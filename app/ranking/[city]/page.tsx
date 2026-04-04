@@ -38,6 +38,10 @@ const defaultCityData = (citySlug: string): CityData => ({
   ],
 })
 
+export async function generateStaticParams() {
+  return Object.keys(cityData).map((city) => ({ city }))
+}
+
 export async function generateMetadata({ params }: { params: { city: string } }): Promise<Metadata> {
   const data = cityData[params.city] ?? defaultCityData(params.city)
   const title = `${data.name}の老人ホームおすすめランキングTOP10【2026年最新】`
