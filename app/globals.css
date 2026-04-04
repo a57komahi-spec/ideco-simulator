@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.highlight {
+  background: linear-gradient(transparent 60%, #FFF176 60%);
+  padding: 0 2px;
+  font-weight: 700;
+}
+
+h2 {
+  border-left: 5px solid #2E7D52;
+  padding-left: 14px;
+}
+
+a {
+  color: #1A5E9E;
+  text-decoration: underline;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: #FAFAF7;
+  color: #1A1A1A;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.table-wrapper table td,
+.table-wrapper table th {
+  min-height: 48px;
+  padding: 14px 16px;
+  font-size: 18px;
+}

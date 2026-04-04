@@ -1,0 +1,7 @@
+node_modules/
+.next/
+*.xlsx
+*.db
+*.log
+画像素材/
+老健/
