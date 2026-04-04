@@ -350,6 +350,37 @@ export default function RankingIndexPage() {
           </div>
         </div>
 
+        {/* 市町村別ランキング */}
+        <div className="rounded-2xl p-6 mb-8 mt-4" style={{ background: '#F9FBF9', border: '2px solid #A5D6A7' }}>
+          <h2 style={{ fontSize: '18px', fontWeight: 800, color: '#1A1A1A', marginBottom: '6px', borderLeft: 'none', paddingLeft: 0 }}>
+            📍 市町村別おすすめ施設ランキング
+          </h2>
+          <p style={{ fontSize: '14px', color: '#666', marginBottom: '16px' }}>
+            地域ごとの評価・費用・特徴をもとに施設をランキング形式で紹介しています。
+          </p>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+            {[
+              { href: '/ranking/osaka', label: '大阪市', pref: '大阪府' },
+              { href: '/ranking/yokohama', label: '横浜市', pref: '神奈川県' },
+              { href: '/ranking/nagoya', label: '名古屋市', pref: '愛知県' },
+              { href: '/ranking/kobe', label: '神戸市', pref: '兵庫県' },
+              { href: '/ranking/kyoto', label: '京都市', pref: '京都府' },
+              { href: '/ranking/fukuoka', label: '福岡市', pref: '福岡県' },
+              { href: '/ranking/kitakyushu', label: '北九州市', pref: '福岡県' },
+              { href: '/ranking/kawasaki', label: '川崎市', pref: '神奈川県' },
+              { href: '/ranking/saitama', label: 'さいたま市', pref: '埼玉県' },
+              { href: '/ranking/hiroshima', label: '広島市', pref: '広島県' },
+            ].map((city) => (
+              <Link key={city.href} href={city.href} style={{ textDecoration: 'none' }}>
+                <div className="transition hover:opacity-80" style={{ background: '#E8F5E9', border: '1px solid #A5D6A7', borderRadius: '10px', padding: '10px 16px', textAlign: 'center', minWidth: '100px' }}>
+                  <p style={{ fontSize: '11px', color: '#666', marginBottom: '2px' }}>{city.pref}</p>
+                  <p style={{ fontSize: '15px', fontWeight: 700, color: '#2E7D52' }}>{city.label} →</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+
         {/* 関連ページ */}
         <div className="flex flex-col gap-3">
           {[

@@ -59,6 +59,15 @@ export async function generateMetadata({ params }: { params: { city: string } })
   }
 }
 
+// 施設名とキャッチコピーを分離する
+function parseFacilityName(rawName: string): { name: string; tagline: string | null } {
+  const match = rawName.match(/^(.+?)(?=[「『]|\d+年|\d+拠点|全国|関東・近畿)/)
+  if (match && match[1].length < rawName.length) {
+    return { name: match[1].trim(), tagline: rawName.slice(match[1].length).trim() }
+  }
+  return { name: rawName, tagline: null }
+}
+
 // ランク装飾
 const RANK_MEDALS = ['🥇', '🥈', '🥉']
 const getRankLabel = (rank: number) => RANK_MEDALS[rank - 1] ?? `${rank}位`
@@ -99,6 +108,33 @@ export default function CityRankingPage({ params }: { params: { city: string } }
       </h1>
 
       <SummaryBox items={summaryItems} />
+
+      {/* 高需要エリア警告バナー */}
+      {data.highDemand && (
+        <div
+          className="rounded-2xl px-5 py-4 mb-6 flex flex-col sm:flex-row items-start sm:items-center gap-3"
+          style={{ backgroundColor: '#FFF3E0', border: '2px solid #F57C00' }}
+        >
+          <span className="text-2xl flex-shrink-0">⚠️</span>
+          <div className="flex-1">
+            <p className="font-bold text-base" style={{ color: '#E65100' }}>
+              {data.name}は施設数に対する高齢者人口が全国的に多い地域です。
+            </p>
+            <p className="text-sm mt-0.5" style={{ color: '#BF360C' }}>
+              空きが出たときにすぐ動けるよう、早めに情報収集と資料請求を進めておきましょう。
+            </p>
+          </div>
+          <a
+            href="https://www.minnanokaigo.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-shrink-0 font-bold text-white rounded-xl px-4 py-2 text-sm transition hover:opacity-90"
+            style={{ backgroundColor: '#F57C00', textDecoration: 'none' }}
+          >
+            今すぐ資料請求 →
+          </a>
+        </div>
+      )}
 
       <p className="text-base mb-8">
         {data.description}
@@ -152,7 +188,7 @@ export default function CityRankingPage({ params }: { params: { city: string } }
                 <td className="font-bold px-2 py-2">
                   <a href={f.url} target="_blank" rel="noopener noreferrer"
                      className="text-primary hover:underline">
-                    {f.name}
+                    {parseFacilityName(f.name).name}
                   </a>
                 </td>
                 <td className="px-2 py-2 text-sm">{f.type}</td>
@@ -164,10 +200,51 @@ export default function CityRankingPage({ params }: { params: { city: string } }
         </table>
       </div>
 
-      <h2 className="text-xl md:text-2xl font-bold mb-4 mt-10 text-primary">
-        {data.name}で施設を無料で探す方法
-      </h2>
-      <CTABox />
+      {/* ランキングページ専用 煽りCTA */}
+      <div
+        className="rounded-2xl p-7 mt-12"
+        style={{ backgroundColor: '#F9FBF9', border: '2px solid #A5D6A7' }}
+      >
+        <p className="text-xs font-bold mb-1 tracking-wide" style={{ color: '#2E7D52' }}>
+          ── このページは一部の施設しか紹介できていません ──
+        </p>
+        <h2 className="text-xl md:text-2xl font-bold mb-3 text-text-main" style={{ borderLeft: 'none', paddingLeft: 0 }}>
+          もっと多くの{data.name}の施設を見たい方はこちら
+        </h2>
+        <p className="text-sm mb-1 text-gray-700">
+          このページで紹介しているのは評価上位のほんの一部。
+          <span className="font-bold" style={{ color: '#2E7D52' }}>【みんなの介護】</span>
+          には{data.name}だけで<strong>数百件以上</strong>の施設情報が掲載されており、空き状況・写真・口コミをまとめて確認できます。
+        </p>
+        <p className="text-sm mb-5 text-gray-700">
+          資料請求・見学予約はすべて<strong>無料</strong>。気になった施設はまとめて資料請求しておくのがおすすめです。
+        </p>
+        <div className="flex flex-col items-center gap-1">
+          <a
+            href="https://www.minnanokaigo.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block text-center font-bold w-full"
+            style={{
+              backgroundColor: '#2E7D52',
+              color: 'white',
+              fontSize: '17px',
+              maxWidth: '480px',
+              minHeight: '56px',
+              borderRadius: '12px',
+              boxShadow: '0 3px 10px rgba(46,125,82,0.25)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              textDecoration: 'none',
+              padding: '0 24px',
+            }}
+          >
+            🔍 【みんなの介護】で{data.name}の全施設を見る（無料）
+          </a>
+          <span style={{ fontSize: '11px', color: '#999', marginTop: '4px' }}>※外部サービス（みんなの介護）に移動します</span>
+        </div>
+      </div>
     </>
   )
 }
@@ -175,6 +252,7 @@ export default function CityRankingPage({ params }: { params: { city: string } }
 // ===== 施設カードコンポーネント =====
 function FacilityCard({ facility, featured }: { facility: Facility; featured: boolean }) {
   const rank = facility.rank
+  const { name, tagline } = parseFacilityName(facility.name)
   return (
     <div
       className="rounded-2xl overflow-hidden bg-white"
@@ -188,7 +266,7 @@ function FacilityCard({ facility, featured }: { facility: Facility; featured: bo
         <span className="text-3xl" aria-label={`第${rank}位`}>{getRankLabel(rank)}</span>
         <div className="flex-1 min-w-0">
           <p className="text-sm text-gray-500">第{rank}位</p>
-          <p className="font-bold text-lg text-text-main truncate">{facility.name}</p>
+          <p className="font-bold text-lg text-text-main truncate">{name}</p>
         </div>
         <span
           className="text-sm font-bold px-3 py-1 rounded-full text-white flex-shrink-0"
@@ -197,6 +275,19 @@ function FacilityCard({ facility, featured }: { facility: Facility; featured: bo
           {facility.badge}
         </span>
       </div>
+
+      {/* 施設画像（TOP3のみ） */}
+      {featured && facility.imageUrl && (
+        <div className="w-full overflow-hidden" style={{ maxHeight: '220px' }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={facility.imageUrl}
+            alt={facility.name}
+            className="w-full object-cover"
+            style={{ maxHeight: '220px', objectPosition: 'center' }}
+          />
+        </div>
+      )}
 
       {/* カード本文 */}
       <div className="px-5 py-4 space-y-3">
@@ -224,11 +315,22 @@ function FacilityCard({ facility, featured }: { facility: Facility; featured: bo
           )}
         </div>
 
-        {/* 住所 */}
-        <p className="text-sm text-gray-600 flex items-start gap-2">
-          <span className="flex-shrink-0">📍</span>
-          <span>{facility.address}</span>
-        </p>
+        {/* 住所・最寄り駅・紹介文 */}
+        <div className="space-y-1">
+          <p className="text-sm text-gray-600 flex items-start gap-2">
+            <span className="flex-shrink-0">📍</span>
+            <span>{facility.address}</span>
+          </p>
+          {facility.nearestStation && (
+            <p className="text-sm text-gray-600 flex items-center gap-2">
+              <span className="flex-shrink-0">🚉</span>
+              <span>{facility.nearestStation}</span>
+            </p>
+          )}
+          {tagline && (
+            <p className="text-sm text-gray-500 italic pl-1">{tagline}</p>
+          )}
+        </div>
 
         {/* 特徴タグ */}
         {facility.features.length > 0 && (

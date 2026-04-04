@@ -14,6 +14,8 @@ export interface Facility {
   operator: string
   rating: string
   url: string
+  imageUrl?: string
+  nearestStation?: string
 }
 
 export interface CityData {
@@ -21,6 +23,7 @@ export interface CityData {
   prefecture: string
   description: string
   facilities: Facility[]
+  highDemand?: boolean  // 高齢者人口に対して施設数が少ない自治体
 }
 
 export const generatedCityData: Record<string, CityData> = {
@@ -36,16 +39,18 @@ export const generatedCityData: Record<string, CityData> = {
         "address": "大阪府大阪市阿倍野区北畠2-11-64",
         "price": "月額 21.2万~137万円",
         "features": [
-          "介護スタッフ常駐",
-          "個別ケアプラン",
-          "食事サービスあり"
+          "夜間有人体制",
+          "テーマ別フロアで趣味継続",
+          "日中看護師常駐"
         ],
-        "recommend": "介護サービスが充実した環境で安心して過ごしたい方におすすめ",
+        "recommend": "姫松駅から徒歩3分と通いやすく、2〜4階のテーマ別スペースで趣味を続けながら、夜間も有人体制で安心して過ごしたい方に",
         "badge": "編集部イチオシ",
         "badgeColor": "#F57C00",
         "operator": "株式会社 ベネッセスタイルケア",
         "rating": "4.26",
-        "url": "https://www.minnanokaigo.com/facility/000-5684333937/"
+        "url": "https://www.minnanokaigo.com/facility/000-5684333937/",
+        "imageUrl": "https://img.minnanokaigo.com/shisetsu/71180/pic/20220113105933.jpg",
+        "nearestStation": "姫松駅 徒歩3分"
       },
       {
         "rank": 2,
@@ -54,16 +59,18 @@ export const generatedCityData: Record<string, CityData> = {
         "address": "大阪府大阪市港区弁天1-3-3",
         "price": "月額 29万~81.8万円",
         "features": [
-          "食事選択制",
-          "機能訓練あり",
-          "介護浴槽完備"
+          "弁天町駅直結・徒歩1分",
+          "同棟にクリニックモール併設",
+          "毎食2種から選べるレストラン"
         ],
-        "recommend": "介護サービスが充実した環境で安心して過ごしたい方におすすめ",
+        "recommend": "弁天町駅から徒歩1分で家族が通いやすく、同じビルに整形外科・眼科・歯科が入るため、持病の通院を施設内で完結させたい方に",
         "badge": "高評価",
         "badgeColor": "#2E7D52",
         "operator": "グッドタイムリビング株式会社",
         "rating": "4.25",
-        "url": "https://www.minnanokaigo.com/facility/010-2770401475/"
+        "url": "https://www.minnanokaigo.com/facility/010-2770401475/",
+        "imageUrl": "https://img.minnanokaigo.com/shisetsu/353/panorama/20181002164247.jpg",
+        "nearestStation": "弁天町駅 徒歩1分"
       },
       {
         "rank": 3,
@@ -72,16 +79,18 @@ export const generatedCityData: Record<string, CityData> = {
         "address": "大阪府大阪市天王寺区勝山2-21-20",
         "price": "月額 28.3万~113.4万円",
         "features": [
-          "介護スタッフ常駐",
-          "個別ケアプラン",
-          "食事サービスあり"
+          "屋上庭園から四天王寺を一望",
+          "月1回イベント食・特別食あり",
+          "ベネッセ運営・2008年開設の実績"
         ],
-        "recommend": "介護サービスが充実した環境で安心して過ごしたい方におすすめ",
+        "recommend": "四天王寺前夕陽ヶ丘駅から徒歩7分。屋上庭園から歴史ある四天王寺を眺めながら、アクティビティ豊富な環境でメリハリある生活を送りたい方に",
         "badge": "おすすめ",
         "badgeColor": "#2E7D52",
         "operator": "株式会社 ベネッセスタイルケア",
         "rating": "4.21",
-        "url": "https://www.minnanokaigo.com/facility/010-2771701311/"
+        "url": "https://www.minnanokaigo.com/facility/010-2771701311/",
+        "imageUrl": "https://img.minnanokaigo.com/shisetsu/14296/pic/71536700-7b73-4b4d-9786-f052a9c7655b.jpg",
+        "nearestStation": "四天王寺前夕陽ヶ丘駅 徒歩7分"
       },
       {
         "rank": 4,

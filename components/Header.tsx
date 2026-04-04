@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 const otherArticles: { href: string; label: string }[] = [
   { href: '/simulation', label: '費用20年シミュレーション' },
@@ -27,12 +27,189 @@ const navItems: { href: string; label: string; highlight?: boolean }[] = [
   { href: '/faq', label: 'FAQ' },
 ]
 
+type Region = '北海道' | '東北' | '関東' | '東京' | '中部' | '近畿' | '中国' | '四国' | '九州'
+
+interface City { slug: string; name: string; available: boolean }
+interface Prefecture { name: string; cities: City[] }
+
+const regions: Region[] = ['北海道', '東北', '関東', '東京', '中部', '近畿', '中国', '四国', '九州']
+
+const regionData: Record<Region, Prefecture[]> = {
+  '北海道': [
+    { name: '北海道', cities: [{ slug: 'sapporo', name: '札幌市', available: false }] },
+  ],
+  '東北': [
+    { name: '宮城県', cities: [{ slug: 'sendai', name: '仙台市', available: false }] },
+    { name: '青森県', cities: [{ slug: 'aomori', name: '青森市', available: false }] },
+    { name: '岩手県', cities: [{ slug: 'morioka', name: '盛岡市', available: false }] },
+    { name: '秋田県', cities: [{ slug: 'akita', name: '秋田市', available: false }] },
+    { name: '山形県', cities: [{ slug: 'yamagata', name: '山形市', available: false }] },
+    { name: '福島県', cities: [{ slug: 'fukushima', name: '福島市', available: false }] },
+  ],
+  '関東': [
+    { name: '神奈川県', cities: [
+      { slug: 'yokohama', name: '横浜市', available: true },
+      { slug: 'kawasaki', name: '川崎市', available: true },
+    ]},
+    { name: '埼玉県', cities: [{ slug: 'saitama', name: 'さいたま市', available: true }] },
+    { name: '千葉県', cities: [{ slug: 'chiba', name: '千葉市', available: false }] },
+    { name: '茨城県', cities: [{ slug: 'mito', name: '水戸市', available: false }] },
+    { name: '栃木県', cities: [{ slug: 'utsunomiya', name: '宇都宮市', available: false }] },
+    { name: '群馬県', cities: [{ slug: 'maebashi', name: '前橋市', available: false }] },
+  ],
+  '東京': [
+    { name: '東京都', cities: [
+      { slug: 'tokyo', name: '東京都（全域）', available: false },
+      { slug: 'setagaya', name: '世田谷区', available: false },
+      { slug: 'nerima', name: '練馬区', available: false },
+      { slug: 'adachi', name: '足立区', available: false },
+      { slug: 'edogawa', name: '江戸川区', available: false },
+      { slug: 'shinjuku', name: '新宿区', available: false },
+    ]},
+  ],
+  '中部': [
+    { name: '愛知県', cities: [{ slug: 'nagoya', name: '名古屋市', available: true }] },
+    { name: '静岡県', cities: [
+      { slug: 'shizuoka', name: '静岡市', available: false },
+      { slug: 'hamamatsu', name: '浜松市', available: false },
+    ]},
+    { name: '新潟県', cities: [{ slug: 'niigata', name: '新潟市', available: false }] },
+    { name: '富山県', cities: [{ slug: 'toyama', name: '富山市', available: false }] },
+    { name: '石川県', cities: [{ slug: 'kanazawa', name: '金沢市', available: false }] },
+    { name: '福井県', cities: [{ slug: 'fukui', name: '福井市', available: false }] },
+    { name: '山梨県', cities: [{ slug: 'kofu', name: '甲府市', available: false }] },
+    { name: '長野県', cities: [{ slug: 'nagano', name: '長野市', available: false }] },
+    { name: '岐阜県', cities: [{ slug: 'gifu', name: '岐阜市', available: false }] },
+  ],
+  '近畿': [
+    { name: '大阪府', cities: [{ slug: 'osaka', name: '大阪市', available: true }] },
+    { name: '兵庫県', cities: [{ slug: 'kobe', name: '神戸市', available: true }] },
+    { name: '京都府', cities: [{ slug: 'kyoto', name: '京都市', available: true }] },
+    { name: '奈良県', cities: [{ slug: 'nara', name: '奈良市', available: false }] },
+    { name: '滋賀県', cities: [{ slug: 'otsu', name: '大津市', available: false }] },
+    { name: '和歌山県', cities: [{ slug: 'wakayama', name: '和歌山市', available: false }] },
+    { name: '三重県', cities: [{ slug: 'tsu', name: '津市', available: false }] },
+  ],
+  '中国': [
+    { name: '広島県', cities: [{ slug: 'hiroshima', name: '広島市', available: true }] },
+    { name: '岡山県', cities: [{ slug: 'okayama', name: '岡山市', available: false }] },
+    { name: '山口県', cities: [{ slug: 'yamaguchi', name: '山口市', available: false }] },
+    { name: '鳥取県', cities: [{ slug: 'tottori', name: '鳥取市', available: false }] },
+    { name: '島根県', cities: [{ slug: 'matsue', name: '松江市', available: false }] },
+  ],
+  '四国': [
+    { name: '愛媛県', cities: [{ slug: 'matsuyama', name: '松山市', available: false }] },
+    { name: '香川県', cities: [{ slug: 'takamatsu', name: '高松市', available: false }] },
+    { name: '徳島県', cities: [{ slug: 'tokushima', name: '徳島市', available: false }] },
+    { name: '高知県', cities: [{ slug: 'kochi', name: '高知市', available: false }] },
+  ],
+  '九州': [
+    { name: '福岡県', cities: [
+      { slug: 'fukuoka', name: '福岡市', available: true },
+      { slug: 'kitakyushu', name: '北九州市', available: true },
+    ]},
+    { name: '熊本県', cities: [{ slug: 'kumamoto', name: '熊本市', available: false }] },
+    { name: '鹿児島県', cities: [{ slug: 'kagoshima', name: '鹿児島市', available: false }] },
+    { name: '大分県', cities: [{ slug: 'oita', name: '大分市', available: false }] },
+    { name: '宮崎県', cities: [{ slug: 'miyazaki', name: '宮崎市', available: false }] },
+    { name: '佐賀県', cities: [{ slug: 'saga', name: '佐賀市', available: false }] },
+    { name: '長崎県', cities: [{ slug: 'nagasaki', name: '長崎市', available: false }] },
+    { name: '沖縄県', cities: [{ slug: 'naha', name: '那覇市', available: false }] },
+  ],
+}
+
+function RankingMegaMenu({ onClose }: { onClose?: () => void }) {
+  const [activeRegion, setActiveRegion] = useState<Region>('近畿')
+  const [activePref, setActivePref] = useState<string>('大阪府')
+
+  const prefs = regionData[activeRegion]
+  const currentPref = prefs.find((p) => p.name === activePref) ?? prefs[0]
+
+  const handleRegionChange = (r: Region) => {
+    setActiveRegion(r)
+    setActivePref(regionData[r][0]?.name ?? '')
+  }
+
+  return (
+    <div style={{ background: '#fff', borderRadius: '12px', boxShadow: '0 8px 32px rgba(0,0,0,0.18)', overflow: 'hidden', minWidth: '480px' }}>
+      {/* 地方タブ */}
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px', padding: '10px 12px 8px', background: '#F9FBF9', borderBottom: '1px solid #e0e0e0' }}>
+        {regions.map((r) => (
+          <button key={r} onClick={() => handleRegionChange(r)} style={{ fontSize: '12px', fontWeight: 700, padding: '4px 10px', borderRadius: '20px', border: 'none', cursor: 'pointer', background: activeRegion === r ? '#2E7D52' : '#eee', color: activeRegion === r ? '#fff' : '#555', transition: 'all 0.15s' }}>
+            {r}
+          </button>
+        ))}
+      </div>
+
+      <div style={{ display: 'flex', minHeight: '120px' }}>
+        {/* 都道府県リスト */}
+        <div style={{ width: '130px', flexShrink: 0, borderRight: '1px solid #e0e0e0', padding: '8px 0', background: '#FAFAFA' }}>
+          {prefs.map((p) => (
+            <button
+              key={p.name}
+              onClick={() => setActivePref(p.name)}
+              style={{
+                display: 'block', width: '100%', textAlign: 'left',
+                padding: '8px 14px', fontSize: '13px', fontWeight: activePref === p.name ? 700 : 400,
+                color: activePref === p.name ? '#2E7D52' : '#444',
+                background: activePref === p.name ? '#E8F5E9' : 'transparent',
+                border: 'none', cursor: 'pointer',
+                borderLeft: activePref === p.name ? '3px solid #2E7D52' : '3px solid transparent',
+              }}
+            >
+              {p.name}
+            </button>
+          ))}
+        </div>
+
+        {/* 市区町村リスト */}
+        <div style={{ flex: 1, padding: '16px' }}>
+          <p style={{ fontSize: '11px', color: '#999', marginBottom: '10px', fontWeight: 700 }}>
+            {currentPref?.name}のランキング
+          </p>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+            {currentPref?.cities.map((c) => (
+              c.available ? (
+                <Link key={c.slug} href={`/ranking/${c.slug}`} onClick={onClose}
+                  style={{ textDecoration: 'none', padding: '8px 16px', borderRadius: '8px', fontSize: '14px', fontWeight: 700, color: '#2E7D52', background: '#E8F5E9', border: '1px solid #A5D6A7', display: 'inline-block' }}
+                  className="hover:bg-green-100 transition"
+                >
+                  {c.name} →
+                </Link>
+              ) : (
+                <span key={c.slug} style={{ padding: '8px 16px', borderRadius: '8px', fontSize: '13px', color: '#bbb', background: '#f5f5f5', border: '1px solid #e8e8e8', display: 'inline-block' }}>
+                  {c.name}（準備中）
+                </span>
+              )
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [rankingOpen, setRankingOpen] = useState(false)
+  const rankingRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (rankingRef.current && !rankingRef.current.contains(e.target as Node)) {
+        setRankingOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [])
+  const [spRankingOpen, setSpRankingOpen] = useState(false)
+  const [spActiveRegion, setSpActiveRegion] = useState<Region>('近畿')
+  const [spActivePref, setSpActivePref] = useState<string>('大阪府')
 
   return (
     <header style={{ background: 'linear-gradient(135deg, #1B5E37 0%, #2E7D52 60%, #3D9966 100%)', boxShadow: '0 2px 12px rgba(0,0,0,0.15)' }}>
-      {/* 最上部バー：こんな方向けリンク */}
+      {/* 最上部バー */}
       <div style={{ background: '#F57C00' }}>
         <div className="max-w-7xl mx-auto px-4">
           <Link
@@ -44,44 +221,23 @@ export default function Header() {
             <span style={{ color: '#fff', fontSize: '16px', fontWeight: 700, letterSpacing: '0.04em' }}>
               はじめての方へ　―　このサイトはこんな方向け
             </span>
-            <span
-              style={{
-                color: '#fff',
-                fontSize: '14px',
-                fontWeight: 700,
-                border: '1px solid rgba(255,255,255,0.6)',
-                borderRadius: '20px',
-                padding: '2px 10px',
-              }}
-            >
+            <span style={{ color: '#fff', fontSize: '14px', fontWeight: 700, border: '1px solid rgba(255,255,255,0.6)', borderRadius: '20px', padding: '2px 10px' }}>
               くわしく見る →
             </span>
           </Link>
         </div>
       </div>
 
-      {/* 上部：ロゴ＋ハンバーガー */}
+      {/* 上部：ロゴ＋ナビ */}
       <div className="max-w-7xl mx-auto px-4 py-2.5 flex items-center justify-between gap-2">
         {/* ロゴ */}
-        <Link
-          href="/"
-          style={{ textDecoration: 'none', flexShrink: 0 }}
-          className="flex items-center gap-2 group"
-        >
-          <span
-            className="flex items-center justify-center rounded-lg text-xl"
-            style={{ width: '36px', height: '36px', background: 'rgba(255,255,255,0.15)', backdropFilter: 'blur(4px)', flexShrink: 0 }}
-            aria-hidden="true"
-          >
+        <Link href="/" style={{ textDecoration: 'none', flexShrink: 0 }} className="flex items-center gap-2 group">
+          <span className="flex items-center justify-center rounded-lg text-xl" style={{ width: '36px', height: '36px', background: 'rgba(255,255,255,0.15)', backdropFilter: 'blur(4px)', flexShrink: 0 }} aria-hidden="true">
             🏡
           </span>
           <span className="flex flex-col leading-tight" style={{ whiteSpace: 'nowrap' }}>
-            <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '10px', letterSpacing: '0.1em' }}>
-              NURSING HOME GUIDE
-            </span>
-            <span style={{ color: '#ffffff', fontSize: '15px', fontWeight: 700, letterSpacing: '0.02em' }}>
-              やさしい老人ホームガイド
-            </span>
+            <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '10px', letterSpacing: '0.1em' }}>NURSING HOME GUIDE</span>
+            <span style={{ color: '#ffffff', fontSize: '15px', fontWeight: 700, letterSpacing: '0.02em' }}>やさしい老人ホームガイド</span>
           </span>
         </Link>
 
@@ -89,63 +245,44 @@ export default function Header() {
         <nav className="hidden md:flex items-center gap-0.5" style={{ flexShrink: 1, minWidth: 0 }}>
           {navItems.map((item) => (
             item.highlight ? (
-              <Link
-                key={item.href}
-                href={item.href}
-                style={{ textDecoration: 'none', whiteSpace: 'nowrap', flexShrink: 0 }}
-                className="transition hover:opacity-90"
-              >
-                <span style={{
-                  background: 'rgba(255,255,255,0.18)',
-                  color: '#FFF176',
-                  fontSize: '13px',
-                  fontWeight: 700,
-                  padding: '4px 10px',
-                  borderRadius: '6px',
-                  border: '1px solid rgba(255,241,118,0.4)',
-                  display: 'inline-block',
-                  whiteSpace: 'nowrap',
-                }}>
+              <Link key={item.href} href={item.href} style={{ textDecoration: 'none', whiteSpace: 'nowrap', flexShrink: 0 }} className="transition hover:opacity-90">
+                <span style={{ background: 'rgba(255,255,255,0.18)', color: '#FFF176', fontSize: '13px', fontWeight: 700, padding: '4px 10px', borderRadius: '6px', border: '1px solid rgba(255,241,118,0.4)', display: 'inline-block', whiteSpace: 'nowrap' }}>
                   ✦ {item.label}
                 </span>
               </Link>
             ) : (
-              <Link
-                key={item.href}
-                href={item.href}
-                style={{ textDecoration: 'none', whiteSpace: 'nowrap' }}
-                className="group relative px-2 py-2 rounded-lg transition-all duration-200 hover:bg-white/10"
-              >
-                <span style={{ color: 'rgba(255,255,255,0.9)', fontSize: '13px', fontWeight: 500 }}>
-                  {item.label}
-                </span>
-                <span
-                  className="absolute bottom-1 left-2 right-2 h-0.5 rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-200"
-                  style={{ background: 'rgba(255,255,255,0.6)' }}
-                />
+              <Link key={item.href} href={item.href} style={{ textDecoration: 'none', whiteSpace: 'nowrap' }} className="group relative px-2 py-2 rounded-lg transition-all duration-200 hover:bg-white/10">
+                <span style={{ color: 'rgba(255,255,255,0.9)', fontSize: '13px', fontWeight: 500 }}>{item.label}</span>
+                <span className="absolute bottom-1 left-2 right-2 h-0.5 rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-200" style={{ background: 'rgba(255,255,255,0.6)' }} />
               </Link>
             )
           ))}
-          {/* その他記事ドロップダウン（PC） */}
-          <div className="relative group" style={{ flexShrink: 0 }}>
+
+          {/* 市町村別ランキング ドロップダウン */}
+          <div className="relative" style={{ flexShrink: 0 }} ref={rankingRef}>
             <button
+              onClick={() => setRankingOpen(!rankingOpen)}
               className="px-2 py-2 rounded-lg transition-all duration-200 hover:bg-white/10 flex items-center gap-1"
-              style={{ color: 'rgba(255,255,255,0.9)', fontSize: '13px', fontWeight: 500, background: 'none', border: 'none', cursor: 'pointer', whiteSpace: 'nowrap' }}
+              style={{ color: '#FFF176', fontSize: '13px', fontWeight: 700, background: 'none', border: 'none', cursor: 'pointer', whiteSpace: 'nowrap' }}
             >
+              📍 市町村別ランキング ▾
+            </button>
+            {rankingOpen && (
+              <div className="absolute left-0 top-full z-50" style={{ paddingTop: '4px' }}>
+                <RankingMegaMenu onClose={() => setRankingOpen(false)} />
+              </div>
+            )}
+          </div>
+
+          {/* その他記事ドロップダウン */}
+          <div className="relative group" style={{ flexShrink: 0 }}>
+            <button className="px-2 py-2 rounded-lg transition-all duration-200 hover:bg-white/10 flex items-center gap-1" style={{ color: 'rgba(255,255,255,0.9)', fontSize: '13px', fontWeight: 500, background: 'none', border: 'none', cursor: 'pointer', whiteSpace: 'nowrap' }}>
               その他記事 ▾
             </button>
-            <div
-              className="absolute left-0 top-full hidden group-hover:block z-50"
-              style={{ minWidth: '200px', paddingTop: '4px' }}
-            >
+            <div className="absolute left-0 top-full hidden group-hover:block z-50" style={{ minWidth: '200px', paddingTop: '4px' }}>
               <div style={{ background: '#fff', borderRadius: '10px', boxShadow: '0 8px 24px rgba(0,0,0,0.15)', overflow: 'hidden' }}>
                 {otherArticles.map((a) => (
-                  <Link
-                    key={a.href}
-                    href={a.href}
-                    style={{ textDecoration: 'none', display: 'block', padding: '10px 16px', color: '#333', fontSize: '13px', borderBottom: '1px solid #f0f0f0' }}
-                    className="hover:bg-gray-50 transition"
-                  >
+                  <Link key={a.href} href={a.href} style={{ textDecoration: 'none', display: 'block', padding: '10px 16px', color: '#333', fontSize: '13px', borderBottom: '1px solid #f0f0f0' }} className="hover:bg-gray-50 transition">
                     {a.label}
                   </Link>
                 ))}
@@ -153,26 +290,8 @@ export default function Header() {
             </div>
           </div>
 
-          <Link
-            href="https://www.minnanokaigo.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ textDecoration: 'none', flexShrink: 0 }}
-            className="ml-2"
-          >
-            <span
-              style={{
-                background: '#F57C00',
-                color: '#fff',
-                fontSize: '13px',
-                fontWeight: 700,
-                padding: '7px 13px',
-                borderRadius: '8px',
-                display: 'inline-block',
-                boxShadow: '0 2px 6px rgba(245,124,0,0.4)',
-                whiteSpace: 'nowrap',
-              }}
-            >
+          <Link href="https://www.minnanokaigo.com/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', flexShrink: 0 }} className="ml-2">
+            <span style={{ background: '#F57C00', color: '#fff', fontSize: '13px', fontWeight: 700, padding: '7px 13px', borderRadius: '8px', display: 'inline-block', boxShadow: '0 2px 6px rgba(245,124,0,0.4)', whiteSpace: 'nowrap' }}>
               無料相談 →
             </span>
           </Link>
@@ -193,49 +312,73 @@ export default function Header() {
 
       {/* SP用ドロワーメニュー */}
       {menuOpen && (
-        <nav
-          className="md:hidden"
-          style={{ background: 'rgba(0,0,0,0.15)', backdropFilter: 'blur(4px)', borderTop: '1px solid rgba(255,255,255,0.1)' }}
-        >
+        <nav className="md:hidden" style={{ background: 'rgba(0,0,0,0.15)', backdropFilter: 'blur(4px)', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
           <ul className="max-w-5xl mx-auto px-4 py-3 flex flex-col gap-1">
             {navItems.map((item) => (
               <li key={item.href}>
-                <Link
-                  href={item.href}
-                  onClick={() => setMenuOpen(false)}
-                  className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/10 transition"
-                  style={{
-                    textDecoration: 'none',
-                    color: item.highlight ? '#FFF176' : '#fff',
-                    fontSize: '17px',
-                    fontWeight: item.highlight ? 700 : 400,
-                  }}
-                >
+                <Link href={item.href} onClick={() => setMenuOpen(false)} className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/10 transition" style={{ textDecoration: 'none', color: item.highlight ? '#FFF176' : '#fff', fontSize: '17px', fontWeight: item.highlight ? 700 : 400 }}>
                   {item.highlight ? `✦ ${item.label}` : item.label}
                 </Link>
               </li>
             ))}
+
+            {/* SP: 市町村別ランキング */}
+            <li>
+              <button
+                onClick={() => setSpRankingOpen(!spRankingOpen)}
+                className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/10 transition w-full text-left"
+                style={{ color: '#FFF176', fontSize: '17px', fontWeight: 700, background: 'none', border: 'none', cursor: 'pointer' }}
+              >
+                📍 市町村別ランキング {spRankingOpen ? '▴' : '▾'}
+              </button>
+              {spRankingOpen && (
+                <div style={{ background: 'rgba(255,255,255,0.95)', borderRadius: '10px', margin: '0 8px 8px', padding: '12px' }}>
+                  {/* 地方タブ */}
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px', marginBottom: '8px' }}>
+                    {regions.map((r) => (
+                      <button key={r} onClick={() => { setSpActiveRegion(r); setSpActivePref(regionData[r][0]?.name ?? '') }}
+                        style={{ fontSize: '12px', fontWeight: 700, padding: '3px 9px', borderRadius: '20px', border: 'none', cursor: 'pointer', background: spActiveRegion === r ? '#2E7D52' : '#ddd', color: spActiveRegion === r ? '#fff' : '#555' }}>
+                        {r}
+                      </button>
+                    ))}
+                  </div>
+                  {/* 都道府県タブ */}
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px', marginBottom: '10px' }}>
+                    {regionData[spActiveRegion].map((p) => (
+                      <button key={p.name} onClick={() => setSpActivePref(p.name)}
+                        style={{ fontSize: '12px', padding: '3px 9px', borderRadius: '6px', border: '1px solid', cursor: 'pointer', fontWeight: spActivePref === p.name ? 700 : 400, background: spActivePref === p.name ? '#E8F5E9' : '#fff', color: spActivePref === p.name ? '#2E7D52' : '#555', borderColor: spActivePref === p.name ? '#A5D6A7' : '#ddd' }}>
+                        {p.name}
+                      </button>
+                    ))}
+                  </div>
+                  {/* 市区町村 */}
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                    {(regionData[spActiveRegion].find((p) => p.name === spActivePref) ?? regionData[spActiveRegion][0])?.cities.map((c) => (
+                      c.available ? (
+                        <Link key={c.slug} href={`/ranking/${c.slug}`} onClick={() => setMenuOpen(false)} style={{ textDecoration: 'none', padding: '6px 12px', borderRadius: '8px', fontSize: '14px', fontWeight: 700, color: '#2E7D52', background: '#E8F5E9', border: '1px solid #A5D6A7' }}>
+                          {c.name} →
+                        </Link>
+                      ) : (
+                        <span key={c.slug} style={{ padding: '6px 12px', borderRadius: '8px', fontSize: '13px', color: '#bbb', background: '#f5f5f5', border: '1px solid #e8e8e8' }}>
+                          {c.name}（準備中）
+                        </span>
+                      )
+                    ))}
+                  </div>
+                </div>
+              )}
+            </li>
+
             <li>
               <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '12px', fontWeight: 700, padding: '8px 16px 2px', letterSpacing: '0.08em' }}>その他記事</p>
               {otherArticles.map((a) => (
-                <Link
-                  key={a.href}
-                  href={a.href}
-                  onClick={() => setMenuOpen(false)}
-                  className="flex items-center gap-3 px-8 py-2 rounded-xl hover:bg-white/10 transition"
-                  style={{ textDecoration: 'none', color: 'rgba(255,255,255,0.75)', fontSize: '15px' }}
-                >
+                <Link key={a.href} href={a.href} onClick={() => setMenuOpen(false)} className="flex items-center gap-3 px-8 py-2 rounded-xl hover:bg-white/10 transition" style={{ textDecoration: 'none', color: 'rgba(255,255,255,0.75)', fontSize: '15px' }}>
                   └ {a.label}
                 </Link>
               ))}
             </li>
             <li className="mt-2">
-              <Link
-                href="/how-to-choose"
-                onClick={() => setMenuOpen(false)}
-                className="flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-white transition hover:opacity-90"
-                style={{ textDecoration: 'none', background: '#F57C00', fontSize: '18px', boxShadow: '0 2px 8px rgba(245,124,0,0.4)' }}
-              >
+              <Link href="/how-to-choose" onClick={() => setMenuOpen(false)} className="flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-white transition hover:opacity-90" style={{ textDecoration: 'none', background: '#F57C00', fontSize: '18px', boxShadow: '0 2px 8px rgba(245,124,0,0.4)' }}>
                 📋 無料で施設を探す →
               </Link>
             </li>
