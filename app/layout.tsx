@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   },
   description: '老人ホーム選びで迷っているご家族へ。種類・費用・選び方を専門用語なしでわかりやすく解説します。',
   viewport: 'width=device-width, initial-scale=1',
+  verification: {
+    google: 'YM1ETgI9LOU3Sijd8kEyHUJ8tbrTpLUn5NaCWdRjpho',
+  },
   openGraph: {
     siteName: 'やさしい老人ホームガイド',
     locale: 'ja_JP',
