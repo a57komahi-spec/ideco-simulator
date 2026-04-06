@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { AFFILIATE_ENABLED } from '@/lib/featureFlags'
 
 export const metadata: Metadata = {
   title: '老人ホーム検索サイト比較ランキング2026年版｜やさしい老人ホームガイド',
@@ -262,7 +263,7 @@ export default function RankingIndexPage() {
               </div>
 
               {/* CTA */}
-              {r.isAffiliate ? (
+              {r.isAffiliate && AFFILIATE_ENABLED ? (
                 <div className="flex flex-col items-center gap-1">
                   <a
                     href={r.url}
@@ -324,31 +325,33 @@ export default function RankingIndexPage() {
         </div>
 
         {/* 最終CTA */}
-        <div className="rounded-2xl p-6 mb-8" style={{ background: 'linear-gradient(135deg, #E8F5E9, #C8E6C9)', border: '2px solid #2E7D52' }}>
-          <p style={{ fontWeight: 800, fontSize: '18px', color: '#1B5E20', marginBottom: '8px' }}>
-            無料で施設を比較・資料請求する
-          </p>
-          <p style={{ color: '#555', fontSize: '14px', lineHeight: 1.8, marginBottom: '16px' }}>
-            全国58,000件以上の老人ホーム・介護施設を無料で一括比較できます。
-            専門スタッフによる無料相談も対応しています。
-          </p>
-          <div className="flex flex-col items-center gap-1">
-            <a
-              href={NURSING_HOME_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                background: '#2E7D52', color: '#fff', fontWeight: 700, fontSize: '18px',
-                borderRadius: '12px', padding: '16px 32px', textDecoration: 'none',
-                boxShadow: '0 4px 16px rgba(46,125,82,0.4)', width: '100%', maxWidth: '480px',
-              }}
-            >
-              無料で施設を比較する（最短1分） →
-            </a>
-            <span style={{ fontSize: '11px', color: '#888' }}>※広告（みんなの介護）</span>
+        {AFFILIATE_ENABLED && (
+          <div className="rounded-2xl p-6 mb-8" style={{ background: 'linear-gradient(135deg, #E8F5E9, #C8E6C9)', border: '2px solid #2E7D52' }}>
+            <p style={{ fontWeight: 800, fontSize: '18px', color: '#1B5E20', marginBottom: '8px' }}>
+              無料で施設を比較・資料請求する
+            </p>
+            <p style={{ color: '#555', fontSize: '14px', lineHeight: 1.8, marginBottom: '16px' }}>
+              全国58,000件以上の老人ホーム・介護施設を無料で一括比較できます。
+              専門スタッフによる無料相談も対応しています。
+            </p>
+            <div className="flex flex-col items-center gap-1">
+              <a
+                href={NURSING_HOME_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  background: '#2E7D52', color: '#fff', fontWeight: 700, fontSize: '18px',
+                  borderRadius: '12px', padding: '16px 32px', textDecoration: 'none',
+                  boxShadow: '0 4px 16px rgba(46,125,82,0.4)', width: '100%', maxWidth: '480px',
+                }}
+              >
+                無料で施設を比較する（最短1分） →
+              </a>
+              <span style={{ fontSize: '11px', color: '#888' }}>※広告（みんなの介護）</span>
+            </div>
           </div>
-        </div>
+        )}
 
         {/* 市町村別ランキング */}
         <div className="rounded-2xl p-6 mb-8 mt-4" style={{ background: '#F9FBF9', border: '2px solid #A5D6A7' }}>

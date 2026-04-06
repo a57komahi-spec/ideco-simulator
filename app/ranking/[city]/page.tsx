@@ -124,15 +124,17 @@ export default function CityRankingPage({ params }: { params: { city: string } }
               空きが出たときにすぐ動けるよう、早めに情報収集と資料請求を進めておきましょう。
             </p>
           </div>
-          <a
-            href="https://www.minnanokaigo.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-shrink-0 font-bold text-white rounded-xl px-4 py-2 text-sm transition hover:opacity-90"
-            style={{ backgroundColor: '#F57C00', textDecoration: 'none' }}
-          >
-            今すぐ資料請求 →
-          </a>
+          {AFFILIATE_ENABLED && (
+            <a
+              href="https://www.minnanokaigo.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-shrink-0 font-bold text-white rounded-xl px-4 py-2 text-sm transition hover:opacity-90"
+              style={{ backgroundColor: '#F57C00', textDecoration: 'none' }}
+            >
+              今すぐ資料請求 →
+            </a>
+          )}
         </div>
       )}
 
@@ -171,7 +173,7 @@ export default function CityRankingPage({ params }: { params: { city: string } }
         {data.name}のおすすめ施設 比較表
       </h2>
       <div className="table-wrapper mb-10">
-        <table className="w-full border-collapse text-base">
+        <table className="w-full border-collapse text-xs md:text-sm">
           <thead>
             <tr className="bg-primary text-white">
               <th className="text-left px-2 py-2">順位</th>
@@ -186,10 +188,14 @@ export default function CityRankingPage({ params }: { params: { city: string } }
               <tr key={f.rank} className={f.rank % 2 === 0 ? 'bg-gray-50 border-b border-gray-200' : 'border-b border-gray-200'}>
                 <td className="font-bold px-2 py-2">{getRankLabel(f.rank)}</td>
                 <td className="font-bold px-2 py-2">
-                  <a href={f.url} target="_blank" rel="noopener noreferrer"
-                     className="text-primary hover:underline">
-                    {parseFacilityName(f.name).name}
-                  </a>
+                  {AFFILIATE_ENABLED ? (
+                    <a href={f.url} target="_blank" rel="noopener noreferrer"
+                       className="text-primary hover:underline">
+                      {parseFacilityName(f.name).name}
+                    </a>
+                  ) : (
+                    <span>{parseFacilityName(f.name).name}</span>
+                  )}
                 </td>
                 <td className="px-2 py-2 text-sm">{f.type}</td>
                 <td className="px-2 py-2 text-sm">{f.price}</td>
@@ -201,50 +207,52 @@ export default function CityRankingPage({ params }: { params: { city: string } }
       </div>
 
       {/* ランキングページ専用 煽りCTA */}
-      <div
-        className="rounded-2xl p-7 mt-12"
-        style={{ backgroundColor: '#F9FBF9', border: '2px solid #A5D6A7' }}
-      >
-        <p className="text-xs font-bold mb-1 tracking-wide" style={{ color: '#2E7D52' }}>
-          ── このページは一部の施設しか紹介できていません ──
-        </p>
-        <h2 className="text-xl md:text-2xl font-bold mb-3 text-text-main" style={{ borderLeft: 'none', paddingLeft: 0 }}>
-          もっと多くの{data.name}の施設を見たい方はこちら
-        </h2>
-        <p className="text-sm mb-1 text-gray-700">
-          このページで紹介しているのは評価上位のほんの一部。
-          <span className="font-bold" style={{ color: '#2E7D52' }}>【みんなの介護】</span>
-          には{data.name}だけで<strong>数百件以上</strong>の施設情報が掲載されており、空き状況・写真・口コミをまとめて確認できます。
-        </p>
-        <p className="text-sm mb-5 text-gray-700">
-          資料請求・見学予約はすべて<strong>無料</strong>。気になった施設はまとめて資料請求しておくのがおすすめです。
-        </p>
-        <div className="flex flex-col items-center gap-1">
-          <a
-            href="https://www.minnanokaigo.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block text-center font-bold w-full"
-            style={{
-              backgroundColor: '#2E7D52',
-              color: 'white',
-              fontSize: '17px',
-              maxWidth: '480px',
-              minHeight: '56px',
-              borderRadius: '12px',
-              boxShadow: '0 3px 10px rgba(46,125,82,0.25)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              textDecoration: 'none',
-              padding: '0 24px',
-            }}
-          >
-            🔍 【みんなの介護】で{data.name}の全施設を見る（無料）
-          </a>
-          <span style={{ fontSize: '11px', color: '#999', marginTop: '4px' }}>※外部サービス（みんなの介護）に移動します</span>
+      {AFFILIATE_ENABLED && (
+        <div
+          className="rounded-2xl p-7 mt-12"
+          style={{ backgroundColor: '#F9FBF9', border: '2px solid #A5D6A7' }}
+        >
+          <p className="text-xs font-bold mb-1 tracking-wide" style={{ color: '#2E7D52' }}>
+            ── このページは一部の施設しか紹介できていません ──
+          </p>
+          <h2 className="text-xl md:text-2xl font-bold mb-3 text-text-main" style={{ borderLeft: 'none', paddingLeft: 0 }}>
+            もっと多くの{data.name}の施設を見たい方はこちら
+          </h2>
+          <p className="text-sm mb-1 text-gray-700">
+            このページで紹介しているのは評価上位のほんの一部。
+            <span className="font-bold" style={{ color: '#2E7D52' }}>【みんなの介護】</span>
+            には{data.name}だけで<strong>数百件以上</strong>の施設情報が掲載されており、空き状況・写真・口コミをまとめて確認できます。
+          </p>
+          <p className="text-sm mb-5 text-gray-700">
+            資料請求・見学予約はすべて<strong>無料</strong>。気になった施設はまとめて資料請求しておくのがおすすめです。
+          </p>
+          <div className="flex flex-col items-center gap-1">
+            <a
+              href="https://www.minnanokaigo.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-center font-bold w-full"
+              style={{
+                backgroundColor: '#2E7D52',
+                color: 'white',
+                fontSize: '17px',
+                maxWidth: '480px',
+                minHeight: '56px',
+                borderRadius: '12px',
+                boxShadow: '0 3px 10px rgba(46,125,82,0.25)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                textDecoration: 'none',
+                padding: '0 24px',
+              }}
+            >
+              🔍 【みんなの介護】で{data.name}の全施設を見る（無料）
+            </a>
+            <span style={{ fontSize: '11px', color: '#999', marginTop: '4px' }}>※外部サービス（みんなの介護）に移動します</span>
+          </div>
         </div>
-      </div>
+      )}
     </>
   )
 }
@@ -265,8 +273,8 @@ function FacilityCard({ facility, featured }: { facility: Facility; featured: bo
       >
         <span className="text-3xl" aria-label={`第${rank}位`}>{getRankLabel(rank)}</span>
         <div className="flex-1 min-w-0">
-          <p className="text-sm text-gray-500">第{rank}位</p>
-          <p className="font-bold text-lg text-text-main truncate">{name}</p>
+          <p className="text-xs text-gray-500">第{rank}位</p>
+          <p className="font-bold text-sm md:text-lg text-text-main leading-tight">{name}</p>
         </div>
         <span
           className="text-sm font-bold px-3 py-1 rounded-full text-white flex-shrink-0"
@@ -295,22 +303,22 @@ function FacilityCard({ facility, featured }: { facility: Facility; featured: bo
         <div className={`grid gap-3 ${featured ? 'grid-cols-2' : 'grid-cols-2 md:grid-cols-4'}`}>
           <div className="rounded-xl p-3 bg-gray-50">
             <p className="text-xs text-gray-500 mb-0.5">施設タイプ</p>
-            <p className="text-sm font-bold text-primary leading-tight">{facility.type}</p>
+            <p className="text-xs md:text-sm font-bold text-primary leading-tight">{facility.type}</p>
           </div>
           <div className="rounded-xl p-3 bg-gray-50">
             <p className="text-xs text-gray-500 mb-0.5">費用目安</p>
-            <p className="text-sm font-bold leading-tight">{facility.price}</p>
+            <p className="text-xs md:text-sm font-bold leading-tight">{facility.price}</p>
           </div>
           {!featured && facility.rating && (
             <div className="rounded-xl p-3 bg-gray-50">
               <p className="text-xs text-gray-500 mb-0.5">評価</p>
-              <p className="text-sm font-bold">★ {facility.rating}</p>
+              <p className="text-xs md:text-sm font-bold">★ {facility.rating}</p>
             </div>
           )}
           {!featured && facility.operator && (
             <div className="rounded-xl p-3 bg-gray-50">
               <p className="text-xs text-gray-500 mb-0.5">運営</p>
-              <p className="text-sm font-bold leading-tight truncate">{facility.operator}</p>
+              <p className="text-xs md:text-sm font-bold leading-tight truncate">{facility.operator}</p>
             </div>
           )}
         </div>
