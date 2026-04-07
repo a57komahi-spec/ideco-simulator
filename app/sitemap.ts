@@ -13,6 +13,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/about',
     '/contact',
     '/disclaimer',
+    '/tell-parents',
+    '/editorial-policy',
   ]
   return pages.map((page) => ({
     url: `${baseUrl}${page}`,
