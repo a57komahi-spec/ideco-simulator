@@ -36,26 +36,63 @@ const regions: Region[] = ['北海道', '東北', '関東', '東京', '中部', 
 
 const regionData: Record<Region, Prefecture[]> = {
   '北海道': [
-    { name: '北海道', cities: [{ slug: 'sapporo', name: '札幌市', available: false }] },
+    { name: '北海道', cities: [
+      { slug: 'sapporo', name: '札幌市', available: true },
+      { slug: 'asahikawa', name: '旭川市', available: true },
+    ]},
   ],
   '東北': [
-    { name: '宮城県', cities: [{ slug: 'sendai', name: '仙台市', available: false }] },
-    { name: '青森県', cities: [{ slug: 'aomori', name: '青森市', available: false }] },
-    { name: '岩手県', cities: [{ slug: 'morioka', name: '盛岡市', available: false }] },
-    { name: '秋田県', cities: [{ slug: 'akita', name: '秋田市', available: false }] },
-    { name: '山形県', cities: [{ slug: 'yamagata', name: '山形市', available: false }] },
-    { name: '福島県', cities: [{ slug: 'fukushima', name: '福島市', available: false }] },
+    { name: '宮城県', cities: [
+      { slug: 'sendai', name: '仙台市', available: true },
+      { slug: 'ishinomaki', name: '石巻市', available: true },
+    ]},
+    { name: '青森県', cities: [
+      { slug: 'aomori', name: '青森市', available: true },
+      { slug: 'hachinohe', name: '八戸市', available: true },
+    ]},
+    { name: '岩手県', cities: [
+      { slug: 'morioka', name: '盛岡市', available: true },
+      { slug: 'ichinoseki', name: '一関市', available: true },
+    ]},
+    { name: '秋田県', cities: [
+      { slug: 'akita', name: '秋田市', available: true },
+      { slug: 'yokote', name: '横手市', available: true },
+    ]},
+    { name: '山形県', cities: [
+      { slug: 'yamagata', name: '山形市', available: true },
+      { slug: 'tsuruoka', name: '鶴岡市', available: true },
+    ]},
+    { name: '福島県', cities: [
+      { slug: 'koriyama', name: '郡山市', available: true },
+      { slug: 'iwaki', name: 'いわき市', available: true },
+    ]},
   ],
   '関東': [
     { name: '神奈川県', cities: [
       { slug: 'yokohama', name: '横浜市', available: true },
       { slug: 'kawasaki', name: '川崎市', available: true },
+      { slug: 'sagamihara', name: '相模原市', available: true },
     ]},
-    { name: '埼玉県', cities: [{ slug: 'saitama', name: 'さいたま市', available: true }] },
-    { name: '千葉県', cities: [{ slug: 'chiba', name: '千葉市', available: false }] },
-    { name: '茨城県', cities: [{ slug: 'mito', name: '水戸市', available: false }] },
-    { name: '栃木県', cities: [{ slug: 'utsunomiya', name: '宇都宮市', available: false }] },
-    { name: '群馬県', cities: [{ slug: 'maebashi', name: '前橋市', available: false }] },
+    { name: '埼玉県', cities: [
+      { slug: 'saitama', name: 'さいたま市', available: true },
+      { slug: 'kawaguchi', name: '川口市', available: true },
+    ]},
+    { name: '千葉県', cities: [
+      { slug: 'chiba', name: '千葉市', available: true },
+      { slug: 'funabashi', name: '船橋市', available: true },
+    ]},
+    { name: '茨城県', cities: [
+      { slug: 'mito', name: '水戸市', available: true },
+      { slug: 'tsukuba', name: 'つくば市', available: true },
+    ]},
+    { name: '栃木県', cities: [
+      { slug: 'utsunomiya', name: '宇都宮市', available: true },
+      { slug: 'oyama', name: '小山市', available: true },
+    ]},
+    { name: '群馬県', cities: [
+      { slug: 'maebashi', name: '前橋市', available: true },
+      { slug: 'takasaki', name: '高崎市', available: true },
+    ]},
   ],
   '東京': [
     { name: '東京都', cities: [
@@ -86,53 +123,146 @@ const regionData: Record<Region, Prefecture[]> = {
     ]},
   ],
   '中部': [
-    { name: '愛知県', cities: [{ slug: 'nagoya', name: '名古屋市', available: true }] },
-    { name: '静岡県', cities: [
-      { slug: 'shizuoka', name: '静岡市', available: false },
-      { slug: 'hamamatsu', name: '浜松市', available: false },
+    { name: '愛知県', cities: [
+      { slug: 'nagoya', name: '名古屋市', available: true },
+      { slug: 'toyota', name: '豊田市', available: true },
     ]},
-    { name: '新潟県', cities: [{ slug: 'niigata', name: '新潟市', available: false }] },
-    { name: '富山県', cities: [{ slug: 'toyama', name: '富山市', available: false }] },
-    { name: '石川県', cities: [{ slug: 'kanazawa', name: '金沢市', available: false }] },
-    { name: '福井県', cities: [{ slug: 'fukui', name: '福井市', available: false }] },
-    { name: '山梨県', cities: [{ slug: 'kofu', name: '甲府市', available: false }] },
-    { name: '長野県', cities: [{ slug: 'nagano', name: '長野市', available: false }] },
-    { name: '岐阜県', cities: [{ slug: 'gifu', name: '岐阜市', available: false }] },
+    { name: '静岡県', cities: [
+      { slug: 'shizuoka', name: '静岡市', available: true },
+      { slug: 'hamamatsu', name: '浜松市', available: true },
+    ]},
+    { name: '新潟県', cities: [
+      { slug: 'niigata', name: '新潟市', available: true },
+      { slug: 'nagaoka', name: '長岡市', available: true },
+    ]},
+    { name: '富山県', cities: [
+      { slug: 'toyama', name: '富山市', available: true },
+      { slug: 'takaoka', name: '高岡市', available: true },
+    ]},
+    { name: '石川県', cities: [
+      { slug: 'kanazawa', name: '金沢市', available: true },
+      { slug: 'hakusan', name: '白山市', available: true },
+    ]},
+    { name: '福井県', cities: [
+      { slug: 'fukui', name: '福井市', available: true },
+      { slug: 'sakai_fukui', name: 'さかい市', available: true },
+    ]},
+    { name: '山梨県', cities: [
+      { slug: 'kofu', name: '甲府市', available: true },
+      { slug: 'kai', name: '甲斐市', available: true },
+    ]},
+    { name: '長野県', cities: [
+      { slug: 'nagano', name: '長野市', available: true },
+      { slug: 'matsumoto', name: '松本市', available: true },
+    ]},
+    { name: '岐阜県', cities: [
+      { slug: 'gifu', name: '岐阜市', available: true },
+      { slug: 'kakamigahara', name: '各務原市', available: true },
+    ]},
+    { name: '三重県', cities: [
+      { slug: 'tsu', name: '津市', available: true },
+      { slug: 'yokkaichi', name: '四日市市', available: true },
+    ]},
   ],
   '近畿': [
-    { name: '大阪府', cities: [{ slug: 'osaka', name: '大阪市', available: true }] },
-    { name: '兵庫県', cities: [{ slug: 'kobe', name: '神戸市', available: true }] },
-    { name: '京都府', cities: [{ slug: 'kyoto', name: '京都市', available: true }] },
-    { name: '奈良県', cities: [{ slug: 'nara', name: '奈良市', available: false }] },
-    { name: '滋賀県', cities: [{ slug: 'otsu', name: '大津市', available: false }] },
-    { name: '和歌山県', cities: [{ slug: 'wakayama', name: '和歌山市', available: false }] },
-    { name: '三重県', cities: [{ slug: 'tsu', name: '津市', available: false }] },
+    { name: '大阪府', cities: [
+      { slug: 'osaka', name: '大阪市', available: true },
+      { slug: 'sakai', name: '堺市', available: true },
+    ]},
+    { name: '兵庫県', cities: [
+      { slug: 'kobe', name: '神戸市', available: true },
+      { slug: 'himeji', name: '姫路市', available: true },
+    ]},
+    { name: '京都府', cities: [
+      { slug: 'kyoto', name: '京都市', available: true },
+      { slug: 'uji', name: '宇治市', available: true },
+    ]},
+    { name: '奈良県', cities: [
+      { slug: 'nara', name: '奈良市', available: true },
+      { slug: 'kashihara', name: '橿原市', available: true },
+    ]},
+    { name: '滋賀県', cities: [
+      { slug: 'otsu', name: '大津市', available: true },
+      { slug: 'kusatsu', name: '草津市', available: true },
+    ]},
+    { name: '和歌山県', cities: [
+      { slug: 'wakayama', name: '和歌山市', available: true },
+      { slug: 'tanabe', name: '田辺市', available: true },
+    ]},
   ],
   '中国': [
-    { name: '広島県', cities: [{ slug: 'hiroshima', name: '広島市', available: true }] },
-    { name: '岡山県', cities: [{ slug: 'okayama', name: '岡山市', available: false }] },
-    { name: '山口県', cities: [{ slug: 'yamaguchi', name: '山口市', available: false }] },
-    { name: '鳥取県', cities: [{ slug: 'tottori', name: '鳥取市', available: false }] },
-    { name: '島根県', cities: [{ slug: 'matsue', name: '松江市', available: false }] },
+    { name: '広島県', cities: [
+      { slug: 'hiroshima', name: '広島市', available: true },
+      { slug: 'fukuyama', name: '福山市', available: true },
+    ]},
+    { name: '岡山県', cities: [
+      { slug: 'okayama', name: '岡山市', available: true },
+      { slug: 'kurashiki', name: '倉敷市', available: true },
+    ]},
+    { name: '山口県', cities: [
+      { slug: 'yamaguchi', name: '山口市', available: true },
+      { slug: 'shimonoseki', name: '下関市', available: true },
+    ]},
+    { name: '鳥取県', cities: [
+      { slug: 'tottori', name: '鳥取市', available: true },
+      { slug: 'yonago', name: '米子市', available: true },
+    ]},
+    { name: '島根県', cities: [
+      { slug: 'matsue', name: '松江市', available: true },
+      { slug: 'izumo', name: '出雲市', available: true },
+    ]},
   ],
   '四国': [
-    { name: '愛媛県', cities: [{ slug: 'matsuyama', name: '松山市', available: false }] },
-    { name: '香川県', cities: [{ slug: 'takamatsu', name: '高松市', available: false }] },
-    { name: '徳島県', cities: [{ slug: 'tokushima', name: '徳島市', available: false }] },
-    { name: '高知県', cities: [{ slug: 'kochi', name: '高知市', available: false }] },
+    { name: '愛媛県', cities: [
+      { slug: 'matsuyama', name: '松山市', available: true },
+      { slug: 'imabari', name: '今治市', available: true },
+    ]},
+    { name: '香川県', cities: [
+      { slug: 'takamatsu', name: '高松市', available: true },
+      { slug: 'marugame', name: '丸亀市', available: true },
+    ]},
+    { name: '徳島県', cities: [
+      { slug: 'tokushima', name: '徳島市', available: true },
+      { slug: 'anan', name: '阿南市', available: true },
+    ]},
+    { name: '高知県', cities: [
+      { slug: 'kochi', name: '高知市', available: true },
+      { slug: 'nankoku', name: '南国市', available: true },
+    ]},
   ],
   '九州': [
     { name: '福岡県', cities: [
       { slug: 'fukuoka', name: '福岡市', available: true },
       { slug: 'kitakyushu', name: '北九州市', available: true },
     ]},
-    { name: '熊本県', cities: [{ slug: 'kumamoto', name: '熊本市', available: false }] },
-    { name: '鹿児島県', cities: [{ slug: 'kagoshima', name: '鹿児島市', available: false }] },
-    { name: '大分県', cities: [{ slug: 'oita', name: '大分市', available: false }] },
-    { name: '宮崎県', cities: [{ slug: 'miyazaki', name: '宮崎市', available: false }] },
-    { name: '佐賀県', cities: [{ slug: 'saga', name: '佐賀市', available: false }] },
-    { name: '長崎県', cities: [{ slug: 'nagasaki', name: '長崎市', available: false }] },
-    { name: '沖縄県', cities: [{ slug: 'naha', name: '那覇市', available: false }] },
+    { name: '熊本県', cities: [
+      { slug: 'kumamoto', name: '熊本市', available: true },
+      { slug: 'yatsushiro', name: '八代市', available: true },
+    ]},
+    { name: '鹿児島県', cities: [
+      { slug: 'kagoshima', name: '鹿児島市', available: true },
+      { slug: 'kirishima', name: '霧島市', available: true },
+    ]},
+    { name: '大分県', cities: [
+      { slug: 'oita', name: '大分市', available: true },
+      { slug: 'beppu', name: '別府市', available: true },
+    ]},
+    { name: '宮崎県', cities: [
+      { slug: 'miyazaki', name: '宮崎市', available: true },
+      { slug: 'miyakonojo', name: '都城市', available: true },
+    ]},
+    { name: '佐賀県', cities: [
+      { slug: 'saga', name: '佐賀市', available: true },
+      { slug: 'karatsu', name: '唐津市', available: true },
+    ]},
+    { name: '長崎県', cities: [
+      { slug: 'nagasaki', name: '長崎市', available: true },
+      { slug: 'sasebo', name: '佐世保市', available: true },
+    ]},
+    { name: '沖縄県', cities: [
+      { slug: 'naha', name: '那覇市', available: true },
+      { slug: 'okinawa_city', name: '沖縄市', available: true },
+    ]},
   ],
 }
 
