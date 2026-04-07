@@ -71,6 +71,31 @@ export default function TopPage() {
         このサイトでは、はじめての方にわかりやすく解説します。
       </p>
 
+      {/* 状況別ショートカット */}
+      <h2 className="text-xl md:text-2xl font-bold mb-4 mt-10 text-primary">
+        あなたの状況から探す
+      </h2>
+      <div className="grid grid-cols-2 gap-3 mb-10">
+        {[
+          { href: '/for-you', icon: '🏥', label: '退院後の行き先を探している',   color: '#FFF3E0', border: '#F57C00' },
+          { href: '/for-you', icon: '🧠', label: '認知症が進んできた',           color: '#F3E5F5', border: '#7B1FA2' },
+          { href: '/cost',    icon: '💴', label: '費用がいくらか不安',           color: '#FFF8E1', border: '#FFC107' },
+          { href: '/for-you', icon: '📞', label: '遠くて介護できない',           color: '#E8F5E9', border: '#2E7D52' },
+          { href: '/for-you', icon: '👴', label: '一人暮らしの親が心配',         color: '#E3F2FD', border: '#1A5E9E' },
+          { href: '/for-you', icon: '😰', label: '急に介護が必要になった',       color: '#FCE4EC', border: '#C2185B' },
+        ].map(({ href, icon, label, color, border }) => (
+          <Link
+            key={label}
+            href={href}
+            className="rounded-xl p-4 hover:shadow-md transition-shadow"
+            style={{ textDecoration: 'none', color: 'inherit', backgroundColor: color, border: `2px solid ${border}` }}
+          >
+            <span style={{ fontSize: '22px' }}>{icon}</span>
+            <p className="font-bold text-sm mt-1" style={{ color: border, lineHeight: 1.4 }}>{label}</p>
+          </Link>
+        ))}
+      </div>
+
       {/* コンテンツ一覧グリッド */}
       <h2 className="text-xl md:text-2xl font-bold mb-4 mt-10 text-primary">
         まず読んでほしい記事

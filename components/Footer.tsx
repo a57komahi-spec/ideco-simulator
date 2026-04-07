@@ -6,6 +6,7 @@ export default function Footer() {
       <div className="max-w-5xl mx-auto px-4">
         <div className="flex flex-wrap gap-4 mb-6">
           <Link href="/about" className="text-gray-300 hover:text-white" style={{ color: '#d1d5db', textDecoration: 'none' }}>運営者情報</Link>
+          <Link href="/editorial-policy" className="text-gray-300 hover:text-white" style={{ color: '#d1d5db', textDecoration: 'none' }}>編集ポリシー</Link>
           <Link href="/privacy" className="text-gray-300 hover:text-white" style={{ color: '#d1d5db', textDecoration: 'none' }}>プライバシーポリシー</Link>
           <Link href="/disclaimer" className="text-gray-300 hover:text-white" style={{ color: '#d1d5db', textDecoration: 'none' }}>免責事項</Link>
           <Link href="/contact" className="text-gray-300 hover:text-white" style={{ color: '#d1d5db', textDecoration: 'none' }}>お問い合わせ</Link>

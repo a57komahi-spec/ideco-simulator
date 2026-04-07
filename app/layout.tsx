@@ -20,10 +20,31 @@ export const metadata: Metadata = {
   },
 }
 
+const siteLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'やさしい老人ホームガイド',
+    url: 'https://2nd-lifesearch.pages.dev',
+    description: '老人ホームの基礎知識・費用・選び方を専門用語なしで解説する情報サイト',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'やさしい老人ホームガイド編集部',
+    url: 'https://2nd-lifesearch.pages.dev',
+    logo: 'https://2nd-lifesearch.pages.dev/images/hero.jpg',
+  },
+]
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ja">
       <body className="font-sans text-text-main bg-bg min-h-screen flex flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteLd) }}
+        />
         <Header />
         <main className="flex-1 max-w-4xl mx-auto w-full px-4 py-8">
           {children}
