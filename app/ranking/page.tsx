@@ -27,6 +27,7 @@ const rankings = [
     badge: '情報量◎',
     badgeColor: '#F57C00',
     stars: 4.8,
+    screenshot: null as string | null,
     pros: [
       '施設ごとの費用・スタッフ体制・医療対応の情報が豊富',
       'オンライン見学・資料請求・見学予約がまとめて申し込める',
@@ -47,6 +48,7 @@ const rankings = [
     badge: '編集部おすすめ',
     badgeColor: '#2E7D52',
     stars: 4.8,
+    screenshot: 'https://www.minnanokaigo.com/img/ogp-img.png' as string | null,
     pros: [
       '掲載施設数が業界トップクラス（58,000件超）',
       '入居相談センター経由で入居するとお祝い金10万円がもらえる',
@@ -67,6 +69,7 @@ const rankings = [
     badge: '施設数最多',
     badgeColor: '#1565C0',
     stars: 4.5,
+    screenshot: null as string | null,
     pros: [
       '老人ホームだけでなく、デイサービス・訪問介護も検索できる',
       '東証プライム上場のエス・エム・エス社が運営する信頼性の高さ',
@@ -86,6 +89,7 @@ const rankings = [
     badge: '見学代わりに◎',
     badgeColor: '#7B1FA2',
     stars: 4.4,
+    screenshot: '/images/services/royal.jpg' as string | null,
     pros: [
       '360度パノラマ写真で施設の雰囲気を事前に確認できる',
       '相談員が実際に訪問したレポートを掲載',
@@ -106,6 +110,7 @@ const rankings = [
     badge: '多機能',
     badgeColor: '#00838F',
     stars: 4.2,
+    screenshot: null as string | null,
     pros: [
       '老人ホームだけでなく、短期入所（ショートステイ）も検索可能',
       '入居相談員による電話サポートあり',
@@ -220,6 +225,41 @@ export default function RankingIndexPage() {
               </div>
               <p style={{ marginTop: '8px', color: '#555', fontSize: '14px', lineHeight: 1.7 }}>{r.catch}</p>
             </div>
+
+            {/* サイト画像 */}
+            {r.screenshot ? (
+              <div style={{ width: '100%', overflow: 'hidden', maxHeight: '220px', borderBottom: `1px solid ${r.badgeColor}30` }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={r.screenshot}
+                  alt={`${r.name}のサイト画像`}
+                  style={{ width: '100%', objectFit: 'cover', objectPosition: 'top', display: 'block', maxHeight: '220px' }}
+                />
+              </div>
+            ) : (
+              <div
+                style={{
+                  width: '100%',
+                  height: '100px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  background: `linear-gradient(135deg, ${r.badgeColor}20, ${r.badgeColor}08)`,
+                  borderBottom: `1px solid ${r.badgeColor}20`,
+                  gap: '12px',
+                }}
+              >
+                <span style={{ fontSize: '36px', fontWeight: 900, color: r.badgeColor, opacity: 0.4, letterSpacing: '-2px' }}>
+                  {r.name.charAt(0)}
+                </span>
+                <div>
+                  <p style={{ fontSize: '16px', fontWeight: 800, color: r.badgeColor, opacity: 0.7 }}>{r.name}</p>
+                  <p style={{ fontSize: '12px', color: '#999', marginTop: '2px' }}>
+                    <a href={r.url} target="_blank" rel="noopener noreferrer" style={{ color: '#999', textDecoration: 'underline' }}>{r.url}</a>
+                  </p>
+                </div>
+              </div>
+            )}
 
             {/* カード本文 */}
             <div style={{ padding: '16px 20px', background: '#fff' }}>
