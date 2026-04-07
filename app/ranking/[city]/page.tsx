@@ -371,6 +371,31 @@ function FacilityCard({ facility, featured }: { facility: Facility; featured: bo
               <p className="text-xs font-bold text-gray-600 mb-1">💡 こんな方におすすめ</p>
               <p className="text-sm">{facility.recommend}</p>
             </div>
+            {/* Googleマップ */}
+            {facility.address && (
+              <div>
+                <p className="text-xs font-bold text-gray-500 mb-1">🗺️ 施設の場所</p>
+                <div className="rounded-xl overflow-hidden" style={{ height: '200px' }}>
+                  <iframe
+                    src={`https://maps.google.com/maps?q=${encodeURIComponent(facility.address)}&output=embed&hl=ja&z=16`}
+                    width="100%"
+                    height="200"
+                    style={{ border: 0 }}
+                    loading="lazy"
+                    title={`${facility.name}の地図`}
+                  />
+                </div>
+                <a
+                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(facility.address)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs hover:underline mt-1 inline-block"
+                  style={{ color: '#1A5E9E' }}
+                >
+                  Googleマップで開く →
+                </a>
+              </div>
+            )}
           </>
         )}
 
