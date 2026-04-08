@@ -30,6 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/funeral-guide',
     '/ending-activity',
     '/transport',
+    '/care-timing',
   ]
   return pages.map((page) => ({
     url: `${baseUrl}${page}`,

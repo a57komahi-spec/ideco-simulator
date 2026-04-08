@@ -7,6 +7,7 @@ const otherArticles: { href: string; label: string }[] = [
   { href: '/parents-support', label: '📋 親のためにやるべきこと完全ガイド' },
   { href: '/care-items', label: '🛒 親のための購入備品ガイド' },
   { href: '/tell-parents', label: '👪 親に伝えるべき老人ホームの魅力' },
+  { href: '/care-timing', label: '⏰ 施設入居を考えるべきタイミング' },
   { href: '/transport', label: '🚌 送迎サービス完全ガイド' },
   { href: '/tokuyou-waiting', label: '⏳ 特養の待機問題と代替施設' },
   { href: '/after-hospital', label: '🏥 退院後の施設入居最短ガイド' },
