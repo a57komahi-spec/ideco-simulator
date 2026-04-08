@@ -4,6 +4,8 @@ import Link from 'next/link'
 import { useState, useEffect, useRef } from 'react'
 
 const otherArticles: { href: string; label: string }[] = [
+  { href: '/parents-support', label: '📋 親のためにやるべきこと完全ガイド' },
+  { href: '/care-items', label: '🛒 親のための購入備品ガイド' },
   { href: '/tell-parents', label: '👪 親に伝えるべき老人ホームの魅力' },
   { href: '/simulation', label: '費用20年シミュレーション' },
   { href: '/care-level', label: '要介護度の違いと認定手続き' },

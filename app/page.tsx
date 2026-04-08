@@ -110,7 +110,8 @@ export default function TopPage() {
           { href: '/faq',           icon: '❓', label: 'よくある質問',     desc: '疑問をまとめて解決' },
           { href: '/simulation',    icon: '🧮', label: '費用シミュレーター', desc: '20年の費用を試算' },
           { href: '/ranking/osaka', icon: '🏆', label: '施設ランキング',     desc: '都市別TOP10を掲載' },
-          { href: '/tell-parents',  icon: '👪', label: '親への伝え方',       desc: '老人ホームの魅力を伝える' },
+          { href: '/parents-support', icon: '📋', label: '親のためにやること',  desc: '子どもができる8つのこと' },
+          { href: '/tell-parents',  icon: '👪', label: '親への伝え方',        desc: '老人ホームの魅力を伝える' },
         ].map(({ href, icon, label, desc }) => (
           <Link
             key={href}
