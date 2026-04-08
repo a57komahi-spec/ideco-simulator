@@ -1,28 +1,72 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 .highlight {
-  background: linear-gradient(transparent 60%, #FFF176 60%);
-  padding: 0 2px;
+  background: linear-gradient(transparent 52%, #FFF176 52%);
+  padding: 0 3px;
   font-weight: 700;
 }
 
 h2 {
   border-left: 5px solid #2E7D52;
   padding-left: 14px;
+  line-height: 1.4;
 }
 
 a {
   color: #1A5E9E;
   text-decoration: underline;
+  transition: color 0.15s ease, opacity 0.15s ease;
 }
 
 body {
   overflow-x: hidden;
   background-color: #FAFAF7;
   color: #1A1A1A;
+  line-height: 1.8;
+}
+
+/* アクセシビリティ: フォーカスリング */
+:focus-visible {
+  outline: 3px solid #2E7D52;
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* インタラクティブなカードリンクのホバー効果 */
+.card-hover {
+  transition: box-shadow 0.2s ease, transform 0.18s ease !important;
+  will-change: transform;
+}
+.card-hover:hover {
+  box-shadow: 0 6px 24px rgba(0,0,0,0.10) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* CTAボタン共通のシャイン効果 */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+.btn-shine::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -75%;
+  width: 50%;
+  height: 200%;
+  background: rgba(255,255,255,0.18);
+  transform: skewX(-20deg);
+  transition: left 0.4s ease;
+}
+.btn-shine:hover::after {
+  left: 125%;
 }
 
 .table-wrapper {

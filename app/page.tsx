@@ -87,11 +87,11 @@ export default function TopPage() {
           <Link
             key={label}
             href={href}
-            className="rounded-xl p-4 hover:shadow-md transition-shadow"
-            style={{ textDecoration: 'none', color: 'inherit', backgroundColor: color, border: `2px solid ${border}` }}
+            className="card-hover rounded-xl p-4"
+            style={{ textDecoration: 'none', color: 'inherit', backgroundColor: color, border: `2px solid ${border}`, display: 'block' }}
           >
-            <span style={{ fontSize: '22px' }}>{icon}</span>
-            <p className="font-bold text-sm mt-1" style={{ color: border, lineHeight: 1.4 }}>{label}</p>
+            <span style={{ fontSize: '24px' }}>{icon}</span>
+            <p className="font-bold text-sm mt-2" style={{ color: border, lineHeight: 1.4 }}>{label}</p>
           </Link>
         ))}
       </div>
@@ -102,26 +102,39 @@ export default function TopPage() {
       </h2>
       <div className="grid grid-cols-2 gap-3 mb-10">
         {[
-          { href: '/types',         icon: '🏠', label: '施設の種類',       desc: '特養・有料など6種類の違い' },
-          { href: '/cost',          icon: '💴', label: '費用の目安',       desc: '月額・初期費用の相場' },
-          { href: '/how-to-choose', icon: '✅', label: '選び方のポイント', desc: '失敗しない7つのポイント' },
-          { href: '/process',       icon: '📋', label: '入居の流れ',       desc: '申込から入居まで5ステップ' },
-          { href: '/care-level',    icon: '📊', label: '要介護度とは',     desc: '認定の仕組みと違い' },
-          { href: '/faq',           icon: '❓', label: 'よくある質問',     desc: '疑問をまとめて解決' },
-          { href: '/simulation',    icon: '🧮', label: '費用シミュレーター', desc: '20年の費用を試算' },
-          { href: '/ranking/osaka', icon: '🏆', label: '施設ランキング',     desc: '都市別TOP10を掲載' },
-          { href: '/parents-support', icon: '📋', label: '親のためにやること',  desc: '子どもができる8つのこと' },
-          { href: '/tell-parents',  icon: '👪', label: '親への伝え方',        desc: '老人ホームの魅力を伝える' },
-        ].map(({ href, icon, label, desc }) => (
+          { href: '/types',           icon: '🏠', label: '施設の種類',         desc: '特養・有料など6種類の違い',   iconBg: '#E8F5E9' },
+          { href: '/cost',            icon: '💴', label: '費用の目安',         desc: '月額・初期費用の相場',         iconBg: '#FFF8E1' },
+          { href: '/how-to-choose',   icon: '✅', label: '選び方のポイント',   desc: '失敗しない7つのポイント',     iconBg: '#E8F5E9' },
+          { href: '/process',         icon: '📋', label: '入居の流れ',         desc: '申込から入居まで5ステップ',   iconBg: '#E3F2FD' },
+          { href: '/care-level',      icon: '📊', label: '要介護度とは',       desc: '認定の仕組みと違い',           iconBg: '#F3E5F5' },
+          { href: '/faq',             icon: '❓', label: 'よくある質問',       desc: '疑問をまとめて解決',           iconBg: '#FFF3E0' },
+          { href: '/simulation',      icon: '🧮', label: '費用シミュレーター', desc: '20年の費用を試算',             iconBg: '#E8F5E9' },
+          { href: '/ranking/osaka',   icon: '🏆', label: '施設ランキング',     desc: '都市別TOP10を掲載',           iconBg: '#FFF8E1' },
+          { href: '/parents-support', icon: '📋', label: '親のためにやること', desc: '子どもができる8つのこと',     iconBg: '#E3F2FD' },
+          { href: '/tell-parents',    icon: '👪', label: '親への伝え方',       desc: '老人ホームの魅力を伝える',   iconBg: '#FCE4EC' },
+        ].map(({ href, icon, label, desc, iconBg }) => (
           <Link
             key={href}
             href={href}
-            className="rounded-xl p-4 bg-white hover:shadow-md transition-shadow"
-            style={{ textDecoration: 'none', color: 'inherit', border: '1px solid #e5e7eb' }}
+            className="card-hover rounded-xl p-4 bg-white"
+            style={{ textDecoration: 'none', color: 'inherit', border: '1px solid #e5e7eb', display: 'block' }}
           >
-            <span style={{ fontSize: '22px' }}>{icon}</span>
-            <p className="font-bold text-sm mt-1 text-primary">{label}</p>
-            <p className="text-xs text-gray-500 mt-0.5">{desc}</p>
+            <span
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: '38px',
+                height: '38px',
+                borderRadius: '10px',
+                backgroundColor: iconBg,
+                fontSize: '20px',
+              }}
+            >
+              {icon}
+            </span>
+            <p className="font-bold text-sm mt-2 text-primary">{label}</p>
+            <p className="text-xs text-gray-500 mt-0.5" style={{ lineHeight: 1.5 }}>{desc}</p>
           </Link>
         ))}
       </div>
@@ -145,11 +158,13 @@ export default function TopPage() {
                 href={NURSING_HOME_URL}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="btn-shine"
                 style={{
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  background: '#2E7D52', color: '#fff', fontWeight: 700, fontSize: '16px',
+                  background: 'linear-gradient(135deg, #2E7D52 0%, #43A066 100%)',
+                  color: '#fff', fontWeight: 700, fontSize: '16px',
                   borderRadius: '10px', padding: '14px 24px', textDecoration: 'none',
-                  boxShadow: '0 3px 10px rgba(46,125,82,0.4)', width: '100%', maxWidth: '480px',
+                  boxShadow: '0 4px 14px rgba(46,125,82,0.45)', width: '100%', maxWidth: '480px',
                 }}
               >
                 全国51,000件の施設を無料一括資料請求 →
@@ -174,11 +189,13 @@ export default function TopPage() {
                 href={GARDEN_URL}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="btn-shine"
                 style={{
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  background: '#1565C0', color: '#fff', fontWeight: 700, fontSize: '16px',
+                  background: 'linear-gradient(135deg, #1565C0 0%, #1976D2 100%)',
+                  color: '#fff', fontWeight: 700, fontSize: '16px',
                   borderRadius: '10px', padding: '14px 24px', textDecoration: 'none',
-                  boxShadow: '0 3px 10px rgba(21,101,192,0.4)', width: '100%', maxWidth: '480px',
+                  boxShadow: '0 4px 14px rgba(21,101,192,0.45)', width: '100%', maxWidth: '480px',
                 }}
               >
                 老後・介護費用を無料でFPに相談する（21歳以上） →
@@ -200,11 +217,13 @@ export default function TopPage() {
                 href={FUNERAL_URL}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="btn-shine"
                 style={{
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  background: '#F57C00', color: '#fff', fontWeight: 700, fontSize: '16px',
+                  background: 'linear-gradient(135deg, #F57C00 0%, #E65100 100%)',
+                  color: '#fff', fontWeight: 700, fontSize: '16px',
                   borderRadius: '10px', padding: '14px 24px', textDecoration: 'none',
-                  boxShadow: '0 3px 10px rgba(245,124,0,0.4)', width: '100%', maxWidth: '480px',
+                  boxShadow: '0 4px 14px rgba(245,124,0,0.45)', width: '100%', maxWidth: '480px',
                 }}
               >
                 今すぐ資料請求で葬儀費用5万円割引 →
