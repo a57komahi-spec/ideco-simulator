@@ -31,6 +31,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/ending-activity',
     '/transport',
     '/care-timing',
+    '/pref-cost-ranking',
+    '/room-size-cost',
+    '/zero-initial-fee',
   ]
   return pages.map((page) => ({
     url: `${baseUrl}${page}`,

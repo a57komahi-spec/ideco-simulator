@@ -32,6 +32,9 @@ const otherArticles: { href: string; label: string }[] = [
   { href: '/funeral', label: '家族葬・葬儀の選び方' },
   { href: '/asset', label: '老後の資産形成（NISA・iDeCo）' },
   { href: '/checklist', label: '終活チェックリスト28項目' },
+  { href: '/pref-cost-ranking', label: '📊 都道府県別 月額費用ランキング' },
+  { href: '/room-size-cost', label: '📐 部屋の広さ別 費用感分析' },
+  { href: '/zero-initial-fee', label: '✅ 入居一時金0円施設まとめ' },
 ]
 
 const navItems: { href: string; label: string; highlight?: boolean }[] = [
