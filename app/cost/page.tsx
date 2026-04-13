@@ -45,21 +45,6 @@ export default function CostPage() {
       </h1>
       <SummaryBox items={summaryItems} />
 
-      <div className="relative w-full rounded-2xl overflow-hidden mb-8" style={{ height: '200px' }}>
-        <Image
-          src="/images/cost.jpg"
-          alt="老人ホームの費用・料金のイメージ"
-          fill
-          style={{ objectFit: 'cover' }}
-          priority
-        />
-        <div
-          className="absolute inset-0 flex items-end p-5"
-          style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 60%)' }}
-        >
-          <p className="text-white text-sm">費用は施設の種類によって大きく異なります</p>
-        </div>
-      </div>
 
       <div className="relative w-full rounded-2xl overflow-hidden mb-8" style={{ height: '250px' }}>
         <Image
