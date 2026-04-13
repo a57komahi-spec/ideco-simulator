@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import CTABox from '@/components/CTABox'
 import SummaryBox from '@/components/SummaryBox'
@@ -70,6 +71,16 @@ export default function TokuyouWaitingPage() {
       </h1>
       <p className="text-sm text-gray-500 mb-6">更新：2026年4月 ｜ やさしい老人ホームガイド編集部</p>
       <SummaryBox items={summaryItems} />
+
+      <div className="relative w-full rounded-2xl overflow-hidden mb-8" style={{ height: '220px' }}>
+        <Image
+          src="/images/2.png"
+          alt="パソコンで特養の空き情報や代替施設を調べている高齢者のイメージ"
+          fill
+          style={{ objectFit: 'cover' }}
+          priority
+        />
+      </div>
 
       <div className="rounded-xl p-5 mb-8" style={{ backgroundColor: '#FFEBEE', border: '2px solid #EF9A9A' }}>
         <p className="font-bold text-base mb-2" style={{ color: '#B71C1C' }}>⚠️ 特養の現状</p>

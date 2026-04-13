@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import CTABox from '@/components/CTABox'
 import SummaryBox from '@/components/SummaryBox'
@@ -31,6 +32,16 @@ export default function CareCostSplitPage() {
       </h1>
       <p className="text-sm text-gray-500 mb-6">更新：2026年4月 ｜ やさしい老人ホームガイド編集部</p>
       <SummaryBox items={summaryItems} />
+
+      <div className="relative w-full rounded-2xl overflow-hidden mb-8" style={{ height: '220px' }}>
+        <Image
+          src="/images/10.png"
+          alt="3世代の家族が介護費用の分担について話し合うイメージ"
+          fill
+          style={{ objectFit: 'cover', objectPosition: 'center 20%' }}
+          priority
+        />
+      </div>
 
       <div className="rounded-xl p-5 mb-8" style={{ backgroundColor: '#FFF8E1', border: '2px solid #FFC107' }}>
         <p className="text-base">「親の施設費用、誰が出すの？」この一言で家族の関係が壊れるケースは少なくありません。法律の基本を理解し、早めに家族で話し合うことが大切です。</p>

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import CTABox from '@/components/CTABox'
 import SummaryBox from '@/components/SummaryBox'
@@ -99,6 +100,16 @@ export default function TransportPage() {
       </h1>
       <p className="text-sm text-gray-500 mb-6">更新：2026年4月 ｜ やさしい老人ホームガイド編集部</p>
       <SummaryBox items={summaryItems} />
+
+      <div className="relative w-full rounded-2xl overflow-hidden mb-8" style={{ height: '220px' }}>
+        <Image
+          src="/images/24.png"
+          alt="介護スタッフが車椅子の高齢者を車に乗せるサポートをしているイメージ"
+          fill
+          style={{ objectFit: 'cover', objectPosition: 'center' }}
+          priority
+        />
+      </div>
 
       <div className="rounded-xl p-5 mb-8" style={{ backgroundColor: '#E8F5E9', border: '2px solid #2E7D52' }}>
         <p className="text-base">「病院に連れて行くのが大変」「デイサービスの送迎はどうなっているの？」「施設に入居する日の移動はどうすれば？」——介護における「移動の悩み」は意外と多いです。このページで一挙に解決します。</p>

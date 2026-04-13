@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import CTABox from '@/components/CTABox'
 import SummaryBox from '@/components/SummaryBox'
@@ -48,6 +49,16 @@ export default function InsuranceGapPage() {
       </h1>
       <p className="text-sm text-gray-500 mb-6">更新：2026年4月 ｜ やさしい老人ホームガイド編集部</p>
       <SummaryBox items={summaryItems} />
+
+      <div className="relative w-full rounded-2xl overflow-hidden mb-8" style={{ height: '220px' }}>
+        <Image
+          src="/images/22.png"
+          alt="介護費用の書類と電卓で自己負担額を計算しているイメージ"
+          fill
+          style={{ objectFit: 'cover' }}
+          priority
+        />
+      </div>
 
       <div className="rounded-xl p-5 mb-8" style={{ backgroundColor: '#FFEBEE', border: '2px solid #EF9A9A' }}>
         <p className="text-base"><strong>「介護保険があるから安心」は誤解です。</strong>介護保険は介護サービス費の1〜3割負担に抑えてくれますが、食費・居住費・日用品代などはカバーされません。実際には介護保険料の他に月5〜20万円の自己負担が発生します。</p>

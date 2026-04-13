@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { AFFILIATE_ENABLED } from '@/lib/featureFlags'
 
@@ -116,7 +117,17 @@ export default function ChecklistPage() {
           終活チェックリスト28項目<br />
           <span style={{ fontSize: '18px', color: '#555', fontWeight: 600 }}>介護・葬儀・資産 ― 準備できているか確認しよう</span>
         </h1>
-        <p style={{ color: '#666', fontSize: '14px', marginBottom: '24px' }}>チェックボックスをクリックすると進捗が記録されます（ページを閉じるとリセットされます）</p>
+        <p style={{ color: '#666', fontSize: '14px', marginBottom: '16px' }}>チェックボックスをクリックすると進捗が記録されます（ページを閉じるとリセットされます）</p>
+
+        <div className="relative w-full rounded-2xl overflow-hidden mb-6" style={{ height: '200px' }}>
+          <Image
+            src="/images/6.png"
+            alt="終活チェックリストで準備状況を確認しているイメージ"
+            fill
+            style={{ objectFit: 'cover' }}
+            priority
+          />
+        </div>
 
         {/* 全体進捗 */}
         <div className="rounded-2xl p-5 mb-8" style={{ background: 'linear-gradient(135deg, #1B5E37, #2E7D52)', color: '#fff' }}>

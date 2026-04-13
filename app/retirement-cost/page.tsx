@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import CTABox from '@/components/CTABox'
 import SummaryBox from '@/components/SummaryBox'
@@ -37,6 +38,16 @@ export default function RetirementCostPage() {
       </h1>
       <p className="text-sm text-gray-500 mb-6">更新：2026年4月 ｜ やさしい老人ホームガイド編集部</p>
       <SummaryBox items={summaryItems} />
+
+      <div className="relative w-full rounded-2xl overflow-hidden mb-8" style={{ height: '220px' }}>
+        <Image
+          src="/images/1.png"
+          alt="年金手帳と電卓で老後資金を試算するイメージ"
+          fill
+          style={{ objectFit: 'cover' }}
+          priority
+        />
+      </div>
 
       <div className="rounded-xl p-5 mb-8" style={{ backgroundColor: '#E3F2FD', border: '2px solid #1A5E9E' }}>
         <p className="text-base mb-2"><strong>老後2,000万円問題とは？</strong></p>

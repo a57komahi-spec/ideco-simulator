@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import CTABox from '@/components/CTABox'
 import SummaryBox from '@/components/SummaryBox'
@@ -125,6 +126,16 @@ export default function CareTimingPage() {
       </h1>
       <p className="text-sm text-gray-500 mb-6">更新：2026年4月 ｜ やさしい老人ホームガイド編集部</p>
       <SummaryBox items={summaryItems} />
+
+      <div className="relative w-full rounded-2xl overflow-hidden mb-8" style={{ height: '220px' }}>
+        <Image
+          src="/images/13.png"
+          alt="介護スタッフが高齢者に施設入居のタイミングについて説明しているイメージ"
+          fill
+          style={{ objectFit: 'cover' }}
+          priority
+        />
+      </div>
 
       <div className="rounded-xl p-5 mb-8" style={{ backgroundColor: '#FFF8E1', border: '2px solid #FFC107' }}>
         <p className="text-base mb-2 font-bold">「いつ施設を考え始めればいいの？」</p>

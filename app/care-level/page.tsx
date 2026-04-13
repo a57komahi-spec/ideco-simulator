@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import CTABox from '@/components/CTABox'
 import SummaryBox from '@/components/SummaryBox'
@@ -161,6 +162,16 @@ export default function CareLevelPage() {
           '状態が変わったら「区分変更申請」でいつでも見直しができる',
         ]}
       />
+
+      <div className="relative w-full rounded-2xl overflow-hidden mb-8" style={{ height: '220px' }}>
+        <Image
+          src="/images/3.png"
+          alt="介護施設に置かれた車椅子。要介護度の認定によって使える施設やサービスが変わる"
+          fill
+          style={{ objectFit: 'cover' }}
+          priority
+        />
+      </div>
 
       {/* 重要ポイントボックス */}
       <div

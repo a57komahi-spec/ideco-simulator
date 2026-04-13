@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import CTABox from '@/components/CTABox'
 import SummaryBox from '@/components/SummaryBox'
@@ -31,6 +32,16 @@ export default function CareResignationPage() {
       </h1>
       <p className="text-sm text-gray-500 mb-6">更新：2026年4月 ｜ やさしい老人ホームガイド編集部</p>
       <SummaryBox items={summaryItems} />
+
+      <div className="relative w-full rounded-2xl overflow-hidden mb-8" style={{ height: '220px' }}>
+        <Image
+          src="/images/20.png"
+          alt="介護と仕事の両立に悩む女性のイメージ"
+          fill
+          style={{ objectFit: 'cover', objectPosition: 'center top' }}
+          priority
+        />
+      </div>
 
       <div className="rounded-xl p-5 mb-8" style={{ backgroundColor: '#FFEBEE', border: '2px solid #EF9A9A' }}>
         <p className="font-bold text-base mb-2" style={{ color: '#B71C1C' }}>⚠️ 介護離職は「最後の手段」です</p>

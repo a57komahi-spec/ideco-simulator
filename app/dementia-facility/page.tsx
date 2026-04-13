@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import CTABox from '@/components/CTABox'
 import SummaryBox from '@/components/SummaryBox'
@@ -52,6 +53,16 @@ export default function DementiaFacilityPage() {
       </h1>
       <p className="text-sm text-gray-500 mb-6">更新：2026年4月 ｜ やさしい老人ホームガイド編集部</p>
       <SummaryBox items={summaryItems} />
+
+      <div className="relative w-full rounded-2xl overflow-hidden mb-8" style={{ height: '220px' }}>
+        <Image
+          src="/images/19.png"
+          alt="認知症の高齢者に介護スタッフが食事介助をしている施設のイメージ"
+          fill
+          style={{ objectFit: 'cover' }}
+          priority
+        />
+      </div>
 
       <div className="rounded-xl p-5 mb-8" style={{ backgroundColor: '#F3E5F5', border: '2px solid #7B1FA2' }}>
         <p className="text-base"><strong>認知症の方の施設選びで最も大切なのは、「今の状態」だけでなく「進行後も安心できるか」を見ること</strong>です。入居時は軽度でも、数年後には重度になる可能性を踏まえて施設を選びましょう。</p>
