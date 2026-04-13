@@ -175,25 +175,20 @@ export default function HomeCarePage() {
 
       <Breadcrumb items={[{ label: '在宅介護・介護用品ガイド' }]} />
 
+      <h1 className="text-2xl md:text-3xl font-bold mb-6 text-primary" style={{ borderLeft: 'none', paddingLeft: 0 }}>
+        在宅介護と施設入居の比較｜介護リフォーム・便利グッズ・見守りカメラ完全ガイド
+      </h1>
+
       {/* ヒーロー */}
-      <div className="relative w-full rounded-2xl overflow-hidden mb-8" style={{ height: '260px' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '2rem' }}>
         <Image
           src="/images/homecare_hero.jpg"
           alt="自宅で介護を受ける高齢者と家族のイメージ"
-          fill
-          style={{ objectFit: 'cover', objectPosition: 'center 30%' }}
+          width={600}
+          height={400}
+          style={{ width: '50%', height: 'auto', borderRadius: '12px' }}
           priority
         />
-        <div
-          className="absolute inset-0 flex flex-col justify-end p-6"
-          style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 55%)' }}
-        >
-          <h1 className="text-2xl md:text-3xl font-bold text-white" style={{ borderLeft: 'none', paddingLeft: 0, textShadow: '0 1px 6px rgba(0,0,0,0.6)' }}>
-            在宅介護と施設入居の比較｜<br className="md:hidden" />
-            介護リフォーム・便利グッズ・<br className="md:hidden" />
-            見守りカメラ完全ガイド
-          </h1>
-        </div>
       </div>
 
       <SummaryBox items={summaryItems} />
@@ -300,16 +295,14 @@ export default function HomeCarePage() {
         介護リフォームの費用と補助金
       </h2>
 
-      <div className="relative w-full rounded-2xl overflow-hidden mb-6" style={{ height: '200px' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1.5rem' }}>
         <Image
           src="/images/homecare_reform.jpg"
           alt="介護リフォームで手すりを設置した浴室のイメージ"
-          fill
-          style={{ objectFit: 'cover' }}
+          width={600}
+          height={400}
+          style={{ width: '50%', height: 'auto', borderRadius: '12px' }}
         />
-        <div className="absolute inset-0 flex items-end p-5" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 60%)' }}>
-          <p className="text-white text-sm">自宅を介護しやすい環境に整えることで、在宅介護の継続が可能になります</p>
-        </div>
       </div>
 
       {/* 補助金バナー */}
@@ -379,16 +372,14 @@ export default function HomeCarePage() {
         便利な介護グッズ紹介
       </h2>
 
-      <div className="relative w-full rounded-2xl overflow-hidden mb-6" style={{ height: '180px' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1.5rem' }}>
         <Image
           src="/images/homecare_goods.jpg"
           alt="在宅介護に役立つ介護グッズのイメージ"
-          fill
-          style={{ objectFit: 'cover' }}
+          width={600}
+          height={400}
+          style={{ width: '50%', height: 'auto', borderRadius: '12px' }}
         />
-        <div className="absolute inset-0 flex items-end p-5" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 60%)' }}>
-          <p className="text-white text-sm">適切なグッズを使うことで介護の負担を大幅に軽減できます</p>
-        </div>
       </div>
 
       <div className="grid gap-6 mb-10">
@@ -470,16 +461,14 @@ export default function HomeCarePage() {
         見守りカメラ・センサーの選び方
       </h2>
 
-      <div className="relative w-full rounded-2xl overflow-hidden mb-6" style={{ height: '180px' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1.5rem' }}>
         <Image
           src="/images/homecare_camera.jpg"
           alt="室内に設置された見守りカメラのイメージ"
-          fill
-          style={{ objectFit: 'cover' }}
+          width={600}
+          height={400}
+          style={{ width: '50%', height: 'auto', borderRadius: '12px' }}
         />
-        <div className="absolute inset-0 flex items-end p-5" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 60%)' }}>
-          <p className="text-white text-sm">離れて暮らす家族の安心のために、見守りデバイスを活用しましょう</p>
-        </div>
       </div>
 
       <div className="grid gap-5 mb-10">

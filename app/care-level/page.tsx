@@ -163,12 +163,13 @@ export default function CareLevelPage() {
         ]}
       />
 
-      <div className="relative w-full rounded-2xl overflow-hidden mb-8" style={{ height: '220px' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '2rem' }}>
         <Image
           src="/images/3.png"
           alt="介護施設に置かれた車椅子。要介護度の認定によって使える施設やサービスが変わる"
-          fill
-          style={{ objectFit: 'cover' }}
+          width={600}
+          height={400}
+          style={{ width: '50%', height: 'auto', borderRadius: '12px' }}
           priority
         />
       </div>

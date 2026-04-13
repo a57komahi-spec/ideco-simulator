@@ -54,12 +54,13 @@ export default function DementiaFacilityPage() {
       <p className="text-sm text-gray-500 mb-6">更新：2026年4月 ｜ やさしい老人ホームガイド編集部</p>
       <SummaryBox items={summaryItems} />
 
-      <div className="relative w-full rounded-2xl overflow-hidden mb-8" style={{ height: '220px' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '2rem' }}>
         <Image
           src="/images/19.png"
           alt="認知症の高齢者に介護スタッフが食事介助をしている施設のイメージ"
-          fill
-          style={{ objectFit: 'cover' }}
+          width={600}
+          height={400}
+          style={{ width: '50%', height: 'auto', borderRadius: '12px' }}
           priority
         />
       </div>

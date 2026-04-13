@@ -156,23 +156,20 @@ export default function ReasonPage() {
 
       <Breadcrumb items={[{ label: 'なぜ老人ホームに入るのか？' }]} />
 
+      <h1 className="text-2xl md:text-3xl font-bold mb-6 text-primary" style={{ borderLeft: 'none', paddingLeft: 0 }}>
+        なぜ老人ホームに入るのか？知っておきたい6つのリスクと新しい暮らしの話
+      </h1>
+
       {/* ヒーロー */}
-      <div className="relative w-full rounded-2xl overflow-hidden mb-8" style={{ height: '280px' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '2rem' }}>
         <Image
           src="/images/reason_hero.jpg"
           alt="穏やかに暮らす高齢者のイメージ"
-          fill
-          style={{ objectFit: 'cover', objectPosition: 'center 40%' }}
+          width={600}
+          height={400}
+          style={{ width: '50%', height: 'auto', borderRadius: '12px' }}
           priority
         />
-        <div
-          className="absolute inset-0 flex flex-col justify-end p-6"
-          style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 55%)' }}
-        >
-          <h1 className="text-2xl md:text-3xl font-bold text-white" style={{ borderLeft: 'none', paddingLeft: 0, textShadow: '0 1px 6px rgba(0,0,0,0.6)' }}>
-            なぜ老人ホームに入るのか？<br />知っておきたい6つのリスクと<br className="md:hidden" />新しい暮らしの話
-          </h1>
-        </div>
       </div>
 
       <SummaryBox items={summaryItems} />
@@ -252,27 +249,14 @@ export default function ReasonPage() {
       <CTABox compact />
 
       {/* ===== ポジティブ編 ===== */}
-      <div
-        className="relative w-full rounded-2xl overflow-hidden mb-8 mt-12"
-        style={{ height: '200px' }}
-      >
+      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '2rem', marginTop: '3rem' }}>
         <Image
           src="/images/reason_positive.jpg"
           alt="老人ホームで仲間と笑顔で過ごす高齢者のイメージ"
-          fill
-          style={{ objectFit: 'cover', objectPosition: 'center 30%' }}
+          width={600}
+          height={400}
+          style={{ width: '50%', height: 'auto', borderRadius: '12px' }}
         />
-        <div
-          className="absolute inset-0 flex flex-col justify-center items-center text-center px-6"
-          style={{ background: 'rgba(0,0,0,0.45)' }}
-        >
-          <p className="text-white font-bold text-2xl mb-2" style={{ textShadow: '0 1px 6px rgba(0,0,0,0.6)' }}>
-            施設は「終わり」じゃない。
-          </p>
-          <p className="text-white text-lg" style={{ textShadow: '0 1px 4px rgba(0,0,0,0.5)' }}>
-            新しい生活の「始まり」です。
-          </p>
-        </div>
       </div>
 
       <div
@@ -309,19 +293,14 @@ export default function ReasonPage() {
       </div>
 
       {/* 仲間の画像 */}
-      <div className="relative w-full rounded-2xl overflow-hidden mb-10" style={{ height: '200px' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '2.5rem' }}>
         <Image
           src="/images/reason_friends.jpg"
           alt="老人ホームで仲間と楽しく過ごす高齢者"
-          fill
-          style={{ objectFit: 'cover', objectPosition: 'center 30%' }}
+          width={600}
+          height={400}
+          style={{ width: '50%', height: 'auto', borderRadius: '12px' }}
         />
-        <div
-          className="absolute inset-0 flex items-end p-5"
-          style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 60%)' }}
-        >
-          <p className="text-white text-base font-bold">「ここへ来て良かった」そう思える場所がきっとあります</p>
-        </div>
       </div>
 
       {/* まとめ */}

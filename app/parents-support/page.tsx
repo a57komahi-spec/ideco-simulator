@@ -195,22 +195,15 @@ export default function ParentsSupportPage() {
       <SummaryBox items={summaryItems} />
 
       {/* ヒーロー画像 */}
-      <div className="relative w-full rounded-2xl overflow-hidden mb-8" style={{ height: '240px' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '2rem' }}>
         <Image
           src="/images/reason_family.jpg"
           alt="親子で話し合っているイメージ"
-          fill
-          style={{ objectFit: 'cover', objectPosition: 'center 30%' }}
+          width={600}
+          height={400}
+          style={{ width: '50%', height: 'auto', borderRadius: '12px' }}
           priority
         />
-        <div
-          className="absolute inset-0 flex items-end p-6"
-          style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 60%)' }}
-        >
-          <p className="text-white text-base font-bold" style={{ textShadow: '0 1px 4px rgba(0,0,0,0.5)' }}>
-            「言い出せないでいる」親の悩みに、子どもが気づいてあげてほしい
-          </p>
-        </div>
       </div>
 
       {/* 導入文 */}

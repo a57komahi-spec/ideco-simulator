@@ -141,20 +141,15 @@ export default function TypesPage() {
       </h1>
       <SummaryBox items={summaryItems} />
 
-      <div className="relative w-full rounded-2xl overflow-hidden mb-8" style={{ height: '220px' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '2rem' }}>
         <Image
           src="/images/facility.jpg"
           alt="特別養護老人ホームの特徴と費用"
-          fill
-          style={{ objectFit: 'cover' }}
+          width={600}
+          height={400}
+          style={{ width: '50%', height: 'auto', borderRadius: '12px' }}
           priority
         />
-        <div
-          className="absolute inset-0 flex items-end p-5"
-          style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 60%)' }}
-        >
-          <p className="text-white text-sm">老人ホームには種類ごとに異なる特徴があります</p>
-        </div>
       </div>
 
       <CTABox compact />

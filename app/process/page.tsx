@@ -65,20 +65,15 @@ export default function ProcessPage() {
       </h1>
       <SummaryBox items={summaryItems} />
 
-      <div className="relative w-full rounded-2xl overflow-hidden mb-8" style={{ height: '200px' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '2rem' }}>
         <Image
           src="/images/checklist.jpg"
           alt="老人ホーム入居手続きのイメージ"
-          fill
-          style={{ objectFit: 'cover' }}
+          width={600}
+          height={400}
+          style={{ width: '50%', height: 'auto', borderRadius: '12px' }}
           priority
         />
-        <div
-          className="absolute inset-0 flex items-end p-5"
-          style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 60%)' }}
-        >
-          <p className="text-white text-sm">入居までの流れを5ステップで解説します</p>
-        </div>
       </div>
 
       {/* 公的 vs 民間：入居までの期間の違い */}

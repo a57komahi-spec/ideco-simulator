@@ -39,21 +39,15 @@ export default function HowToChoosePage() {
       </h1>
       <SummaryBox items={summaryItems} />
 
-      {/* 家族見学イメージ画像 */}
-      <div className="relative w-full rounded-2xl overflow-hidden mb-8" style={{ height: '220px' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '2rem' }}>
         <Image
           src="/images/family.jpg"
           alt="家族で老人ホームを見学しているイメージ"
-          fill
-          style={{ objectFit: 'cover', objectPosition: 'center 30%' }}
+          width={600}
+          height={400}
+          style={{ width: '50%', height: 'auto', borderRadius: '12px' }}
           priority
         />
-        <div
-          className="absolute inset-0 flex items-end p-5"
-          style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 60%)' }}
-        >
-          <p className="text-white text-sm">実際に見学して、施設の雰囲気を確かめましょう</p>
-        </div>
       </div>
 
       <h2 className="text-xl md:text-2xl font-bold mb-4 mt-10 text-primary">

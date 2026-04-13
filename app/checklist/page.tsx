@@ -119,12 +119,13 @@ export default function ChecklistPage() {
         </h1>
         <p style={{ color: '#666', fontSize: '14px', marginBottom: '16px' }}>チェックボックスをクリックすると進捗が記録されます（ページを閉じるとリセットされます）</p>
 
-        <div className="relative w-full rounded-2xl overflow-hidden mb-6" style={{ height: '200px' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1.5rem' }}>
           <Image
             src="/images/6.png"
             alt="終活チェックリストで準備状況を確認しているイメージ"
-            fill
-            style={{ objectFit: 'cover' }}
+            width={600}
+            height={400}
+            style={{ width: '50%', height: 'auto', borderRadius: '12px' }}
             priority
           />
         </div>

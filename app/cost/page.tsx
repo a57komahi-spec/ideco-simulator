@@ -46,12 +46,13 @@ export default function CostPage() {
       <SummaryBox items={summaryItems} />
 
 
-      <div className="relative w-full rounded-2xl overflow-hidden mb-8" style={{ height: '250px' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '2rem' }}>
         <Image
           src="/images/21.png"
           alt="老人ホームの初期費用・月額費用の内訳と相場をわかりやすく図解"
-          fill
-          style={{ objectFit: 'cover' }}
+          width={600}
+          height={400}
+          style={{ width: '50%', height: 'auto', borderRadius: '12px' }}
           priority
         />
       </div>
