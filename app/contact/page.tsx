@@ -21,7 +21,6 @@ export default function ContactPage() {
       <div className="rounded-xl p-5 mb-8" style={{ backgroundColor: '#E8F5E9', border: '2px solid #2E7D52' }}>
         <p className="text-base">
           当サイトへのお問い合わせ・記事内容の誤りのご指摘・ご意見・ご要望は、以下のフォームよりお送りください。
-          確認後、2〜5営業日以内にご返信します。
         </p>
       </div>
 
@@ -75,13 +74,23 @@ export default function ContactPage() {
         </div>
       </div>
 
+      {/* 返信・対応について */}
+      <div className="rounded-xl p-5 mb-6" style={{ backgroundColor: '#F3F4F6', border: '1px solid #e5e7eb' }}>
+        <p className="font-bold text-sm mb-3" style={{ color: '#1A1A1A' }}>返信・対応について</p>
+        <ul className="text-sm text-gray-700 space-y-2" style={{ lineHeight: 1.8 }}>
+          <li>📬 <strong>返信目安：3営業日以内</strong>にご返信いたします</li>
+          <li>🙏 個人運営のため、お時間をいただく場合がございます</li>
+          <li>📋 掲載情報の誤りや更新のご指摘も歓迎しております</li>
+          <li>🔒 正当な理由がある場合、運営者情報の個別開示に応じます</li>
+        </ul>
+      </div>
+
       {/* 注意事項 */}
       <div className="rounded-xl p-4" style={{ backgroundColor: '#FFF8E1', border: '1px solid #FFC107' }}>
         <p className="text-sm font-bold mb-2" style={{ color: '#E65100' }}>ご注意</p>
         <ul className="text-sm text-gray-600 space-y-1" style={{ lineHeight: 1.8 }}>
           <li>・施設への入居相談・資料請求は、各施設または<a href="https://www.minnanokaigo.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#1A5E9E' }}>みんなの介護</a>へ直接お問い合わせください</li>
           <li>・個人情報はお問い合わせへの回答のみに使用し、第三者への提供は行いません</li>
-          <li>・広告・リンク掲載の依頼はお断りしています</li>
         </ul>
       </div>
     </>
