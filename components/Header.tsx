@@ -14,6 +14,7 @@ const otherArticles: { href: string; label: string }[] = [
   { href: '/dementia-facility', label: '🧠 認知症対応施設の選び方' },
   { href: '/review-guide', label: '📖 口コミの正しい読み方' },
   { href: '/sakouju', label: '🏠 サ高住 vs 有料老人ホーム比較' },
+  { href: '/care-manager-relation', label: '🤝 ケアマネージャーとの上手な付き合い方' },
   { href: '/care-resignation', label: '💼 介護離職を防ぐ制度活用ガイド' },
   { href: '/care-cost-split', label: '💰 介護費用の兄弟間分担ガイド' },
   { href: '/retirement-cost', label: '📊 老後資金・介護費用の試算' },
@@ -640,12 +641,4 @@ export default function Header() {
             </li>
             <li className="mt-2">
               <Link href="/how-to-choose" onClick={() => setMenuOpen(false)} className="flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-white transition hover:opacity-90" style={{ textDecoration: 'none', background: '#F57C00', fontSize: '18px', boxShadow: '0 2px 8px rgba(245,124,0,0.4)' }}>
-                📋 無料で施設を探す →
-              </Link>
-            </li>
-          </ul>
-        </nav>
-      )}
-    </header>
-  )
-}
+                📋 無料で施設を探す →

@@ -34,11 +34,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/pref-cost-ranking',
     '/room-size-cost',
     '/zero-initial-fee',
+    '/care-manager-relation',
   ]
   return pages.map((page) => ({
     url: `${baseUrl}${page}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
-    priority: page === '' ? 1 : 0.8,
-  }))
-}
+    priority: pag
