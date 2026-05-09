@@ -641,4 +641,12 @@ export default function Header() {
             </li>
             <li className="mt-2">
               <Link href="/how-to-choose" onClick={() => setMenuOpen(false)} className="flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-white transition hover:opacity-90" style={{ textDecoration: 'none', background: '#F57C00', fontSize: '18px', boxShadow: '0 2px 8px rgba(245,124,0,0.4)' }}>
-                📋 無料で施設を探す →
+                📋 無料で施設を探す →
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      )}
+    </header>
+  )
+}

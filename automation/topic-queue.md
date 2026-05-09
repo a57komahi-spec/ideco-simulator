@@ -13,7 +13,7 @@
 
 | # | status | route name | テーマ | 想定文字数 | notes |
 |---|---|---|---|---|---|
-| 1 | completed | care-manager-relation | ケアマネージャーとの上手な付き合い方｜信頼関係の築き方 | 6,000字前後 | 2026-05-09 自動生成（規制7.5/empathy8.0/SEO7.5、修正反映済み） |
+| 1 | completed | care-manager-relation | ケアマネージャーとの上手な付き合い方｜信頼関係の築き方 | 6,000字前後 | 2026-05-09 自動生成完了（規制7.5/empathy8.0/SEO7.5）。OneDrive Files-On-Demand 制約で .git/config がサンドボックスから読めず通常 commit 失敗のため、新 commit object（5c040208b71b344f633bbf010c06aff9acf58163）を .git/objects/ に配置し、新 commit ハッシュを refs/heads/auto-care-manager-relation-pending に保存。Windows 側で `commit-care-manager-relation.ps1`（C:\Users\a57ko\OneDrive\Desktop\claude\直下）を実行→main を更新→AutoPushAll(5:30) で push される段取り。 |
 | 2 | pending | dementia-care-basics | 認知症ケアの基本｜家族が知っておきたい接し方と進行ステージ | 7,000字前後 |  |
 | 3 | pending | insurance-usage-guide | 介護保険の使い方完全ガイド｜要介護認定から給付までの全工程 | 8,000字前後 |  |
 | 4 | pending | sibling-care-discussion | 兄弟姉妹で介護を分担する話し合い方｜揉めないための整理術 | 6,000字前後 |  |
