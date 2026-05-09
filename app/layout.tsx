@@ -4,6 +4,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://2ndhappiness.com'),
   title: {
     default: 'やさしい老人ホームガイド',
     template: '%s｜やさしい老人ホームガイド',
@@ -17,6 +18,22 @@ export const metadata: Metadata = {
     siteName: 'やさしい老人ホームガイド',
     locale: 'ja_JP',
     type: 'website',
+    url: 'https://2ndhappiness.com',
+    images: [
+      {
+        url: 'https://2ndhappiness.com/images/hero.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'やさしい老人ホームガイド',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['https://2ndhappiness.com/images/hero.jpg'],
+  },
+  alternates: {
+    canonical: 'https://2ndhappiness.com',
   },
 }
 
@@ -25,15 +42,15 @@ const siteLd = [
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'やさしい老人ホームガイド',
-    url: 'https://2nd-lifesearch.pages.dev',
+    url: 'https://2ndhappiness.com',
     description: '老人ホームの基礎知識・費用・選び方を専門用語なしで解説する情報サイト',
   },
   {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'やさしい老人ホームガイド編集部',
-    url: 'https://2nd-lifesearch.pages.dev',
-    logo: 'https://2nd-lifesearch.pages.dev/images/hero.jpg',
+    url: 'https://2ndhappiness.com',
+    logo: 'https://2ndhappiness.com/images/hero.jpg',
   },
 ]
 

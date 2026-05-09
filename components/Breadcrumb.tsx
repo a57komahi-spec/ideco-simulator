@@ -9,7 +9,7 @@ interface BreadcrumbProps {
   items: BreadcrumbItem[]
 }
 
-const BASE_URL = 'https://2nd-lifesearch.pages.dev'
+const BASE_URL = 'https://2ndhappiness.com'
 
 export default function Breadcrumb({ items }: BreadcrumbProps) {
   const breadcrumbLd = {

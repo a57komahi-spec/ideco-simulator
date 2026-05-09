@@ -59,7 +59,7 @@ export default function AboutPage() {
           <tbody>
             {[
               { label: 'サイト名', value: 'やさしい老人ホームガイド' },
-              { label: 'サイトURL', value: 'https://2nd-lifesearch.pages.dev' },
+              { label: 'サイトURL', value: 'https://2ndhappiness.com' },
               { label: '運営者名', value: 'やさしい老人ホームガイド 編集部' },
               { label: '開設日', value: '2024年1月' },
               { label: '主なテーマ', value: '老人ホーム・介護施設の基礎知識・費用・選び方・終活' },

@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://2nd-lifesearch.pages.dev/sitemap.xml',
+    sitemap: 'https://2ndhappiness.com/sitemap.xml',
   }
 }
