@@ -58,6 +58,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ja">
       <head>
+        {/* 旧 pages.dev ドメインから独自ドメインへの即時リダイレクト
+            （Cloudflare Pages の pages.dev は直接 301 設定できないためクライアントサイドで対応） */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){if(typeof window!=='undefined'&&window.location.hostname==='2nd-lifesearch.pages.dev'){window.location.replace('https://2ndhappiness.com'+window.location.pathname+window.location.search+window.location.hash);}})();`,
+          }}
+        />
         {/* Google tag (gtag.js) */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-N6JYJEN4QR" />
         <script
