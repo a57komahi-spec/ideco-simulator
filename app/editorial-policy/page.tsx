@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Breadcrumb from '@/components/Breadcrumb'
 
+import ArticleJsonLd from '@/components/ArticleJsonLd'
 export const metadata: Metadata = {
   title: '編集ポリシー・調査方法｜やさしい老人ホームガイド',
   description: '当サイトの編集方針・情報の調査方法・更新基準・広告に関する表示について説明します。',
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
 export default function EditorialPolicyPage() {
   return (
     <>
+      <ArticleJsonLd path={"/editorial-policy"} title={"編集ポリシー・調査方法｜やさしい老人ホームガイド"} description={"当サイトの編集方針・情報の調査方法・更新基準・広告に関する表示について説明します。"} />
       <Breadcrumb items={[{ label: '編集ポリシー' }]} />
 
       <h1 className="text-2xl md:text-3xl font-bold mb-6 text-primary" style={{ borderLeft: 'none', paddingLeft: 0 }}>

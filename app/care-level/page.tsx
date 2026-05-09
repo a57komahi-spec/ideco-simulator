@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import CTABox from '@/components/CTABox'
 import SummaryBox from '@/components/SummaryBox'
+import ArticleJsonLd from '@/components/ArticleJsonLd'
 
 export const metadata: Metadata = {
   title: '要介護度の違いを徹底解説｜要支援・要介護1〜5の基準と受けられるサービス',
@@ -137,6 +138,11 @@ const steps = [
 export default function CareLevelPage() {
   return (
     <article>
+      <ArticleJsonLd
+        path="/care-level"
+        title="要介護度の違いを徹底解説｜要支援・要介護1〜5の基準と受けられるサービス"
+        description="要支援1・2と要介護1〜5の違いをわかりやすく解説。対比表・受けられるサービス・認定の申請手順まで、家族が知りたい情報をまとめました。"
+      />
       {/* Hero */}
       <div
         className="rounded-2xl mb-8 p-8"

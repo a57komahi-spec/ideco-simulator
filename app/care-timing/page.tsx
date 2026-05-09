@@ -6,6 +6,7 @@ import SummaryBox from '@/components/SummaryBox'
 import Breadcrumb from '@/components/Breadcrumb'
 import AffiliateBlock from '@/components/AffiliateBlock'
 
+import ArticleJsonLd from '@/components/ArticleJsonLd'
 export const metadata: Metadata = {
   title: '老人ホームへの入居を検討すべき6つのタイミング｜迷っている方へ',
   description: '「まだ早いかな」と迷っているうちに手遅れになるケースは少なくありません。配偶者との死別・入院後・認知症の進行など、専門家が勧める「施設を考えるべき6つのタイミング」を解説します。',
@@ -119,6 +120,7 @@ const timings = [
 export default function CareTimingPage() {
   return (
     <>
+      <ArticleJsonLd path={"/care-timing"} title={"老人ホームへの入居を検討すべき6つのタイミング｜迷っている方へ"} description={"「まだ早いかな」と迷っているうちに手遅れになるケースは少なくありません。配偶者との死別・入院後・認知症の進行など、専門家が勧める「施設を考えるべき6つのタイミング」を解説します。"} />
       <Breadcrumb items={[{ label: '老人ホームへの入居を検討すべき6つのタイミング' }]} />
       <h1 className="text-2xl md:text-3xl font-bold mb-3 text-primary" style={{ borderLeft: 'none', paddingLeft: 0 }}>
         老人ホームへの入居を<br className="md:hidden" />検討すべき6つのタイミング

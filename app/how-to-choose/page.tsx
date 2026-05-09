@@ -4,6 +4,7 @@ import CTABox from '@/components/CTABox'
 import SummaryBox from '@/components/SummaryBox'
 import Breadcrumb from '@/components/Breadcrumb'
 
+import ArticleJsonLd from '@/components/ArticleJsonLd'
 export const metadata: Metadata = {
   title: '老人ホームの選び方｜失敗しない7つのポイントとチェックリスト',
   description: '老人ホーム選びで失敗しないための7つのポイントを解説。見学時のチェックリスト付きで初めての方も安心。',
@@ -33,6 +34,7 @@ const checklistItems = [
 export default function HowToChoosePage() {
   return (
     <>
+      <ArticleJsonLd path={"/how-to-choose"} title={"老人ホームの選び方｜失敗しない7つのポイントとチェックリスト"} description={"老人ホーム選びで失敗しないための7つのポイントを解説。見学時のチェックリスト付きで初めての方も安心。"} />
       <Breadcrumb items={[{ label: '老人ホームの選び方' }]} />
       <h1 className="text-2xl md:text-3xl font-bold mb-6 text-primary" style={{ borderLeft: 'none', paddingLeft: 0 }}>
         後悔しない老人ホームの選び方｜7つのポイントと見学チェックリスト

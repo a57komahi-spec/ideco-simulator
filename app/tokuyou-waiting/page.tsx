@@ -6,6 +6,7 @@ import SummaryBox from '@/components/SummaryBox'
 import Breadcrumb from '@/components/Breadcrumb'
 import AffiliateBlock from '@/components/AffiliateBlock'
 
+import ArticleJsonLd from '@/components/ArticleJsonLd'
 export const metadata: Metadata = {
   title: '特養に入れないと言われたら？待機問題と代替施設の選び方【2026年】',
   description: '特別養護老人ホーム（特養）の全国待機者数は約27万人。入居できないと言われた方へ、老健・有料老人ホーム・サ高住など代替施設の選び方を解説します。',
@@ -65,6 +66,7 @@ const alternatives = [
 export default function TokuyouWaitingPage() {
   return (
     <>
+      <ArticleJsonLd path={"/tokuyou-waiting"} title={"特養に入れないと言われたら？待機問題と代替施設の選び方【2026年】"} description={"特別養護老人ホーム（特養）の全国待機者数は約27万人。入居できないと言われた方へ、老健・有料老人ホーム・サ高住など代替施設の選び方を解説します。"} />
       <Breadcrumb items={[{ label: '特養に入れないと言われたら' }]} />
       <h1 className="text-2xl md:text-3xl font-bold mb-3 text-primary" style={{ borderLeft: 'none', paddingLeft: 0 }}>
         「特養に入れない」と言われたらどうする？<br className="md:hidden" />待機問題と代替施設の選び方

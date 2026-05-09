@@ -5,6 +5,7 @@ import CTABox from '@/components/CTABox'
 import SummaryBox from '@/components/SummaryBox'
 import Breadcrumb from '@/components/Breadcrumb'
 
+import ArticleJsonLd from '@/components/ArticleJsonLd'
 export const metadata: Metadata = {
   title: '親のためにやるべきこと完全ガイド｜子どもが代わりにしてあげたい8つのこと',
   description: '高齢の親が抱えている悩みと、子どもにできるサポートを徹底解説。手続き・住環境・医療・お金・見守り・施設探しまで、50代の子世代向けに「今すぐできること」をまとめました。',
@@ -184,6 +185,7 @@ const topics = [
 export default function ParentsSupportPage() {
   return (
     <>
+      <ArticleJsonLd path={"/parents-support"} title={"親のためにやるべきこと完全ガイド｜子どもが代わりにしてあげたい8つのこと"} description={"高齢の親が抱えている悩みと、子どもにできるサポートを徹底解説。手続き・住環境・医療・お金・見守り・施設探しまで、50代の子世代向けに「今すぐできること」をまとめました。"} />
       <Breadcrumb items={[{ label: '親のためにやるべきこと完全ガイド' }]} />
 
       <h1 className="text-2xl md:text-3xl font-bold mb-3 text-primary" style={{ borderLeft: 'none', paddingLeft: 0 }}>

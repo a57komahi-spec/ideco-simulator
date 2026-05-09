@@ -4,6 +4,7 @@ import CTABox from '@/components/CTABox'
 import SummaryBox from '@/components/SummaryBox'
 import { PREF_COST_RANKING, TOTAL_FACILITIES, GENERATED_DATE } from '@/lib/facilityStats'
 
+import ArticleJsonLd from '@/components/ArticleJsonLd'
 export const metadata: Metadata = {
   title: '老人ホーム月額費用【都道府県別ランキング】全国5.5万件の実データから算出',
   description: `みんなの介護に掲載された全国${TOTAL_FACILITIES.toLocaleString()}件の老人ホームデータをもとに、都道府県別の月額費用（平均・中央値・最安値）をランキング形式で公開。最も費用が安い都道府県・高い都道府県が一目でわかります。`,
@@ -46,6 +47,7 @@ function CostBar({ value, max }: { value: number; max: number }) {
 export default function PrefCostRankingPage() {
   return (
     <>
+      <ArticleJsonLd path={"/pref-cost-ranking"} title={"老人ホーム月額費用【都道府県別ランキング】全国5.5万件の実データから算出"} description={"全国5.5万件の老人ホームデータから算出した都道府県別月額費用ランキング。平均・中央値・最安値を掲載。"} />
       <Breadcrumb items={[{ label: '老人ホームデータ分析', href: '/pref-cost-ranking' }, { label: '都道府県別月額費用ランキング' }]} />
 
       <h1 className="text-2xl md:text-3xl font-bold mb-6 text-primary" style={{ borderLeft: 'none', paddingLeft: 0 }}>

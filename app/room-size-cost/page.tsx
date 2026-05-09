@@ -4,6 +4,7 @@ import CTABox from '@/components/CTABox'
 import SummaryBox from '@/components/SummaryBox'
 import { ROOM_SIZE_ANALYSIS, TOTAL_FACILITIES, GENERATED_DATE } from '@/lib/facilityStats'
 
+import ArticleJsonLd from '@/components/ArticleJsonLd'
 export const metadata: Metadata = {
   title: '老人ホームの部屋の広さと月額費用の関係【実データ分析】',
   description: `老人ホームの居室の広さ（㎡）と月額費用の関係を実データで分析。${TOTAL_FACILITIES.toLocaleString()}件の掲載情報からわかった「広さ別の費用感」をグラフと表で解説します。`,
@@ -31,6 +32,7 @@ const BAR_COLORS = ['#2E7D52', '#43A066', '#5BB87D', '#F57C00', '#E65100']
 export default function RoomSizeCostPage() {
   return (
     <>
+      <ArticleJsonLd path={"/room-size-cost"} title={"老人ホームの部屋の広さと月額費用の関係【実データ分析】"} description={"居室の広さ（㎡）ごとの月額費用を実データで比較。広い部屋に住む費用感がわかります。"} />
       <Breadcrumb items={[{ label: '老人ホームデータ分析', href: '/pref-cost-ranking' }, { label: '部屋の広さ別費用分析' }]} />
 
       <h1 className="text-2xl md:text-3xl font-bold mb-6 text-primary" style={{ borderLeft: 'none', paddingLeft: 0 }}>

@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import CTABox from '@/components/CTABox'
 import SummaryBox from '@/components/SummaryBox'
 import Breadcrumb from '@/components/Breadcrumb'
+import ArticleJsonLd from '@/components/ArticleJsonLd'
 import { generatedCityData, type CityData, type Facility } from '@/lib/cityData.generated'
 import { AFFILIATE_ENABLED } from '@/lib/featureFlags'
 
@@ -101,6 +102,11 @@ export default function CityRankingPage({ params }: { params: { city: string } }
 
   return (
     <>
+      <ArticleJsonLd
+        path={`/ranking/${params.city}`}
+        title={`${data.name}の老人ホームおすすめランキングTOP10【2026年最新】`}
+        description={`${data.name}の老人ホーム・介護施設おすすめランキングTOP10。みんなの介護の評価・費用・特徴を比較して最適な施設を見つけましょう。`}
+      />
       <Breadcrumb items={[{ label: `${data.name}のおすすめランキング` }]} />
 
       <h1 className="text-2xl md:text-3xl font-bold mb-6 text-primary" style={{ borderLeft: 'none', paddingLeft: 0 }}>

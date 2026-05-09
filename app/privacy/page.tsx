@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Breadcrumb from '@/components/Breadcrumb'
 
+import ArticleJsonLd from '@/components/ArticleJsonLd'
 export const metadata: Metadata = {
   title: 'プライバシーポリシー｜やさしい老人ホームガイド',
   description: 'やさしい老人ホームガイドのプライバシーポリシーです。個人情報の取り扱い・Cookie・アフィリエイト広告について説明します。',
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
 export default function PrivacyPage() {
   return (
     <>
+      <ArticleJsonLd path={"/privacy"} title={"プライバシーポリシー｜やさしい老人ホームガイド"} description={"やさしい老人ホームガイドのプライバシーポリシーです。個人情報の取り扱い・Cookie・アフィリエイト広告について説明します。"} />
       <Breadcrumb items={[{ label: 'プライバシーポリシー' }]} />
       <h1 className="text-2xl md:text-3xl font-bold mb-8 text-primary" style={{ borderLeft: 'none', paddingLeft: 0 }}>
         プライバシーポリシー

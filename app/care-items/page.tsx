@@ -4,6 +4,7 @@ import CTABox from '@/components/CTABox'
 import Breadcrumb from '@/components/Breadcrumb'
 import SummaryBox from '@/components/SummaryBox'
 
+import ArticleJsonLd from '@/components/ArticleJsonLd'
 export const metadata: Metadata = {
   title: '親のために揃えておきたい介護・生活補助グッズ一覧｜購入備品ガイド',
   description: '高齢の親が安全・快適に暮らせるよう、子どもが揃えておきたい介護用品・生活補助グッズをカテゴリ別に紹介。転倒防止・健康管理・緊急対応・日常生活補助の4分野で解説します。',
@@ -232,6 +233,7 @@ const categories = [
 export default function CareItemsPage() {
   return (
     <>
+      <ArticleJsonLd path={"/care-items"} title={"親のために揃えておきたい介護・生活補助グッズ一覧｜購入備品ガイド"} description={"高齢の親が安全・快適に暮らせるよう、子どもが揃えておきたい介護用品・生活補助グッズをカテゴリ別に紹介。転倒防止・健康管理・緊急対応・日常生活補助の4分野で解説します。"} />
       <Breadcrumb
         items={[
           { label: '親のためにやるべきこと', href: '/parents-support' },

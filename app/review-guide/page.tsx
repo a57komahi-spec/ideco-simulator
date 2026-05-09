@@ -4,6 +4,7 @@ import CTABox from '@/components/CTABox'
 import SummaryBox from '@/components/SummaryBox'
 import Breadcrumb from '@/components/Breadcrumb'
 
+import ArticleJsonLd from '@/components/ArticleJsonLd'
 export const metadata: Metadata = {
   title: '老人ホームの口コミ・評判の正しい読み方と注意点｜信頼できる情報の選び方',
   description: '老人ホームの口コミは「良い口コミだけ」「古い情報」に注意が必要です。口コミの正しい読み方・信頼できる評判の見分け方・施設見学での確認ポイントを解説します。',
@@ -38,6 +39,7 @@ const goodSources = [
 export default function ReviewGuidePage() {
   return (
     <>
+      <ArticleJsonLd path={"/review-guide"} title={"老人ホームの口コミ・評判の正しい読み方と注意点｜信頼できる情報の選び方"} description={"老人ホームの口コミは「良い口コミだけ」「古い情報」に注意が必要です。口コミの正しい読み方・信頼できる評判の見分け方・施設見学での確認ポイントを解説します。"} />
       <Breadcrumb items={[{ label: '老人ホームの口コミ・評判の正しい読み方' }]} />
       <h1 className="text-2xl md:text-3xl font-bold mb-3 text-primary" style={{ borderLeft: 'none', paddingLeft: 0 }}>
         老人ホームの口コミ・評判の正しい読み方と注意点

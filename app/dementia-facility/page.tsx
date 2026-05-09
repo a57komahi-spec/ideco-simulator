@@ -6,6 +6,7 @@ import SummaryBox from '@/components/SummaryBox'
 import Breadcrumb from '@/components/Breadcrumb'
 import AffiliateBlock from '@/components/AffiliateBlock'
 
+import ArticleJsonLd from '@/components/ArticleJsonLd'
 export const metadata: Metadata = {
   title: '認知症の親に合った施設の選び方｜グループホームvs有料老人ホーム比較',
   description: '認知症の方が入居できる施設の種類・選び方・費用を比較解説。グループホーム・認知症対応の有料老人ホーム・特養など、進行度別の選択肢を紹介します。',
@@ -47,6 +48,7 @@ const checkPoints = [
 export default function DementiaFacilityPage() {
   return (
     <>
+      <ArticleJsonLd path={"/dementia-facility"} title={"認知症の親に合った施設の選び方｜グループホームvs有料老人ホーム比較"} description={"認知症の方が入居できる施設の種類・選び方・費用を比較解説。グループホーム・認知症対応の有料老人ホーム・特養など、進行度別の選択肢を紹介します。"} />
       <Breadcrumb items={[{ label: '認知症の親に合った施設の選び方' }]} />
       <h1 className="text-2xl md:text-3xl font-bold mb-3 text-primary" style={{ borderLeft: 'none', paddingLeft: 0 }}>
         認知症の親に合った施設の選び方<br className="md:hidden" />｜グループホームvsその他の比較

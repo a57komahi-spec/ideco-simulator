@@ -5,6 +5,7 @@ import SummaryBox from '@/components/SummaryBox'
 import Breadcrumb from '@/components/Breadcrumb'
 import AffiliateBlock from '@/components/AffiliateBlock'
 
+import ArticleJsonLd from '@/components/ArticleJsonLd'
 export const metadata: Metadata = {
   title: '家族葬と一般葬どちらを選ぶ？費用・規模・後悔しない選び方',
   description: '家族葬と一般葬の費用・参列者の規模・メリット・デメリットを徹底比較。「後から後悔した」という声から学ぶ、葬儀形式の正しい選び方を解説します。',
@@ -35,6 +36,7 @@ const comparison = [
 export default function FuneralGuidePage() {
   return (
     <>
+      <ArticleJsonLd path={"/funeral-guide"} title={"家族葬と一般葬どちらを選ぶ？費用・規模・後悔しない選び方"} description={"家族葬と一般葬の費用・参列者の規模・メリット・デメリットを徹底比較。「後から後悔した」という声から学ぶ、葬儀形式の正しい選び方を解説します。"} />
       <Breadcrumb items={[{ label: '家族葬と一般葬の選び方' }]} />
       <h1 className="text-2xl md:text-3xl font-bold mb-3 text-primary" style={{ borderLeft: 'none', paddingLeft: 0 }}>
         家族葬と一般葬どちらを選ぶ？<br className="md:hidden" />費用・規模・後悔しない選び方

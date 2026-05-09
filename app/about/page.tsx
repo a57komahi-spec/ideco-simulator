@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Breadcrumb from '@/components/Breadcrumb'
 
+import ArticleJsonLd from '@/components/ArticleJsonLd'
 export const metadata: Metadata = {
   title: '運営者情報・編集部プロフィール｜やさしい老人ホームガイド',
   description: 'やさしい老人ホームガイドの運営者情報・編集部プロフィール・サイト設立の経緯をご紹介します。',
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
+      <ArticleJsonLd path={"/about"} title={"運営者情報・編集部プロフィール｜やさしい老人ホームガイド"} description={"やさしい老人ホームガイドの運営者情報・編集部プロフィール・サイト設立の経緯をご紹介します。"} />
       <Breadcrumb items={[{ label: '運営者情報' }]} />
       <h1 className="text-2xl md:text-3xl font-bold mb-6 text-primary" style={{ borderLeft: 'none', paddingLeft: 0 }}>
         運営者情報

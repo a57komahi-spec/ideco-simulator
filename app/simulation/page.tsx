@@ -6,6 +6,7 @@ import CTABox from '@/components/CTABox'
 import SummaryBox from '@/components/SummaryBox'
 import Breadcrumb from '@/components/Breadcrumb'
 
+import ArticleJsonLd from '@/components/ArticleJsonLd'
 // ========== データ定義 ==========
 // isPublic: true = 公的（緑系）/ false = 民間（オレンジ系）
 const facilities = [
@@ -235,6 +236,7 @@ export default function SimulationPage() {
 
   return (
     <>
+      <ArticleJsonLd path={"/simulation"} title={"老人ホーム費用シミュレーター｜タイプ別の月額試算"} description={"老人ホームの費用シミュレーター。特養・サ高住・有料老人ホームなどタイプ別に月額・初期費用を試算できます。介護保険の自己負担割合・地域・要介護度を加味した目安が即わかります。"} />
       <Breadcrumb items={[
         { label: '老人ホームの種類', href: '/types' },
         { label: '20年費用シミュレーション' },

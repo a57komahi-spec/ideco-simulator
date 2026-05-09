@@ -5,6 +5,7 @@ import CTABox from '@/components/CTABox'
 import SummaryBox from '@/components/SummaryBox'
 import Breadcrumb from '@/components/Breadcrumb'
 
+import ArticleJsonLd from '@/components/ArticleJsonLd'
 export const metadata: Metadata = {
   title: '老人ホームの種類と違いを完全解説｜費用・特徴・選び方【図解あり】',
   description: '老人ホームの種類（特養・老健・有料など）を図解でわかりやすく解説。費用相場・選び方・おすすめの探し方まで完全網羅。',
@@ -135,6 +136,7 @@ export default function TypesPage() {
         }}
       />
 
+      <ArticleJsonLd path={"/types"} title={"老人ホームの種類と違いを完全解説｜費用・特徴・選び方【図解あり】"} description={"老人ホームの種類（特養・老健・有料など）を図解でわかりやすく解説。費用相場・選び方・おすすめの探し方まで完全網羅。"} />
       <Breadcrumb items={[{ label: '老人ホームの種類' }]} />
       <h1 className="text-2xl md:text-3xl font-bold mb-6 text-primary" style={{ borderLeft: 'none', paddingLeft: 0 }}>
         老人ホームの種類と違いを完全解説

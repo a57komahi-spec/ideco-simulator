@@ -5,6 +5,7 @@ import SummaryBox from '@/components/SummaryBox'
 import Breadcrumb from '@/components/Breadcrumb'
 import AffiliateBlock from '@/components/AffiliateBlock'
 
+import ArticleJsonLd from '@/components/ArticleJsonLd'
 export const metadata: Metadata = {
   title: '親と一緒に「終活」を始めるためのステップガイド｜何から始めればいい？',
   description: '終活は「死の準備」ではなく「残りの人生をよりよく生きるための準備」です。親と一緒に始める終活の進め方・エンディングノートの書き方・施設選びとの関係を解説します。',
@@ -43,6 +44,7 @@ const steps = [
 export default function EndingActivityPage() {
   return (
     <>
+      <ArticleJsonLd path={"/ending-activity"} title={"親と一緒に「終活」を始めるためのステップガイド｜何から始めればいい？"} description={"終活は「死の準備」ではなく「残りの人生をよりよく生きるための準備」です。親と一緒に始める終活の進め方・エンディングノートの書き方・施設選びとの関係を解説します。"} />
       <Breadcrumb items={[{ label: '親と一緒に終活を始めるガイド' }]} />
       <h1 className="text-2xl md:text-3xl font-bold mb-3 text-primary" style={{ borderLeft: 'none', paddingLeft: 0 }}>
         親と一緒に「終活」を始めるための<br className="md:hidden" />ステップガイド

@@ -6,6 +6,7 @@ import SummaryBox from '@/components/SummaryBox'
 import Breadcrumb from '@/components/Breadcrumb'
 import AffiliateBlock from '@/components/AffiliateBlock'
 
+import ArticleJsonLd from '@/components/ArticleJsonLd'
 export const metadata: Metadata = {
   title: '老人ホーム・介護施設の送迎サービス完全ガイド｜デイサービス・通院・入退院の移動を解決',
   description: 'デイサービスの送迎・通院の移動・入居時の引越し送迎など、介護における「移動の悩み」を一挙解決。介護タクシー・福祉車両・施設送迎の違いも解説します。',
@@ -93,6 +94,7 @@ const checkPoints = [
 export default function TransportPage() {
   return (
     <>
+      <ArticleJsonLd path={"/transport"} title={"老人ホーム・介護施設の送迎サービス完全ガイド｜デイサービス・通院・入退院の移動を解決"} description={"デイサービスの送迎・通院の移動・入居時の引越し送迎など、介護における「移動の悩み」を一挙解決。介護タクシー・福祉車両・施設送迎の違いも解説します。"} />
       <Breadcrumb items={[{ label: '老人ホーム・介護施設の送迎サービス完全ガイド' }]} />
       <h1 className="text-2xl md:text-3xl font-bold mb-3 text-primary" style={{ borderLeft: 'none', paddingLeft: 0 }}>
         老人ホーム・介護施設の送迎サービス完全ガイド

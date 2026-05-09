@@ -6,6 +6,7 @@ import CTABox from '@/components/CTABox'
 import SummaryBox from '@/components/SummaryBox'
 import Breadcrumb from '@/components/Breadcrumb'
 
+import ArticleJsonLd from '@/components/ArticleJsonLd'
 const INHERITANCE_URL  = 'https://www.souzoku-pro.net/'
 const REAL_ESTATE_URL  = 'https://www.home4u.jp/'
 
@@ -72,6 +73,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
 export default function InheritancePage() {
   return (
     <>
+      <ArticleJsonLd path={"/prepare/inheritance"} title={"親の相続準備｜手続きと税金の基礎"} description={"親の相続準備、何から始めればいい？遺言・相続税・名義変更・実家の不動産など、家族で揉めないための手続きと税金の基礎を整理しました。"} />
       <Breadcrumb items={[
         { label: '入居前の準備', href: '/prepare' },
         { label: '相続の準備' },

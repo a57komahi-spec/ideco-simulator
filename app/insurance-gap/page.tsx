@@ -6,6 +6,7 @@ import SummaryBox from '@/components/SummaryBox'
 import Breadcrumb from '@/components/Breadcrumb'
 import AffiliateBlock from '@/components/AffiliateBlock'
 
+import ArticleJsonLd from '@/components/ArticleJsonLd'
 export const metadata: Metadata = {
   title: '介護保険だけでは足りない！自費で払うものリストと節約術',
   description: '「介護保険があれば安心」は誤解です。食費・居住費・日用品・医療費など介護保険でカバーされない費用を一覧で解説。節約術と補助制度も紹介します。',
@@ -43,6 +44,7 @@ const selfPayItems = [
 export default function InsuranceGapPage() {
   return (
     <>
+      <ArticleJsonLd path={"/insurance-gap"} title={"介護保険だけでは足りない！自費で払うものリストと節約術"} description={"「介護保険があれば安心」は誤解です。食費・居住費・日用品・医療費など介護保険でカバーされない費用を一覧で解説。節約術と補助制度も紹介します。"} />
       <Breadcrumb items={[{ label: '介護保険だけでは足りない費用リスト' }]} />
       <h1 className="text-2xl md:text-3xl font-bold mb-3 text-primary" style={{ borderLeft: 'none', paddingLeft: 0 }}>
         介護保険だけでは足りない！<br className="md:hidden" />自費で払うものリストと節約術

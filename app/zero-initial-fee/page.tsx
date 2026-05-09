@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import ArticleJsonLd from '@/components/ArticleJsonLd'
 import Breadcrumb from '@/components/Breadcrumb'
 import CTABox from '@/components/CTABox'
 import SummaryBox from '@/components/SummaryBox'
@@ -36,6 +37,11 @@ const paidRate = Math.round((paidTotal / TOTAL_FACILITIES) * 100 * 10) / 10
 export default function ZeroInitialFeePage() {
   return (
     <>
+      <ArticleJsonLd
+        path="/zero-initial-fee"
+        title="老人ホームの入居一時金ゼロ円施設まとめ【都道府県別】実データ分析"
+        description="全国の老人ホームデータを分析。入居一時金0円で入れる施設の割合・都道府県別の分布・平均月額を公開。初期費用を抑えたい方必見の情報です。"
+      />
       <Breadcrumb items={[{ label: '老人ホームデータ分析', href: '/pref-cost-ranking' }, { label: '入居一時金0円施設まとめ' }]} />
 
       <h1 className="text-2xl md:text-3xl font-bold mb-6 text-primary" style={{ borderLeft: 'none', paddingLeft: 0 }}>

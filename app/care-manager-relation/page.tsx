@@ -5,6 +5,7 @@ import CTABox from '@/components/CTABox'
 import SummaryBox from '@/components/SummaryBox'
 import Breadcrumb from '@/components/Breadcrumb'
 
+import ArticleJsonLd from '@/components/ArticleJsonLd'
 export const metadata: Metadata = {
   title: 'ケアマネージャーとの上手な付き合い方｜家族が知りたい信頼関係の築き方',
   description: 'ケアマネージャーとの付き合い方を家族目線で解説。相性のサイン・担当変更の手続き・すれ違いを防ぐ会話例まで、専門用語の言い換え付きで具体的にまとめました。担当変更は無料で可能です。',
@@ -186,6 +187,7 @@ export default function CareManagerRelationPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
 
+      <ArticleJsonLd path={"/care-manager-relation"} title={"ケアマネージャーとの上手な付き合い方｜家族が知りたい信頼関係の築き方"} description={"ケアマネージャーとの付き合い方を家族目線で解説。相性のサイン・担当変更の手続き・すれ違いを防ぐ会話例まで、専門用語の言い換え付きで具体的にまとめました。担当変更は無料で可能です。"} />
       <Breadcrumb items={[{ label: 'ケアマネージャーとの上手な付き合い方' }]} />
 
       <h1

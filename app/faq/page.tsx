@@ -5,6 +5,7 @@ import CTABox from '@/components/CTABox'
 import SummaryBox from '@/components/SummaryBox'
 import Breadcrumb from '@/components/Breadcrumb'
 
+import ArticleJsonLd from '@/components/ArticleJsonLd'
 const summaryItems = [
   '入居条件は施設タイプによって異なります（<mark class="highlight">要介護度</mark>が重要です）',
   '費用は<mark class="highlight">介護保険</mark>を活用することで軽減できます',
@@ -203,6 +204,7 @@ export default function FAQPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
+      <ArticleJsonLd path={"/faq"} title={"老人ホームのよくある質問FAQ｜入居条件・費用・面会まで"} description={"老人ホーム選びでよくある質問FAQ。入居条件・費用・面会・介護保険の使い方・施設タイプの違いまで、家族目線でわかりやすく回答しています。"} />
       <Breadcrumb items={[{ label: 'よくある質問' }]} />
       <h1 className="text-2xl md:text-3xl font-bold mb-6 text-primary" style={{ borderLeft: 'none', paddingLeft: 0 }}>
         老人ホームに関するよくある質問（FAQ）

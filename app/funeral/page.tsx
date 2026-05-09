@@ -5,6 +5,7 @@ import SummaryBox from '@/components/SummaryBox'
 import Breadcrumb from '@/components/Breadcrumb'
 import AffiliateBlock from '@/components/AffiliateBlock'
 
+import ArticleJsonLd from '@/components/ArticleJsonLd'
 // ===== アフィリエイトURL（A8.netのURLに差し替えてください） =====
 // ※ 電話番号 0120-595-026 / 050-1809-2115 への誘導は成果対象外のため掲載不可
 const FUNERAL_URL = 'https://px.a8.net/svt/ejp?a8mat=XXXXXX' // ← A8.netのURLに変更
@@ -88,6 +89,7 @@ function FuneralCTA({ size = 'normal' }: { size?: 'normal' | 'large' }) {
 export default function FuneralPage() {
   return (
     <>
+      <ArticleJsonLd path={"/funeral"} title={"家族葬とは？費用・流れ・葬儀社の選び方を徹底解説【2026年最新版】"} description={"家族葬の費用相場（直葬79,000円〜）・流れ・葬儀社の選び方をわかりやすく解説。事前に資料請求すると最大5万円割引になる仕組みも紹介。"} />
       <Breadcrumb items={[{ label: '家族葬・葬儀の基礎知識' }]} />
 
       {/* 冒頭：割引バナー（仕様書指定） */}

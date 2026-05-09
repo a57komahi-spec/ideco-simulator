@@ -6,6 +6,7 @@ import SummaryBox from '@/components/SummaryBox'
 import Breadcrumb from '@/components/Breadcrumb'
 import AffiliateBlock from '@/components/AffiliateBlock'
 
+import ArticleJsonLd from '@/components/ArticleJsonLd'
 export const metadata: Metadata = {
   title: '介護離職のリアル｜仕事を辞める前に必ず知っておくべきこと',
   description: '「仕事を辞めて介護に専念しよう」と思っている方へ。介護離職の経済的損失・仕事との両立方法・施設活用で離職を防ぐ方法を解説します。',
@@ -26,6 +27,7 @@ const summaryItems = [
 export default function CareResignationPage() {
   return (
     <>
+      <ArticleJsonLd path={"/care-resignation"} title={"介護離職のリアル｜仕事を辞める前に必ず知っておくべきこと"} description={"「仕事を辞めて介護に専念しよう」と思っている方へ。介護離職の経済的損失・仕事との両立方法・施設活用で離職を防ぐ方法を解説します。"} />
       <Breadcrumb items={[{ label: '介護離職のリアル' }]} />
       <h1 className="text-2xl md:text-3xl font-bold mb-3 text-primary" style={{ borderLeft: 'none', paddingLeft: 0 }}>
         介護離職のリアル<br className="md:hidden" />｜仕事を辞める前に必ず知っておくべきこと

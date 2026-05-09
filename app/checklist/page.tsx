@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { AFFILIATE_ENABLED } from '@/lib/featureFlags'
+import ArticleJsonLd from '@/components/ArticleJsonLd'
 
 const NURSING_HOME_URL = 'https://www.minnanokaigo.com/'
 const FUNERAL_URL = 'https://px.a8.net/svt/ejp?a8mat=XXXXXX_FUNERAL'
@@ -106,6 +107,11 @@ export default function ChecklistPage() {
 
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
+        <ArticleJsonLd
+          path="/checklist"
+          title="老人ホーム入居前 準備チェックリスト｜全カテゴリ完全版"
+          description="老人ホーム入居前に確認すべき準備項目をチェックリスト形式で整理。介護・施設・お金・書類・実家の片付けなど、家族で共有しながら進められる完全版チェックリストです。"
+        />
         {/* パンくず */}
         <nav style={{ fontSize: '13px', color: '#888', marginBottom: '16px' }}>
           <Link href="/" style={{ color: '#2E7D52', textDecoration: 'none' }}>トップ</Link>

@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { AFFILIATE_ENABLED } from '@/lib/featureFlags'
+import ArticleJsonLd from '@/components/ArticleJsonLd'
 
 const GARDEN_URL = 'https://px.a8.net/svt/ejp?a8mat=XXXXXX_GARDEN'
 
@@ -124,6 +125,11 @@ const faqItems = [
 export default function AssetPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
+        <ArticleJsonLd
+          path="/asset"
+          title="老後の資産形成・FP無料相談｜介護費用に備える方法"
+          description="老後・介護費用の不安をプロのFPに無料相談する方法。介護費用の試算・保険の見直し・家計の総点検まで、老後資金の準備に必要な相談窓口を解説します。"
+        />
         {/* パンくず */}
         <nav style={{ fontSize: '13px', color: '#888', marginBottom: '16px' }}>
           <Link href="/" style={{ color: '#2E7D52', textDecoration: 'none' }}>トップ</Link>

@@ -5,6 +5,7 @@ import CTABox from '@/components/CTABox'
 import SummaryBox from '@/components/SummaryBox'
 import Breadcrumb from '@/components/Breadcrumb'
 
+import ArticleJsonLd from '@/components/ArticleJsonLd'
 export const metadata: Metadata = {
   title: 'なぜ老人ホームに入るのか？知っておきたい6つのリスクと新しい暮らしの話',
   description: '「施設に入るなんてまだ早い」と思っていませんか。一人暮らしや在宅介護を続けることで生じるリスクと、老人ホームで得られる安心・仲間・生きがいについて解説します。',
@@ -154,6 +155,7 @@ export default function ReasonPage() {
         }}
       />
 
+      <ArticleJsonLd path={"/reason"} title={"なぜ老人ホームに入るのか？知っておきたい6つのリスクと新しい暮らしの話"} description={"「施設に入るなんてまだ早い」と思っていませんか。一人暮らしや在宅介護を続けることで生じるリスクと、老人ホームで得られる安心・仲間・生きがいについて解説します。"} />
       <Breadcrumb items={[{ label: 'なぜ老人ホームに入るのか？' }]} />
 
       <h1 className="text-2xl md:text-3xl font-bold mb-6 text-primary" style={{ borderLeft: 'none', paddingLeft: 0 }}>

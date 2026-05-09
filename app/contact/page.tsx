@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Breadcrumb from '@/components/Breadcrumb'
 
+import ArticleJsonLd from '@/components/ArticleJsonLd'
 export const metadata: Metadata = {
   title: 'お問い合わせ｜やさしい老人ホームガイド',
   description: 'やさしい老人ホームガイドへのお問い合わせはこちらから。記事の内容に関するご質問・誤りのご指摘・ご意見をお受けしています。',
@@ -13,6 +14,7 @@ const GOOGLE_FORM_URL = 'https://forms.google.com/' // ← 実際のGoogleフォ
 export default function ContactPage() {
   return (
     <>
+      <ArticleJsonLd path={"/contact"} title={"お問い合わせ｜やさしい老人ホームガイド"} description={"やさしい老人ホームガイドへのお問い合わせはこちらから。記事の内容に関するご質問・誤りのご指摘・ご意見をお受けしています。"} />
       <Breadcrumb items={[{ label: 'お問い合わせ' }]} />
       <h1 className="text-2xl md:text-3xl font-bold mb-6 text-primary" style={{ borderLeft: 'none', paddingLeft: 0 }}>
         お問い合わせ

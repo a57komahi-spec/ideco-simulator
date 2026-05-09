@@ -5,6 +5,7 @@ import CTABox from '@/components/CTABox'
 import SummaryBox from '@/components/SummaryBox'
 import Breadcrumb from '@/components/Breadcrumb'
 
+import ArticleJsonLd from '@/components/ArticleJsonLd'
 export const metadata: Metadata = {
   title: '在宅介護と施設入居の比較｜介護リフォーム・便利グッズ・見守りカメラ完全ガイド',
   description: '在宅介護と老人ホーム入居、どちらが正解？介護リフォームの費用・補助金、便利な介護グッズ・見守りカメラの選び方まで徹底解説します。',
@@ -173,6 +174,7 @@ export default function HomeCarePage() {
         }}
       />
 
+      <ArticleJsonLd path={"/home-care"} title={"在宅介護と施設入居の比較｜介護リフォーム・便利グッズ・見守りカメラ完全ガイド"} description={"在宅介護と老人ホーム入居、どちらが正解？介護リフォームの費用・補助金、便利な介護グッズ・見守りカメラの選び方まで徹底解説します。"} />
       <Breadcrumb items={[{ label: '在宅介護・介護用品ガイド' }]} />
 
       <h1 className="text-2xl md:text-3xl font-bold mb-6 text-primary" style={{ borderLeft: 'none', paddingLeft: 0 }}>

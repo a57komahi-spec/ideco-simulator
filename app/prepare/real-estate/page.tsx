@@ -6,6 +6,7 @@ import CTABox from '@/components/CTABox'
 import SummaryBox from '@/components/SummaryBox'
 import Breadcrumb from '@/components/Breadcrumb'
 
+import ArticleJsonLd from '@/components/ArticleJsonLd'
 const REAL_ESTATE_URL  = 'https://www.home4u.jp/'
 const MOVING_URL       = 'https://www.suumo.jp/'
 const NURSING_HOME_URL = 'https://www.minnanokaigo.com/'
@@ -48,6 +49,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
 export default function RealEstatePage() {
   return (
     <>
+      <ArticleJsonLd path={"/prepare/real-estate"} title={"親の不動産・実家どうする？｜売却・賃貸・空き家対策"} description={"親が施設に入った後の実家、売却・賃貸・そのまま残すの3つの選択肢を整理。空き家のままだと税負担が増える理由と、家族で揉めない決め方を解説します。"} />
       <Breadcrumb items={[
         { label: '入居前の準備', href: '/prepare' },
         { label: '自宅・不動産の整理' },

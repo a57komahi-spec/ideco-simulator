@@ -4,6 +4,7 @@ import CTABox from '@/components/CTABox'
 import SummaryBox from '@/components/SummaryBox'
 import Breadcrumb from '@/components/Breadcrumb'
 
+import ArticleJsonLd from '@/components/ArticleJsonLd'
 export const metadata: Metadata = {
   title: '老人ホームの費用はいくら？月額・初期費用の相場を解説',
   description: '老人ホームの月額費用・入居一時金などの相場をタイプ別に解説。費用を抑えるポイントも紹介します。',
@@ -39,6 +40,7 @@ const privateFacilities = [
 export default function CostPage() {
   return (
     <>
+      <ArticleJsonLd path={"/cost"} title={"老人ホームの費用はいくら？月額・初期費用の相場を解説"} description={"老人ホームの月額費用・入居一時金などの相場をタイプ別に解説。費用を抑えるポイントも紹介します。"} />
       <Breadcrumb items={[{ label: '費用・料金' }]} />
       <h1 className="text-2xl md:text-3xl font-bold mb-6 text-primary" style={{ borderLeft: 'none', paddingLeft: 0 }}>
         老人ホームの費用・料金の相場をタイプ別に解説

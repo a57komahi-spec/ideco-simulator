@@ -6,6 +6,7 @@ import SummaryBox from '@/components/SummaryBox'
 import Breadcrumb from '@/components/Breadcrumb'
 import AffiliateBlock from '@/components/AffiliateBlock'
 
+import ArticleJsonLd from '@/components/ArticleJsonLd'
 export const metadata: Metadata = {
   title: '退院後すぐ入れる老人ホームの探し方｜急いでいる方向け緊急ガイド',
   description: '「退院日が決まったのに行き先がない」「もう自宅には戻れないと言われた」。退院後すぐに入居できる施設の種類・探し方・相談先を緊急解説します。',
@@ -26,6 +27,7 @@ const summaryItems = [
 export default function AfterHospitalPage() {
   return (
     <>
+      <ArticleJsonLd path={"/after-hospital"} title={"退院後すぐ入れる老人ホームの探し方｜急いでいる方向け緊急ガイド"} description={"「退院日が決まったのに行き先がない」「もう自宅には戻れないと言われた」。退院後すぐに入居できる施設の種類・探し方・相談先を緊急解説します。"} />
       <Breadcrumb items={[{ label: '退院後すぐ入れる老人ホームの探し方' }]} />
       <h1 className="text-2xl md:text-3xl font-bold mb-3 text-primary" style={{ borderLeft: 'none', paddingLeft: 0 }}>
         退院後すぐ入れる老人ホームの探し方<br className="md:hidden" />｜急いでいる方向け緊急ガイド

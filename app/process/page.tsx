@@ -4,6 +4,7 @@ import CTABox from '@/components/CTABox'
 import SummaryBox from '@/components/SummaryBox'
 import Breadcrumb from '@/components/Breadcrumb'
 
+import ArticleJsonLd from '@/components/ArticleJsonLd'
 export const metadata: Metadata = {
   title: '老人ホームへの入居の流れ【ステップ別に解説】',
   description: '老人ホームへの入居までの流れをステップ別に解説。必要書類や手続きも含めて初めての方にわかりやすく説明します。',
@@ -59,6 +60,7 @@ const steps = [
 export default function ProcessPage() {
   return (
     <>
+      <ArticleJsonLd path={"/process"} title={"老人ホームへの入居の流れ【ステップ別に解説】"} description={"老人ホームへの入居までの流れをステップ別に解説。必要書類や手続きも含めて初めての方にわかりやすく説明します。"} />
       <Breadcrumb items={[{ label: '入居の流れ' }]} />
       <h1 className="text-2xl md:text-3xl font-bold mb-6 text-primary" style={{ borderLeft: 'none', paddingLeft: 0 }}>
         老人ホームへの入居までの流れ｜手続き・必要書類を徹底解説

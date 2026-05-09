@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { AFFILIATE_ENABLED } from '@/lib/featureFlags'
+import ArticleJsonLd from '@/components/ArticleJsonLd'
 
 export const metadata: Metadata = {
   title: '老人ホーム検索サイト比較ランキング2026年版｜やさしい老人ホームガイド',
@@ -140,6 +141,11 @@ function StarRating({ score }: { score: number }) {
 export default function RankingIndexPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
+        <ArticleJsonLd
+          path="/ranking"
+          title="老人ホーム検索サイト比較ランキング2026年版｜やさしい老人ホームガイド"
+          description="老人ホーム・介護施設を探せる検索サービスを徹底比較。施設数・使いやすさ・サポート体制の観点から5サービスをランキング形式で紹介します。"
+        />
         {/* パンくず */}
         <nav style={{ fontSize: '13px', color: '#888', marginBottom: '16px' }}>
           <Link href="/" style={{ color: '#2E7D52', textDecoration: 'none' }}>トップ</Link>

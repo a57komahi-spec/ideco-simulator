@@ -5,6 +5,7 @@ import CTABox from '@/components/CTABox'
 import SummaryBox from '@/components/SummaryBox'
 import Breadcrumb from '@/components/Breadcrumb'
 
+import ArticleJsonLd from '@/components/ArticleJsonLd'
 export const metadata: Metadata = {
   title: '親に伝えるべき老人ホームの魅力｜入居を前向きに考えてもらうための言葉',
   description: '「施設には入りたくない」という親を説得するのではなく、老人ホームの本当の魅力を一緒に知ってほしい。同世代の仲間・安心の食事・24時間のサポート…実は入居後に「来てよかった」と感じる方がほとんどです。',
@@ -124,6 +125,7 @@ const talkingPoints = [
 export default function TellParentsPage() {
   return (
     <>
+      <ArticleJsonLd path={"/tell-parents"} title={"親に伝えるべき老人ホームの魅力｜入居を前向きに考えてもらうための言葉"} description={"「施設には入りたくない」という親を説得するのではなく、老人ホームの本当の魅力を一緒に知ってほしい。同世代の仲間・安心の食事・24時間のサポート…実は入居後に「来てよかった」と感じる方がほとんどです。"} />
       <Breadcrumb items={[{ label: '親に伝えるべき老人ホームの魅力' }]} />
 
       {/* ヘッダー */}

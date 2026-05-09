@@ -4,6 +4,7 @@ import Link from 'next/link'
 import CTABox from '@/components/CTABox'
 import Breadcrumb from '@/components/Breadcrumb'
 
+import ArticleJsonLd from '@/components/ArticleJsonLd'
 export const metadata: Metadata = {
   title: 'こんな方に読んでほしい｜やさしい老人ホームガイド',
   description: '「何から始めればいいかわからない」「急に介護が必要になった」「費用が心配」など、老人ホーム選びで悩む全ての方に向けたガイドです。',
@@ -139,6 +140,7 @@ const situations = [
 export default function ForYouPage() {
   return (
     <>
+      <ArticleJsonLd path={"/for-you"} title={"こんな方に読んでほしい｜やさしい老人ホームガイド"} description={"「何から始めればいいかわからない」「急に介護が必要になった」「費用が心配」など、老人ホーム選びで悩む全ての方に向けたガイドです。"} />
       <Breadcrumb items={[{ label: 'こんな方に読んでほしい' }]} />
 
       {/* メインヘッド */}

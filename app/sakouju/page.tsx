@@ -5,6 +5,7 @@ import SummaryBox from '@/components/SummaryBox'
 import Breadcrumb from '@/components/Breadcrumb'
 import AffiliateBlock from '@/components/AffiliateBlock'
 
+import ArticleJsonLd from '@/components/ArticleJsonLd'
 export const metadata: Metadata = {
   title: 'サービス付き高齢者向け住宅（サ高住）完全ガイド｜費用・メリット・注意点',
   description: 'サービス付き高齢者向け住宅（サ高住）の費用相場・有料老人ホームとの違い・向いている人・向いていない人・契約前の注意点を徹底解説します。',
@@ -34,6 +35,7 @@ const comparison = [
 export default function SakoujuPage() {
   return (
     <>
+      <ArticleJsonLd path={"/sakouju"} title={"サービス付き高齢者向け住宅（サ高住）完全ガイド｜費用・メリット・注意点"} description={"サービス付き高齢者向け住宅（サ高住）の費用相場・有料老人ホームとの違い・向いている人・向いていない人・契約前の注意点を徹底解説します。"} />
       <Breadcrumb items={[{ label: 'サービス付き高齢者向け住宅（サ高住）完全ガイド' }]} />
       <h1 className="text-2xl md:text-3xl font-bold mb-3 text-primary" style={{ borderLeft: 'none', paddingLeft: 0 }}>
         サービス付き高齢者向け住宅（サ高住）完全ガイド<br className="md:hidden" />｜費用・メリット・注意点

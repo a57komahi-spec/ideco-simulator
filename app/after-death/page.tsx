@@ -5,6 +5,7 @@ import SummaryBox from '@/components/SummaryBox'
 import Breadcrumb from '@/components/Breadcrumb'
 import AffiliateBlock from '@/components/AffiliateBlock'
 
+import ArticleJsonLd from '@/components/ArticleJsonLd'
 export const metadata: Metadata = {
   title: '親が亡くなったら最初にやること｜手続き・連絡・葬儀の流れ完全ガイド',
   description: '親が亡くなった直後から必要な手続きを時系列で解説。死亡届・葬儀・年金・相続・施設退去など、やるべきことを優先度順にまとめました。',
@@ -48,6 +49,7 @@ const timeline = [
 export default function AfterDeathPage() {
   return (
     <>
+      <ArticleJsonLd path={"/after-death"} title={"親が亡くなったら最初にやること｜手続き・連絡・葬儀の流れ完全ガイド"} description={"親が亡くなった直後から必要な手続きを時系列で解説。死亡届・葬儀・年金・相続・施設退去など、やるべきことを優先度順にまとめました。"} />
       <Breadcrumb items={[{ label: '親が亡くなったら最初にやること' }]} />
       <h1 className="text-2xl md:text-3xl font-bold mb-3 text-primary" style={{ borderLeft: 'none', paddingLeft: 0 }}>
         親が亡くなったら最初にやること<br className="md:hidden" />｜手続き・連絡・葬儀の流れ完全ガイド

@@ -6,6 +6,7 @@ import SummaryBox from '@/components/SummaryBox'
 import Breadcrumb from '@/components/Breadcrumb'
 import AffiliateBlock from '@/components/AffiliateBlock'
 
+import ArticleJsonLd from '@/components/ArticleJsonLd'
 export const metadata: Metadata = {
   title: '老後資金はいくら必要か？介護費用込みのリアルな試算',
   description: '老後2,000万円問題だけでは足りない。介護費用・施設費・医療費を含めた老後資金のリアルな必要額と、不足した場合の対策を解説します。',
@@ -32,6 +33,7 @@ const scenarios = [
 export default function RetirementCostPage() {
   return (
     <>
+      <ArticleJsonLd path={"/retirement-cost"} title={"老後資金はいくら必要か？介護費用込みのリアルな試算"} description={"老後2,000万円問題だけでは足りない。介護費用・施設費・医療費を含めた老後資金のリアルな必要額と、不足した場合の対策を解説します。"} />
       <Breadcrumb items={[{ label: '老後資金はいくら必要か' }]} />
       <h1 className="text-2xl md:text-3xl font-bold mb-3 text-primary" style={{ borderLeft: 'none', paddingLeft: 0 }}>
         老後資金はいくら必要か？<br className="md:hidden" />介護費用込みのリアルな試算

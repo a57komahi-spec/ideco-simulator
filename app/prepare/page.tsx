@@ -6,6 +6,7 @@ import CTABox from '@/components/CTABox'
 import SummaryBox from '@/components/SummaryBox'
 import Breadcrumb from '@/components/Breadcrumb'
 
+import ArticleJsonLd from '@/components/ArticleJsonLd'
 // ===== アフィリエイトURL（差し替え箇所） =====
 const NURSING_HOME_URL = 'https://www.minnanokaigo.com/'
 const REAL_ESTATE_URL  = 'https://www.home4u.jp/'
@@ -116,6 +117,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
 export default function PreparePage() {
   return (
     <>
+      <ArticleJsonLd path={"/prepare"} title={"親の老後準備｜何から始めればいいか"} description={"親の老後準備、何から始めればいい？相続・保険・不動産・専門家相談など、家族で進める「親の暮らしの整え方」をテーマ別に解説します。"} />
       <Breadcrumb items={[{ label: '入居前の準備' }]} />
 
       {/* Hero */}

@@ -6,6 +6,7 @@ import CTABox from '@/components/CTABox'
 import SummaryBox from '@/components/SummaryBox'
 import Breadcrumb from '@/components/Breadcrumb'
 
+import ArticleJsonLd from '@/components/ArticleJsonLd'
 const NURSING_HOME_URL = 'https://www.minnanokaigo.com/'
 
 const summaryItems = [
@@ -101,6 +102,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
 export default function ConsultationPage() {
   return (
     <>
+      <ArticleJsonLd path={"/prepare/consultation"} title={"親の老後の専門家相談｜誰に何を相談すべきか"} description={"親の老後について、誰に何を相談すべきかを整理。FP・税理士・司法書士・ケアマネ・地域包括支援センターなど、相談先別の活用方法を解説します。"} />
       <Breadcrumb items={[
         { label: '入居前の準備', href: '/prepare' },
         { label: '相談先の選び方' },

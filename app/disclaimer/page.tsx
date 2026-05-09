@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Breadcrumb from '@/components/Breadcrumb'
 
+import ArticleJsonLd from '@/components/ArticleJsonLd'
 export const metadata: Metadata = {
   title: '免責事項',
   description: 'やさしい老人ホームガイドの免責事項です。',
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
 export default function DisclaimerPage() {
   return (
     <>
+      <ArticleJsonLd path={"/disclaimer"} title={"免責事項"} description={"やさしい老人ホームガイドの免責事項です。"} />
       <Breadcrumb items={[{ label: '免責事項' }]} />
       <h1 className="text-2xl md:text-3xl font-bold mb-8 text-primary" style={{ borderLeft: 'none', paddingLeft: 0 }}>
         免責事項

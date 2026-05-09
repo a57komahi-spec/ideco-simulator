@@ -6,6 +6,7 @@ import SummaryBox from '@/components/SummaryBox'
 import Breadcrumb from '@/components/Breadcrumb'
 import AffiliateBlock from '@/components/AffiliateBlock'
 
+import ArticleJsonLd from '@/components/ArticleJsonLd'
 export const metadata: Metadata = {
   title: '親の介護費用は誰が払う？兄弟間でもめないための費用分担ルール',
   description: '「誰が介護費用を負担するの？」は家族間で最もトラブルになりやすいテーマです。法律上の扶養義務・費用分担の考え方・兄弟でもめないための話し合い方を解説します。',
@@ -26,6 +27,7 @@ const summaryItems = [
 export default function CareCostSplitPage() {
   return (
     <>
+      <ArticleJsonLd path={"/care-cost-split"} title={"親の介護費用は誰が払う？兄弟間でもめないための費用分担ルール"} description={"「誰が介護費用を負担するの？」は家族間で最もトラブルになりやすいテーマです。法律上の扶養義務・費用分担の考え方・兄弟でもめないための話し合い方を解説します。"} />
       <Breadcrumb items={[{ label: '親の介護費用は誰が払う？' }]} />
       <h1 className="text-2xl md:text-3xl font-bold mb-3 text-primary" style={{ borderLeft: 'none', paddingLeft: 0 }}>
         親の介護費用は誰が払う？<br className="md:hidden" />兄弟間でもめないための費用分担ルール

@@ -6,6 +6,7 @@ import CTABox from '@/components/CTABox'
 import SummaryBox from '@/components/SummaryBox'
 import Breadcrumb from '@/components/Breadcrumb'
 
+import ArticleJsonLd from '@/components/ArticleJsonLd'
 const INSURANCE_URL    = 'https://www.hokennomadoguchi.com/'
 const NURSING_HOME_URL = 'https://www.minnanokaigo.com/'
 
@@ -95,6 +96,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
 export default function InsurancePage() {
   return (
     <>
+      <ArticleJsonLd path={"/prepare/insurance"} title={"親の保険見直し｜介護・医療保険の選び方"} description={"親の保険、見直すべきタイミングと判断軸。介護保険・医療保険・終身保険・がん保険まで、シニア世代に必要な保障とそうでない保障を家族目線で整理しました。"} />
       <Breadcrumb items={[
         { label: '入居前の準備', href: '/prepare' },
         { label: '保険の見直し' },
