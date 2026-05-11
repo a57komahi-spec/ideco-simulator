@@ -17,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/checklist',
     '/contact',
     '/cost',
+    '/dementia-care-basics',
     '/dementia-facility',
     '/disclaimer',
     '/editorial-policy',
