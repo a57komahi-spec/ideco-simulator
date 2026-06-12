@@ -15,7 +15,7 @@
 |---|---|---|---|---|---|
 | 1 | completed | care-manager-relation | ケアマネージャーとの上手な付き合い方｜信頼関係の築き方 | 6,000字前後 | 2026-05-09 自動生成完了（規制7.5/empathy8.0/SEO7.5）。OneDrive Files-On-Demand 制約で .git/config がサンドボックスから読めず通常 commit 失敗のため、新 commit object（5c040208b71b344f633bbf010c06aff9acf58163）を .git/objects/ に配置し、新 commit ハッシュを refs/heads/auto-care-manager-relation-pending に保存。Windows 側で `commit-care-manager-relation.ps1`（C:\Users\a57ko\OneDrive\Desktop\claude\直下）を実行→main を更新→AutoPushAll(5:30) で push される段取り。 |
 | 2 | completed | dementia-care-basics | 認知症ケアの基本｜家族が知っておきたい接し方と進行ステージ | 7,000字前後 | 2026-05-12 自動生成完了（規制7.5/empathy8.2/SEO8.0）。Critical/Major 修正13件適用（グループホーム対象要件・要介護認定30日規定・初期集中支援チーム断定回避・効能効果暗示削除・レビー小体型の認知の変動追加・徘徊→ひとり歩き・BPSD英語表記・地域包括職種正式名称・特養を選択肢追加・体験談架空注記強化・PR表示の選定基準追加・title へのサイト名サフィックス・reviewedBy 構造化追加・冒頭イライラ肯定・NG見出しソフト化・自己ケア表現マイルド化）。 |
-| 3 | pending | insurance-usage-guide | 介護保険の使い方完全ガイド｜要介護認定から給付までの全工程 | 8,000字前後 |  |
+| 3 | completed | insurance-usage-guide | 介護保険の使い方完全ガイド｜要介護認定から給付までの全工程 | 8,000字前後 | 2026-06-12 自動生成完了（規制8.5/empathy9.0/SEO7.0）。Critical/Major修正13件適用（title30字化・description拡張・H1/headline整合・自己負担1〜3割に所得区分併記×3・特養要介護1/2特例入所・認定有効期間3〜12か月・特定疾病16種明記・審査請求3か月断定+言い換え・介護付き有料=特定施設入居者生活介護・合算療養費の8月〜7月期間・体験談「もっと早く」削除→安心起点・H2-7「知らないと損」ソフト化・まとめH2にKW追加・テーブル角丸修正）。Header.tsx otherArticles と sitemap.ts pages に /insurance-usage-guide 追加済み。 |
 | 4 | pending | sibling-care-discussion | 兄弟姉妹で介護を分担する話し合い方｜揉めないための整理術 | 6,000字前後 |  |
 | 5 | pending | caregiver-mental-care | 介護する家族のメンタルケア｜燃え尽きないための備え方 | 6,000字前後 |  |
 | 6 | pending | post-admission-money | 老人ホーム入居後のお金の管理｜成年後見制度・財産管理のステップ | 7,000字前後 |  |

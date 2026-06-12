@@ -29,6 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/home-care',
     '/how-to-choose',
     '/insurance-gap',
+    '/insurance-usage-guide',
     '/parents-support',
     '/pref-cost-ranking',
     '/prepare',

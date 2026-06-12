@@ -15,6 +15,7 @@ const otherArticles: { href: string; label: string }[] = [
   { href: '/review-guide', label: '📖 口コミの正しい読み方' },
   { href: '/sakouju', label: '🏠 サ高住 vs 有料老人ホーム比較' },
   { href: '/care-manager-relation', label: '🤝 ケアマネージャーとの上手な付き合い方' },
+  { href: '/insurance-usage-guide', label: '📝 介護保険の使い方完全ガイド｜申請から給付まで' },
   { href: '/dementia-care-basics', label: '🧠 認知症ケアの基本｜接し方と進行ステージ' },
   { href: '/care-resignation', label: '💼 介護離職を防ぐ制度活用ガイド' },
   { href: '/care-cost-split', label: '💰 介護費用の兄弟間分担ガイド' },
