@@ -19,6 +19,7 @@ const otherArticles: { href: string; label: string }[] = [
   { href: '/dementia-care-basics', label: '🧠 認知症ケアの基本｜接し方と進行ステージ' },
   { href: '/care-resignation', label: '💼 介護離職を防ぐ制度活用ガイド' },
   { href: '/care-cost-split', label: '💰 介護費用の兄弟間分担ガイド' },
+  { href: '/sibling-care-discussion', label: '🤝 兄弟姉妹で介護を分担する話し合い方' },
   { href: '/retirement-cost', label: '📊 老後資金・介護費用の試算' },
   { href: '/insurance-gap', label: '🔍 介護保険でカバーされない費用' },
   { href: '/after-death', label: '📋 親が亡くなったら最初にやること' },
@@ -644,11 +645,3 @@ export default function Header() {
             <li className="mt-2">
               <Link href="/how-to-choose" onClick={() => setMenuOpen(false)} className="flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-white transition hover:opacity-90" style={{ textDecoration: 'none', background: '#F57C00', fontSize: '18px', boxShadow: '0 2px 8px rgba(245,124,0,0.4)' }}>
                 📋 無料で施設を探す →
-              </Link>
-            </li>
-          </ul>
-        </nav>
-      )}
-    </header>
-  )
-}
