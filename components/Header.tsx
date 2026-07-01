@@ -24,6 +24,7 @@ const otherArticles: { href: string; label: string }[] = [
   { href: '/post-admission-money', label: '💴 入居後のお金の管理｜成年後見・財産管理' },
   { href: '/end-of-life-at-home', label: '🕊️ 老人ホームでの看取り｜最期の準備' },
   { href: '/family-visit-rhythm', label: '🏡 入居後の家族の面会頻度と関わり方' },
+  { href: '/choice-failure-lessons', label: '⚠️ 老人ホーム選びの失敗に学ぶ7つの教訓' },
   { href: '/retirement-cost', label: '📊 老後資金・介護費用の試算' },
   { href: '/insurance-gap', label: '🔍 介護保険でカバーされない費用' },
   { href: '/after-death', label: '📋 親が亡くなったら最初にやること' },

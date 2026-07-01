@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/care-timing',
     '/caregiver-mental-care',
     '/checklist',
+    '/choice-failure-lessons',
     '/contact',
     '/cost',
     '/dementia-care-basics',
