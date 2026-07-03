@@ -25,6 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/end-of-life-at-home',
     '/editorial-policy',
     '/ending-activity',
+    '/facility-vs-home-care',
     '/family-visit-rhythm',
     '/faq',
     '/for-you',
@@ -59,6 +60,4 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}${page}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
-    priority: page === '' ? 1 : lowPriorityPages.includes(page) ? 0.5 : 0.8,
-  }))
-}
+    priority: page === '' ? 1 : lowPriorityPages.includ
