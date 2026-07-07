@@ -364,7 +364,9 @@ export default function FacilityVsHomeCarePage() {
       </p>
       <p className="text-base mb-8">
         そして、在宅で工夫を重ねたうえで「やはり負担が大きい」と感じたら、そのときに施設へ切り替えればいい。<strong>順番は自由</strong>ですし、一度決めたら変えられないわけでもありません。
-        「今日、最終結論を出す」必要はないのです。まずは使えるサービスを一つ増やしてみる、資料を一つ取り寄せてみる——そんな小さな一歩から始めましょう。デイサービスやショートステイの活用は
+        「今日、最終結論を出す」必要はないのです。まずは使えるサービスを一つ増やしてみる、資料を一つ取り寄せてみる——そんな小さな一歩から始めましょう。デイサービスやショートステイの具体的な使い方は
+        <Link href="/short-stay-day-service" style={{ color: '#1A5E9E', fontWeight: 700 }}>「ショートステイ・デイサービスの使い方」</Link>
+        、在宅サービス全体は
         <Link href="/home-care" style={{ color: '#1A5E9E', fontWeight: 700 }}>「在宅介護のガイド」</Link>
         、施設を考えるタイミングは
         <Link href="/care-timing" style={{ color: '#1A5E9E', fontWeight: 700 }}>「施設入居を考えるべきタイミング」</Link>

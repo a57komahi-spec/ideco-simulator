@@ -47,6 +47,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/review-guide',
     '/room-size-cost',
     '/sakouju',
+    '/short-stay-day-service',
     '/sibling-care-discussion',
     '/simulation',
     '/tell-parents',
@@ -60,4 +61,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}${page}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
-    priority: page === '' ? 1 : lowPriorityPages.includ
+    priority: page === '' ? 1 : lowPriorityPages.includes(page) ? 0.5 : 0.8,
+  }))
+}
