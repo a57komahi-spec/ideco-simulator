@@ -27,6 +27,7 @@ const otherArticles: { href: string; label: string }[] = [
   { href: '/choice-failure-lessons', label: '⚠️ 老人ホーム選びの失敗に学ぶ7つの教訓' },
   { href: '/facility-vs-home-care', label: '⚖️ 老人ホームと在宅介護の比較｜7つの判断軸' },
   { href: '/short-stay-day-service', label: '🔄 ショートステイ・デイサービスの賢い使い方' },
+  { href: '/care-leave-system', label: '🗓️ 介護休業・介護休暇の使い方｜働きながら介護' },
   { href: '/retirement-cost', label: '📊 老後資金・介護費用の試算' },
   { href: '/insurance-gap', label: '🔍 介護保険でカバーされない費用' },
   { href: '/after-death', label: '📋 親が亡くなったら最初にやること' },

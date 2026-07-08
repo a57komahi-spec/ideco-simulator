@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/asset',
     '/care-cost-split',
     '/care-items',
+    '/care-leave-system',
     '/care-level',
     '/care-manager-relation',
     '/care-resignation',
