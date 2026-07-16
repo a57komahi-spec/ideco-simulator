@@ -448,6 +448,7 @@ export default function PostAdmissionMoneyPage() {
       <h2 className="text-xl font-bold mb-4 text-primary">あわせて読みたい記事</h2>
       <div className="flex flex-col gap-3 mb-10">
         {[
+          { href: '/care-medical-deduction', label: '介護の医療費控除｜対象になる費用と申告のしかた', icon: '🧾' },
           { href: '/insurance-usage-guide', label: '介護保険の使い方完全ガイド（申請から給付まで）', icon: '📝' },
           { href: '/sibling-care-discussion', label: '兄弟姉妹で介護を分担する話し合い方', icon: '🤝' },
           { href: '/care-cost-split', label: '介護費用の兄弟間分担ガイド', icon: '💰' },

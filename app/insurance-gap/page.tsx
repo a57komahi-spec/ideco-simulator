@@ -100,6 +100,12 @@ export default function InsuranceGapPage() {
         ))}
       </div>
 
+      <p className="text-base mb-8">
+        なかでも見落とされやすいのが医療費控除です。介護施設の費用やおむつ代、通院交通費なども条件を満たせば対象になります。くわしくは
+        <Link href="/care-medical-deduction" style={{ color: '#1A5E9E', fontWeight: 700 }}>「介護の医療費控除｜対象になる費用と申告のしかた」</Link>
+        で解説しています。
+      </p>
+
       <AffiliateBlock>
         <div className="rounded-2xl p-6 mb-8" style={{ background: 'linear-gradient(135deg, #E3F2FD, #BBDEFB)', border: '2px solid #1A5E9E' }}>
           <p className="font-bold text-lg mb-2" style={{ color: '#0D47A1' }}>介護費用の不安をFPに相談する</p>

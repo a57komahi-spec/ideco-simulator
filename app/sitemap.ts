@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/care-leave-system',
     '/care-level',
     '/care-manager-relation',
+    '/care-medical-deduction',
     '/care-resignation',
     '/care-timing',
     '/caregiver-mental-care',
