@@ -665,6 +665,7 @@ export default function DementiaCareBasicsPage() {
           { href: '/care-manager-relation', label: 'ケアマネージャーとの上手な付き合い方', icon: '🤝' },
           { href: '/care-level', label: '要介護度の違いと認定手続き｜申請から結果通知まで', icon: '📋' },
           { href: '/care-resignation', label: '介護離職を防ぐ制度活用ガイド', icon: '💼' },
+          { href: '/asset-pension-handover', label: '親の財産・年金管理の引き継ぎ方｜認知症になる前に', icon: '🔑' },
           { href: '/parents-support', label: '親のためにやるべきこと完全ガイド｜8つのテーマ', icon: '👪' },
         ].map((link) => (
           <Link

@@ -320,7 +320,9 @@ export default function PostAdmissionMoneyPage() {
         <Link href="/prepare/inheritance" style={{ color: '#1A5E9E', fontWeight: 700 }}>「相続の準備」</Link>
         や
         <Link href="/ending-activity" style={{ color: '#1A5E9E', fontWeight: 700 }}>「終活ステップガイド」</Link>
-        もあわせてどうぞ。
+        もあわせてどうぞ。親が元気なうちの財産・年金の引き継ぎから整理したい方は、
+        <Link href="/asset-pension-handover" style={{ color: '#1A5E9E', fontWeight: 700 }}>「親の財産・年金管理の引き継ぎ方」</Link>
+        が入口になります。
       </p>
 
       {/* H2-6 */}
@@ -449,6 +451,7 @@ export default function PostAdmissionMoneyPage() {
       <div className="flex flex-col gap-3 mb-10">
         {[
           { href: '/care-medical-deduction', label: '介護の医療費控除｜対象になる費用と申告のしかた', icon: '🧾' },
+          { href: '/asset-pension-handover', label: '親の財産・年金管理の引き継ぎ方｜認知症になる前に', icon: '🔑' },
           { href: '/insurance-usage-guide', label: '介護保険の使い方完全ガイド（申請から給付まで）', icon: '📝' },
           { href: '/sibling-care-discussion', label: '兄弟姉妹で介護を分担する話し合い方', icon: '🤝' },
           { href: '/care-cost-split', label: '介護費用の兄弟間分担ガイド', icon: '💰' },

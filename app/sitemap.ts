@@ -5,6 +5,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const pages = [
     '',
     '/about',
+    '/asset-pension-handover',
     '/after-death',
     '/after-hospital',
     '/asset',

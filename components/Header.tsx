@@ -22,6 +22,7 @@ const otherArticles: { href: string; label: string }[] = [
   { href: '/sibling-care-discussion', label: '🤝 兄弟姉妹で介護を分担する話し合い方' },
   { href: '/caregiver-mental-care', label: '💚 介護する家族のメンタルケア｜燃え尽き対策' },
   { href: '/post-admission-money', label: '💴 入居後のお金の管理｜成年後見・財産管理' },
+  { href: '/asset-pension-handover', label: '🔑 親の財産・年金管理の引き継ぎ方｜認知症になる前に' },
   { href: '/care-medical-deduction', label: '🧾 介護の医療費控除｜対象費用と申告のしかた' },
   { href: '/end-of-life-at-home', label: '🕊️ 老人ホームでの看取り｜最期の準備' },
   { href: '/family-visit-rhythm', label: '🏡 入居後の家族の面会頻度と関わり方' },
