@@ -283,6 +283,18 @@ export default function PreparePage() {
         ))}
       </div>
 
+      {/* 関連：身辺整理 */}
+      <Link href="/belongings-downsizing" style={{ textDecoration: 'none', display: 'block' }}>
+        <div className="flex items-center gap-4 rounded-xl px-5 py-4 mb-10 transition hover:shadow-md" style={{ background: '#F3F8F5', border: '1px solid #A5D6A7' }}>
+          <span style={{ fontSize: '28px' }}>🧹</span>
+          <div style={{ flex: 1 }}>
+            <p style={{ fontWeight: 800, fontSize: '16px', color: '#1a1a1a' }}>老人ホーム入居前の身辺整理・持ち物の減らし方</p>
+            <p style={{ fontSize: '13px', color: '#888', marginTop: '2px' }}>限られた居室に合わせて、焦らず持ち物を整理するコツ</p>
+          </div>
+          <span style={{ color: '#2E7D52', fontWeight: 700, fontSize: '18px' }}>→</span>
+        </div>
+      </Link>
+
       {/* FAQ */}
       <h2 className="text-xl md:text-2xl font-bold mb-4 text-primary">よくある質問</h2>
       <div className="mb-10">

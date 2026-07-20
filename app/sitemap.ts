@@ -9,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/after-death',
     '/after-hospital',
     '/asset',
+    '/belongings-downsizing',
     '/care-cost-split',
     '/care-items',
     '/care-leave-system',
