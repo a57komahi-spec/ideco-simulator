@@ -51,6 +51,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/review-guide',
     '/room-size-cost',
     '/sakouju',
+    '/senior-watch-service',
     '/short-stay-day-service',
     '/sibling-care-discussion',
     '/simulation',

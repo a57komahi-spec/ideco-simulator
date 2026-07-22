@@ -36,6 +36,7 @@ const otherArticles: { href: string; label: string }[] = [
   { href: '/funeral-guide', label: '🕊️ 家族葬と一般葬の選び方' },
   { href: '/ending-activity', label: '📝 終活ステップガイド' },
   { href: '/belongings-downsizing', label: '🧹 老人ホーム入居前の身辺整理・持ち物の減らし方' },
+  { href: '/senior-watch-service', label: '📡 高齢者見守りサービスの選び方｜種類・費用・自治体支援' },
   { href: '/simulation', label: '費用20年シミュレーション' },
   { href: '/care-level', label: '要介護度の違いと認定手続き' },
   { href: '/prepare', label: '入居前の準備4つのこと' },

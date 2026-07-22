@@ -263,6 +263,7 @@ export default function CareTimingPage() {
           { href: '/dementia-facility', label: '認知症対応施設の選び方', icon: '🧠' },
           { href: '/after-hospital', label: '退院後の施設入居・最短ガイド', icon: '🏥' },
           { href: '/tell-parents', label: '親に「施設入居」を伝えるコツ', icon: '👪' },
+          { href: '/senior-watch-service', label: '高齢者見守りサービスの選び方｜在宅を続ける備え', icon: '📡' },
         ].map(link => (
           <Link key={link.href} href={link.href} className="card-hover flex items-center gap-3 rounded-xl px-4 py-3 bg-white" style={{ border: '1px solid #e5e7eb', textDecoration: 'none', color: 'inherit' }}>
             <span style={{ fontSize: '20px' }}>{link.icon}</span>

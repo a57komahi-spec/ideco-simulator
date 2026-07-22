@@ -570,6 +570,14 @@ export default function HomeCarePage() {
           </div>
           <span style={{ color: '#F57C00' }} className="font-bold flex-shrink-0">→</span>
         </Link>
+        <Link href="/senior-watch-service" className="flex items-center gap-4 p-5 rounded-2xl bg-white transition hover:shadow-md" style={{ border: '2px solid #2E7D52', textDecoration: 'none', color: 'inherit' }}>
+          <span className="text-3xl flex-shrink-0">📡</span>
+          <div className="flex-1">
+            <p className="font-bold text-base mb-0.5" style={{ color: '#2E7D52' }}>高齢者見守りサービスの選び方｜種類・費用・自治体支援</p>
+            <p className="text-sm text-gray-600">離れて暮らす親をそっと見守る5タイプを比較</p>
+          </div>
+          <span style={{ color: '#2E7D52' }} className="font-bold flex-shrink-0">→</span>
+        </Link>
       </div>
 
       <CTABox />
