@@ -37,6 +37,7 @@ const otherArticles: { href: string; label: string }[] = [
   { href: '/ending-activity', label: '📝 終活ステップガイド' },
   { href: '/belongings-downsizing', label: '🧹 老人ホーム入居前の身辺整理・持ち物の減らし方' },
   { href: '/senior-watch-service', label: '📡 高齢者見守りサービスの選び方｜種類・費用・自治体支援' },
+  { href: '/daily-life-in-facility', label: '🕘 老人ホーム入居後の一日の過ごし方｜生活リズムと関わり方' },
   { href: '/simulation', label: '費用20年シミュレーション' },
   { href: '/care-level', label: '要介護度の違いと認定手続き' },
   { href: '/prepare', label: '入居前の準備4つのこと' },

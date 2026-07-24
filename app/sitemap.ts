@@ -23,6 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/choice-failure-lessons',
     '/contact',
     '/cost',
+    '/daily-life-in-facility',
     '/dementia-care-basics',
     '/dementia-facility',
     '/disclaimer',

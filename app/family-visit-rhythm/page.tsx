@@ -369,6 +369,7 @@ export default function FamilyVisitRhythmPage() {
       <h2 className="text-xl font-bold mb-4 text-primary">あわせて読みたい記事</h2>
       <div className="flex flex-col gap-3 mb-10">
         {[
+          { href: '/daily-life-in-facility', label: '老人ホーム入居後の一日の過ごし方｜生活リズムと家族の関わり方', icon: '🕘' },
           { href: '/caregiver-mental-care', label: '介護する家族のメンタルケア｜燃え尽き対策', icon: '💚' },
           { href: '/sibling-care-discussion', label: '兄弟姉妹で介護を分担する話し合い方', icon: '🤝' },
           { href: '/dementia-care-basics', label: '認知症ケアの基本｜接し方と進行ステージ', icon: '🧠' },
@@ -403,4 +404,9 @@ export default function FamilyVisitRhythmPage() {
         <p className="text-xs text-gray-500" style={{ lineHeight: 1.8 }}>
           【免責事項】本記事は、老人ホーム入居後のご家族の面会や関わり方に関する一般的な情報をまとめたものです。特定の関わり方による効果や結果を保証・推奨するものではありません。
           面会のルール（時間帯・人数・感染症対策など）や、ご本人の状態に応じた対応は、施設の方針や時期によって異なる場合があります。
-          実際の対応については、入居先の施設・職員・担当のケアマネージャー、お住まいの市区町村や地域包括支援センターなどの専門職にご相談のうえ、ご本人とご家族�
+          実際の対応については、入居先の施設・職員・担当のケアマネージャー、お住まいの市区町村や地域包括支援センターなどの専門職にご相談のうえ、ご本人とご家族の状況に合わせてご判断ください。
+        </p>
+      </div>
+    </>
+  )
+}
