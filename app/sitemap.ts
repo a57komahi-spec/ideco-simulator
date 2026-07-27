@@ -30,6 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/end-of-life-at-home',
     '/editorial-policy',
     '/ending-activity',
+    '/facility-disaster-preparedness',
     '/facility-vs-home-care',
     '/family-visit-rhythm',
     '/faq',

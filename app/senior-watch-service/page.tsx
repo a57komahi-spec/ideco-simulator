@@ -455,6 +455,7 @@ export default function SeniorWatchServicePage() {
       <div className="flex flex-col gap-3 mb-10">
         {[
           { href: '/facility-vs-home-care', label: '老人ホームと在宅介護の比較｜7つの判断軸', icon: '⚖️' },
+          { href: '/facility-disaster-preparedness', label: '老人ホーム・介護施設の防災と緊急時対応', icon: '🛟' },
           { href: '/care-timing', label: '施設入居を考えるべきタイミング', icon: '⏰' },
           { href: '/insurance-usage-guide', label: '介護保険の使い方完全ガイド｜申請から給付まで', icon: '📝' },
           { href: '/care-manager-relation', label: 'ケアマネージャーとの上手な付き合い方', icon: '🤝' },

@@ -422,6 +422,7 @@ export default function FacilityVsHomeCarePage() {
           { href: '/types', label: '老人ホームの種類と違いをわかりやすく解説', icon: '🏢' },
           { href: '/care-timing', label: '施設入居を考えるべきタイミング', icon: '⏰' },
           { href: '/senior-watch-service', label: '高齢者見守りサービスの選び方｜種類・費用・自治体支援', icon: '📡' },
+          { href: '/facility-disaster-preparedness', label: '老人ホーム・介護施設の防災と緊急時対応', icon: '🛟' },
           { href: '/caregiver-mental-care', label: '介護する家族のメンタルケア｜燃え尽き対策', icon: '💚' },
         ].map((link) => (
           <Link
