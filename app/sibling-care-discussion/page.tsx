@@ -416,6 +416,7 @@ export default function SiblingCareDiscussionPage() {
       <h2 className="text-xl font-bold mb-4 text-primary">あわせて読みたい記事</h2>
       <div className="flex flex-col gap-3 mb-10">
         {[
+          { href: '/long-distance-care', label: '親の遠距離介護の進め方｜帰省頻度・費用・見守りの整え方', icon: '✈️' },
           { href: '/care-cost-split', label: '親の介護費用は誰が払う？兄弟間の費用分担ルール', icon: '💴' },
           { href: '/care-resignation', label: '介護離職を防ぐ制度活用ガイド', icon: '💼' },
           { href: '/insurance-usage-guide', label: '介護保険の使い方完全ガイド（申請から給付まで）', icon: '📝' },

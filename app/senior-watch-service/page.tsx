@@ -454,6 +454,7 @@ export default function SeniorWatchServicePage() {
       <h2 className="text-xl font-bold mb-4 text-primary">あわせて読みたい記事</h2>
       <div className="flex flex-col gap-3 mb-10">
         {[
+          { href: '/long-distance-care', label: '親の遠距離介護の進め方｜帰省頻度・費用・見守りの整え方', icon: '✈️' },
           { href: '/facility-vs-home-care', label: '老人ホームと在宅介護の比較｜7つの判断軸', icon: '⚖️' },
           { href: '/facility-disaster-preparedness', label: '老人ホーム・介護施設の防災と緊急時対応', icon: '🛟' },
           { href: '/care-timing', label: '施設入居を考えるべきタイミング', icon: '⏰' },

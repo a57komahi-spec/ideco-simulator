@@ -520,6 +520,7 @@ export default function CareManagerRelationPage() {
       <h2 className="text-xl font-bold mb-4 text-primary">あわせて読みたい記事</h2>
       <div className="flex flex-col gap-3 mb-10">
         {[
+          { href: '/long-distance-care', label: '親の遠距離介護の進め方｜帰省頻度・費用・見守りの整え方', icon: '✈️' },
           { href: '/care-level', label: '要介護度の違いと認定手続き｜申請から結果通知まで', icon: '📋' },
           { href: '/parents-support', label: '親のためにやるべきこと完全ガイド｜8つのテーマ', icon: '👪' },
           { href: '/care-resignation', label: '介護離職のリアル｜仕事を辞める前に知るべきこと', icon: '💼' },

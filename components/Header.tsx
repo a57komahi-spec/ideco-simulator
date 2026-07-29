@@ -39,6 +39,7 @@ const otherArticles: { href: string; label: string }[] = [
   { href: '/senior-watch-service', label: '📡 高齢者見守りサービスの選び方｜種類・費用・自治体支援' },
   { href: '/daily-life-in-facility', label: '🕘 老人ホーム入居後の一日の過ごし方｜生活リズムと関わり方' },
   { href: '/facility-disaster-preparedness', label: '🛟 老人ホーム・介護施設の防災と緊急時対応｜災害への備え' },
+  { href: '/long-distance-care', label: '✈️ 親の遠距離介護の進め方｜帰省頻度・費用・見守り' },
   { href: '/simulation', label: '費用20年シミュレーション' },
   { href: '/care-level', label: '要介護度の違いと認定手続き' },
   { href: '/prepare', label: '入居前の準備4つのこと' },

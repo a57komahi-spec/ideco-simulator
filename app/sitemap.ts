@@ -41,6 +41,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/how-to-choose',
     '/insurance-gap',
     '/insurance-usage-guide',
+    '/long-distance-care',
     '/parents-support',
     '/post-admission-money',
     '/pref-cost-ranking',
